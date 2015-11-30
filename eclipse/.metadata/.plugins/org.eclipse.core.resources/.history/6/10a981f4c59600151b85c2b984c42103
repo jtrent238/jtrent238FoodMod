@@ -1,0 +1,12 @@
+package com.jtrent238.weaponmod;
+
+import net.minecraft.item.Item;
+
+public class ItemlapizFragment {
+
+	public Item setUnlocalizedName(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

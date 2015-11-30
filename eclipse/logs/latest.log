@@ -1,0 +1,65 @@
+[18:37:26] [main/INFO]: Setting user: Player634
+[18:37:30] [Client thread/INFO]: LWJGL Version: 2.9.1
+[18:38:09] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:jtrent238's Weapon Mod
+[18:38:11] [Sound Library Loader/INFO]: Sound engine started
+[18:38:51] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[18:38:51] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[18:38:52] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:jtrent238's Weapon Mod
+[18:38:53] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[18:38:57] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[18:38:58] [Sound Library Loader/INFO]: Sound engine started
+[18:39:07] [Client thread/ERROR]: ########## GL ERROR ##########
+[18:39:07] [Client thread/ERROR]: @ Post startup
+[18:39:07] [Client thread/ERROR]: 1286: Invalid framebuffer operation
+[18:39:32] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[18:39:32] [Server thread/INFO]: Generating keypair
+[18:39:36] [Server thread/INFO]: Preparing start region for level 0
+[18:39:37] [Server thread/INFO]: Preparing spawn area: 0%
+[18:39:38] [Server thread/INFO]: Preparing spawn area: 22%
+[18:39:39] [Server thread/INFO]: Preparing spawn area: 33%
+[18:39:44] [Server thread/INFO]: Preparing spawn area: 48%
+[18:39:45] [Server thread/INFO]: Preparing spawn area: 50%
+[18:39:46] [Server thread/INFO]: Preparing spawn area: 64%
+[18:39:47] [Server thread/INFO]: Preparing spawn area: 67%
+[18:39:49] [Server thread/INFO]: Preparing spawn area: 70%
+[18:39:50] [Server thread/INFO]: Preparing spawn area: 71%
+[18:39:51] [Server thread/INFO]: Preparing spawn area: 73%
+[18:39:52] [Server thread/INFO]: Preparing spawn area: 75%
+[18:39:53] [Server thread/INFO]: Preparing spawn area: 76%
+[18:39:54] [Server thread/INFO]: Preparing spawn area: 79%
+[18:39:55] [Server thread/INFO]: Preparing spawn area: 81%
+[18:39:56] [Server thread/INFO]: Preparing spawn area: 84%
+[18:39:57] [Server thread/INFO]: Preparing spawn area: 86%
+[18:39:58] [Server thread/INFO]: Preparing spawn area: 90%
+[18:39:59] [Server thread/INFO]: Preparing spawn area: 93%
+[18:40:00] [Server thread/INFO]: Preparing spawn area: 96%
+[18:40:01] [Server thread/INFO]: Preparing spawn area: 99%
+[18:40:02] [Server thread/INFO]: Changing view distance to 8, from 10
+[18:40:04] [Server thread/INFO]: Player634[local:E:20191016] logged in with entity id 315 at (-1.5, 72.0, -5.5)
+[18:40:04] [Server thread/INFO]: Player634 joined the game
+[18:40:08] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3987ms behind, skipping 79 tick(s)
+[18:40:09] [Server thread/INFO]: Saving and pausing game...
+[18:40:09] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Overworld
+[18:40:16] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Nether
+[18:40:16] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/The End
+[18:40:29] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 3682ms behind, skipping 73 tick(s)
+[18:40:29] [Server thread/INFO]: Player634 has just earned the achievement [Taking Inventory]
+[18:40:30] [Client thread/INFO]: [CHAT] Player634 has just earned the achievement [Taking Inventory]
+[18:40:31] [Client thread/INFO]: Warning: Clientside chunk ticking took 183 ms
+[18:40:34] [Client thread/INFO]: Warning: Clientside chunk ticking took 202 ms
+[18:40:35] [Client thread/INFO]: Warning: Clientside chunk ticking took 338 ms
+[18:42:16] [Server thread/INFO]: Saving and pausing game...
+[18:42:16] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Overworld
+[18:42:16] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Nether
+[18:42:16] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/The End
+[18:42:16] [Server thread/INFO]: Saving and pausing game...
+[18:42:17] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Overworld
+[18:42:17] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Nether
+[18:42:17] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/The End
+[18:42:18] [Server thread/INFO]: Stopping server
+[18:42:18] [Server thread/INFO]: Saving players
+[18:42:18] [Server thread/INFO]: Saving worlds
+[18:42:18] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Overworld
+[18:42:18] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Nether
+[18:42:18] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/The End
+[18:42:44] [Client thread/INFO]: Stopping!
