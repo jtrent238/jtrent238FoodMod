@@ -1,0 +1,30 @@
+//jtrent238's Food Mod Lang File
+//en_US
+
+//Items
+item.itemlapizapple.name=Lapis Apple
+item.itemredstoneapple.name=Redstone Apple
+item.itemcoalapple.name=Coal Apple
+item.itemironapple.name=Iron Apple
+item.itemdiamondapple.name=Diamond Apple
+item.itememeraldapple.name=Emerald Apple
+item.itemgoldapple.name=Gold Apple
+item.itemdragoneggapple.name=DragonEgg Apple
+item.itemnetherstarapple.name=NetherStar Apple
+item.itemcheese.name=Cheese
+item.itemgrilledcheese.name=Grilled Cheese
+item.itemgrilledcheesesandwhich.name=Grilled Cheese Sandwitch
+item.itemflesh.name=Flesh
+item.itemcookedflesh.name=Cooked Flesh
+item.itemRicebread.name=Rice Bread
+item.itembacon.name=Bacon
+item.itemcarrotcake.name=Carrot Cake
+item.itemcheesecake.name=Cheese Cake
+item.itemBarkbread.name=Bark Bread
+item.itemKubdari.name=Kubdari
+
+
+//Blocks
+//Achievements
+//Creative Tabs
+itemGroup.FoodMod=jtrent238's Food Mod

@@ -1,6 +1,0 @@
-package com.jtrent238.weaponmod;
-
-@mod(modid = "weaponmod", name = "jtrent238's Weapon Mod", version = "1.0")
-public class WeaponMod {
-
-}

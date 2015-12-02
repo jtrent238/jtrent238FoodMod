@@ -1,0 +1,7 @@
+package com.jtrent238.weaponmod;
+
+import net.minecraft.block.Block;
+
+public class Blocknetherstar extends Block {
+
+}

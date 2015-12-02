@@ -61,10 +61,12 @@ item.itemcheeseknife.name=Cheese Knife
 item.itemrainbowFragment.name=Rainbow Fragment
 item.itemrainbowwand.name=Rainbow Wand(WIP)
 item.itemmagicwand.name=Magic Wand(WIP)
+item.itemflesh.name=Flesh
+item.itemcookedflesh.name=Cooked Flesh
 
 
 //Blocks
-tile.itemLightingShard.name=Lighting Shard Block
+tile.blockLightingShard.name=Lighting Shard Block
 tile.blockruby.name=Block of Ruby
 tile.blockrubyore.name=Ruby Ore
 tile.blockdragonegg.name=Dragon Egg Block
@@ -73,7 +75,8 @@ tile.blocknetherstar.name=Nether Star Block
 //Achievements
 achievement.weaponmod_install=Thanks For Installing jtrent238's Weapon Mod
 achievement.weaponmod_install.desc=Install jtrent238's Weapon Mod
-
+achievement.ach=A Dirty Start
+achievement.ach.desc=Mine A Piece Of Dirt!
 //Creative Tabs
 itemGroup.tabWeaponMod=jtrent238's Weapon Mod
 itemGroup.tabSwordCraft=Sword Craft

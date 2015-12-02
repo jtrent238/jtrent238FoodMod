@@ -1,8 +1,0 @@
-package com.jtrent238.weaponmod;
-
-import cpw.mods.fml.common.Mod;
-
-@Mod(modid = "weaponmod", name = "jtrent238's Weapon Mod", version = "1.0")
-public class WeaponMod {
-
-}
