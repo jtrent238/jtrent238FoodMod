@@ -93,6 +93,25 @@ public class FoodMod
 	public static Item itemlamb;
 	public static Item itemlambraw;
 	public static Item itemCheesecakeStuffedStrawberries;
+	public static Item itemstrawberry;
+	public static Item itemblueberry;
+	public static Item itemblackberry;
+	public static Item itemcherry;
+	public static Item itemsoup;
+	public static Item itemfrenchfry;
+	public static Item itemlemonpie;
+	public static Item itemapplepie;
+	
+	//Kitchen Utensials
+	public static Item itemknife;
+	public static Item itemfork;
+	public static Item itemspoon;
+	public static Item itemplate;
+	public static Item itembowl;
+	public static Item itemtowel;
+	public static Item itemnapkin;
+	
+	
 	
 	
 	
