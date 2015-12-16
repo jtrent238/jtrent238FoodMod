@@ -99,10 +99,32 @@ public class FoodMod
 	public static Item itemfrenchfry;
 	public static Item itemlemonpie;
 	public static Item itemapplepie;
-	public static Item item
-	public static Item item
-	public static Item item
-	public static Item item
+	public static Item itemasparagus;
+	public static Item itembasil;
+	public static Item itemcilantro;
+	public static Item itembroccoli;
+	public static Item itemorange;
+	public static Item itemkiwi;
+	public static Item itemredpepper;
+	public static Item itemtomato;
+	public static Item itemavocado;
+	public static Item itemgreenpepper;
+	public static Item itemraspberries;
+	public static Item itempear;
+	public static Item itempeach;
+	public static Item itemonions;
+	public static Item itemgarlic;
+	public static Item itemginger;
+	public static Item itemadzukibeans;
+	public static Item itemblackbeans;
+	public static Item itemblackeyepeas;
+	public static Item itemgarbanzobeans;
+	public static Item itemkidneybeans;
+	public static Item itemlentils;
+	public static Item itempintobeans;
+	public static Item itemwhitebeans;
+
+	
 	
 		//Kitchen Utensials
 	public static Item itemknife;
