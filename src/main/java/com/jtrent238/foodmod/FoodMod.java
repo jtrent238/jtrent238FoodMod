@@ -99,6 +99,10 @@ public class FoodMod
 	public static Item itemfrenchfry;
 	public static Item itemlemonpie;
 	public static Item itemapplepie;
+	public static Item item
+	public static Item item
+	public static Item item
+	public static Item item
 	
 		//Kitchen Utensials
 	public static Item itemknife;
