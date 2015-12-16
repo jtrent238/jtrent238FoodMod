@@ -1,7 +1,5 @@
 package com.jtrent238.foodmod;
 
-import com.jtrent238.weaponmod.Itemrubyhoe;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -102,7 +100,7 @@ public class FoodMod
 	public static Item itemlemonpie;
 	public static Item itemapplepie;
 	
-	//Kitchen Utensials
+		//Kitchen Utensials
 	public static Item itemknife;
 	public static Item itemfork;
 	public static Item itemspoon;
