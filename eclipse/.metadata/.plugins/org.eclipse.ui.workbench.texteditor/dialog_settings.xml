@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="ClientProxy" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ClientProxy"/>
 			<item value="mcreator"/>
 			<item value="mcreator_creeperInAJar"/>
 			<item value="func_149647_a"/>
@@ -15,7 +16,6 @@
 			<item value="func_149663_c"/>
 			<item value="func_149739_a"/>
 			<item value="func_77664_n"/>
-			<item value="func_77658_a"/>
 		</list>
 		<list key="replacehistory">
 			<item value="creeperInAJar"/>

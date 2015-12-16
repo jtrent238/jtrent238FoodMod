@@ -1,0 +1,17 @@
+package com.jtrent238.foodmod;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+
+public class FoodModItems {
+
+	public static Item itemlambraw;
+	public static Item itemmuttonraw;
+	public static Item itemfishsticks;
+
+	public static void init() {
+
+		
+	}
+
+}

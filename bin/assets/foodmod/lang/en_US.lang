@@ -22,9 +22,56 @@ item.itemcarrotcake.name=Carrot Cake
 item.itemcheesecake.name=Cheese Cake
 item.itemBarkbread.name=Bark Bread
 item.itemKubdari.name=Kubdari
+item.itemKisra.name=Kisra
+item.itemSimit.name=Simit
+item.itemRicebread.name=Rice Bread
+item.itemtoast.name=Toast
+item.itemČesnica.name=Česnica
+item.itemSlicedbread.name=Slicedbread
+item.itemchocolatebar.name=Chocolate Bar
+item.itemchocolatemilk.name=Chocolate Milk
+item.itempizza.name=Pizza
+item.itemicecream.name=Ice Cream
+item.itemcorndog.name=Corn Dog
+item.itemhotdog.name=Hot Dog
+item.itemcottoncandy.name=Cotton Candy
+item.itemapplepie.name=Apple Pie
+item.itemcandyapple.name=Candy Apple
+item.itemsugarcookie.name=Sugar Cookie
+item.itemoreo.name=Oreo
+item.item_mms.name=M&M's
+item.itemlemonade.name=Lemonade
+item.itemlemon.name=Lemon
+item.itemmeatball.name=Meatball
+item.itemmeatballraw.name=Raw Meatball
+item.itempasta.name=Pasta
+item.itemchickenwings.name=Chicken Wings
+item.itemchickenwingsraw.name=Raw Chicken Wings
+item.itemchicken_nuggets.name=Chicken Nuggets
+item.itemchicken_nuggetsraw.name=Raw Chicken Nuggets
+item.itempeanut.name=Peanut
+item.itempeanutseeds.name=Peanut Seeds
+item.itempeanutplant.name=Peanut Plant
+item.itembean.name=Bean
+item.itemgoatmilk.name=Goat Milk
+item.itemfishsticks.name=Fishsticks
+item.itemfishsticksraw.name=Raw Fishsticks
+item.itempie.name=Pie
+item.itemmutton.name=Mutton
+item.itemmuttonraw.name=Raw Mutton
+item.itemlamb.name=Lamb
+item.itemlambraw.name=Raw Lamb
+item.itemCheesecakeStuffedStrawberries.name=Cheesecake Stuffed Strawberries
+
+item.itemstove.name=Stove
+item.itemmicrowave.name=Microwave
 
 
 //Blocks
+tile.blockstove.name=Stove
+tile.blockmicrowave.name=Microwave
+tile.itempeanutplant.name=Peanut Plant
+
 //Achievements
 //Creative Tabs
 itemGroup.FoodMod=jtrent238's Food Mod

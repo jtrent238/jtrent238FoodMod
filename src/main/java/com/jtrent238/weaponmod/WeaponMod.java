@@ -1,26 +1,42 @@
 package com.jtrent238.weaponmod;
 
+import com.jtrent238.foodmod.CommonProxy;
+import com.jtrent238.foodmod.ForgeSubscribe;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid="weaponmod", name="jtrent238's Weapon Mod", version="1.0.0.0")
 public class WeaponMod
 {
 	private static final String weaponmod = null;
 	private static final String MODID = weaponmod;
+	
+	 @ForgeSubscribe(priority = EventPriority.NORMAL)
+	    public void eventHandler(RenderGameOverlayEvent event) {
+	}
+	    
+
+	    
+	    
 //Items
   public static Item itemdiamondFragment;
   public static Item itemgoldFragment;
@@ -71,6 +87,8 @@ public class WeaponMod
   public static Block blocknetherstar;
   public static Block blockarmorcrafter;
   public static Block blockcreeperinajar;
+  
+
   
   @Mod.EventHandler
   public void preInit(FMLPreInitializationEvent event)
@@ -269,6 +287,7 @@ public class WeaponMod
     NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
   }
   
+
   public static CreativeTabs tabWeaponMod = new CreativeTabs("tabWeaponMod")
   {
 
@@ -283,5 +302,7 @@ public class WeaponMod
   ;
   
   @Mod.EventHandler
-  public void postInit(FMLPostInitializationEvent event) {}
+  public void postInit(FMLPostInitializationEvent event) {
+
+  }
 }

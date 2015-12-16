@@ -1,7 +1,0 @@
-package com.jtrent238.weaponmod;
-
-import net.minecraft.block.Block;
-
-public class BlockLightingShard extends Block {
-
-}
