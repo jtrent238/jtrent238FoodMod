@@ -66,6 +66,8 @@ public class FoodModItems {
 	public static Item itemlambraw;
 	public static Item itemCheesecakeStuffedStrawberries;
 	public static Item itemappleseed;
+	public static Item plantSeeds;
+	public static Item beetroot;
 	
 	
 	

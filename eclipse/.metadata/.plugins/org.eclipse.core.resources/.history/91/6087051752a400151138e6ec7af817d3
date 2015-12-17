@@ -1,0 +1,20 @@
+package com.jtrent238.foodmod;
+
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+public class CommonProxy {
+
+	public void preInit(FMLPreInitializationEvent e) {
+		ModItems.createItems();
+		ModBlocks.createBlocks();
+		ModTileEntities.init();
+	}
+
+	public void init(FMLInitializationEvent e) {
+		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new ModGuiHandler());
+	}
+
+	public void postInit(FMLPostInitializationEvent e) {
+
+	}
+}

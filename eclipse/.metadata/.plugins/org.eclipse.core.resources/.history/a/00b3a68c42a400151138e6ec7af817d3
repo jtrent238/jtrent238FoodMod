@@ -1,0 +1,18 @@
+package com.jtrent238.foodmod;
+
+import net.minecraft.entity.passive.EntitySheep;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
+
+public class CustomDrops {
+	   public static double rand;
+	   
+	   @ForgeSubscribe
+	   public void onEntityDrop(LivingDropsEvent event) {
+	         if (event.entityLiving instanceof EntitySheep){
+	                            rand = Math.random();
+	            if (rand < 0.1D) {
+	               event.entityLiving.dropItem(itemmuttonraw, 1);
+	            }
+	         }
+	      }
+	}

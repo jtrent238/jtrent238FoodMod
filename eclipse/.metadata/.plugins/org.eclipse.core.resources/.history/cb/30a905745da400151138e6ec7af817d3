@@ -1,0 +1,32 @@
+package com.jtrent238.foodmod;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.stats.Achievement;
+import net.minecraftforge.event.entity.player.AchievementEvent;
+
+public class AchievementList {
+	
+	private static Object openInventory;
+
+	@SubscribeEvent
+	public void onEvent(AchievementEvent event) 
+	{
+	    if (event.achievement.equals(AchievementList.openInventory)) 
+	    {
+	        event.setCanceled(true);
+	    }
+	}
+	public static Achievement achievementStartMagicBeans = 
+		      new Achievement("achievement.startmagicbeans", "startmagicbeans", 
+		      0, 0, FoodMod.magicBeans, (Achievement)null);
+		public static Achievement achievementGiantSlayer = 
+		      new Achievement("achievement.giantslayer", "giantslayer", 
+		      2, 1, FoodMod.bootsOfSafeFalling, 
+		      FoodMod.achievementStartMagicBeans).setSpecial();
+}{
+AchievementPage.registerAchievementPage(
+	      new AchievementPage("jtrent238's FoodMod Achievements", 
+	            new Achievement[] {MagicBeans.achievementStartMagicBeans, 
+	               MagicBeans.achievementGiantSlayer}));
+}
+}

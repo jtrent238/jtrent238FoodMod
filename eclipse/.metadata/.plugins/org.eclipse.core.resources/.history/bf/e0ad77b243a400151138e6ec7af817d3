@@ -1,0 +1,25 @@
+package com.jtrent238.foodmod;
+
+import cpw.mods.fml.common.eventhandler.EventPriority;
+import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import com.jtrent238.foodmod.ForgeSubscribe;
+
+public class CustomDrops {
+	@ForgeSubscribe(priority = EventPriority.NORMAL)
+    public void eventHandler(RenderGameOverlayEvent event) {
+	}
+	
+	public static double rand;
+	//Sheep Drops Raw Mutton
+	public void onEntityDrop(LivingDropsEvent event, Item itemmuttonraw) {
+        if (event.entityLiving instanceof EntitySheep){
+                           rand = Math.random();
+           if (rand < 0.1D) {
+              event.entityLiving.dropItem(itemmuttonraw, 1);
+           }
+        }
+     }
+}

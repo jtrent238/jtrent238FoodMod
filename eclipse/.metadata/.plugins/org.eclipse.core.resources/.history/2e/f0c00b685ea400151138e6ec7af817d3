@@ -1,0 +1,56 @@
+package com.jtrent238.foodmod;
+
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.stats.Achievement;
+import net.minecraftforge.common.AchievementPage;
+import net.minecraftforge.event.entity.player.AchievementEvent;
+
+public class AchievementList<entityAttackedBy, entityAttackedBy1> {
+	
+	private static Object openInventory;
+	private Object damageSource;
+	private net.minecraft.entity.player.EntityPlayer entityAttackedBy;
+
+	@SubscribeEvent
+	public void onEvent(AchievementEvent event) 
+	{
+	    if (event.achievement.equals(AchievementList.openInventory)) 
+	    {
+	        event.setCanceled(true);
+	    }
+	}
+	public static Achievement achievementStartMagicBeans = 
+		      new Achievement("achievement.startmagicbeans", "startmagicbeans", 
+		      0, 0, FoodMod.magicBeans, (Achievement)null);
+		public static Achievement achievementGiantSlayer = 
+		      new Achievement("achievement.giantslayer", "giantslayer", 
+		      2, 1, FoodMod.bootsOfSafeFalling, 
+		      FoodMod.achievementStartMagicBeans).setSpecial();
+{
+AchievementPage.registerAchievementPage(
+	      new AchievementPage("jtrent238's FoodMod Achievements", 
+	            new Achievement[] {FoodMod.achievementStartMagicBeans, 
+	            		}));
+}
+
+{
+if (getHealth() <= 0.0F)
+{
+    onDeath(damageSource);
+    if (entityAttackedBy instanceof net.minecraft.entity.player.EntityPlayer)
+    {
+        ((net.minecraft.entity.player.EntityPlayer)entityAttackedBy)
+              .addStat(FoodMod.achievementStartMagicBeans, 1);
+    }
+}
+}
+
+private float getHealth() {
+
+	return 0;
+}
+
+private void onDeath(Object damageSource2) {
+	
+}
+}

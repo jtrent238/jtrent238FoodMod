@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 
 public class FoodModBlocks {
 
+	public static final Block plant = null;
 	public static Block itemapplesapling;
 	public static Block itemlemonsapling;
 	public static Block blockstove;

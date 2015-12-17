@@ -1,0 +1,7 @@
+package com.jtrent238.foodmod;
+
+import net.minecraft.tileentity.TileEntity;
+
+public class TileEntityStorage extends TileEntity {
+
+}

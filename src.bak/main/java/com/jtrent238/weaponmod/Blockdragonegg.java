@@ -7,7 +7,7 @@ public class Blockdragonegg extends Block {
 
 	protected Blockdragonegg(Material material) {
 		super(material);
-		// TODO Auto-generated constructor stub
+
 	}
 
 }

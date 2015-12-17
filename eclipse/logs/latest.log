@@ -1,38 +1,13 @@
-[20:41:10] [main/INFO]: Setting user: Player695
-[20:41:13] [Client thread/INFO]: LWJGL Version: 2.9.1
-[20:41:35] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:jtrent238's Core Mod, FMLFileResourcePack:jtrent238's Food Mod, FMLFileResourcePack:jtrent238's Lots Of Blocks Mod, FMLFileResourcePack:jtrent238's Weapon Mod
-[20:41:37] [Sound Library Loader/INFO]: Sound engine started
-[20:41:42] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
-[20:41:42] [Client thread/INFO]: Created: 16x16 textures/items-atlas
-[20:41:42] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:jtrent238's Core Mod, FMLFileResourcePack:jtrent238's Food Mod, FMLFileResourcePack:jtrent238's Lots Of Blocks Mod, FMLFileResourcePack:jtrent238's Weapon Mod
-[20:41:44] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[20:41:46] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[20:41:47] [Sound Library Loader/INFO]: Sound engine started
-[20:41:51] [Client thread/ERROR]: ########## GL ERROR ##########
-[20:41:51] [Client thread/ERROR]: @ Post startup
-[20:41:51] [Client thread/ERROR]: 1286: Invalid framebuffer operation
-[20:42:14] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
-[20:42:14] [Server thread/INFO]: Generating keypair
-[20:42:14] [Server thread/INFO]: Preparing start region for level 0
-[20:42:16] [Server thread/INFO]: Preparing spawn area: 2%
-[20:42:17] [Server thread/INFO]: Preparing spawn area: 50%
-[20:42:18] [Server thread/INFO]: Preparing spawn area: 96%
-[20:42:19] [Server thread/INFO]: Changing view distance to 8, from 10
-[20:42:21] [Server thread/INFO]: Player695[local:E:feaf812f] logged in with entity id 246 at (6.5, 71.0, -2.5)
-[20:42:21] [Server thread/INFO]: Player695 joined the game
-[20:42:23] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2490ms behind, skipping 49 tick(s)
-[20:42:24] [Server thread/INFO]: Saving and pausing game...
-[20:42:24] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Overworld
-[20:42:25] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Nether
-[20:42:25] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/The End
-[20:42:33] [Server thread/INFO]: Player695 has just earned the achievement [Taking Inventory]
-[20:42:34] [Client thread/INFO]: [CHAT] Player695 has just earned the achievement [Taking Inventory]
-[20:42:52] [Client thread/INFO]: Stopping!
-[20:42:52] [Server thread/INFO]: Stopping server
-[20:42:52] [Server thread/INFO]: Saving players
-[20:42:52] [Server thread/INFO]: Saving worlds
-[20:42:52] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Overworld
-[20:42:53] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/Nether
-[20:42:53] [Server thread/INFO]: Saving chunks for level 'Copy of TEST_WORLD'/The End
-[20:42:53] [Client Shutdown Thread/INFO]: Stopping server
-[20:42:53] [Client Shutdown Thread/INFO]: Saving players
+[21:05:37] [main/INFO]: Setting user: Player581
+[21:05:40] [Client thread/INFO]: LWJGL Version: 2.9.1
+[21:06:07] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:jtrent238's Core Mod, FMLFileResourcePack:jtrent238's Food Mod, FMLFileResourcePack:jtrent238's Lots Of Blocks Mod, FMLFileResourcePack:jtrent238's Weapon Mod
+[21:06:09] [Sound Library Loader/INFO]: Sound engine started
+[21:06:14] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[21:06:14] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[21:06:14] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:jtrent238's Core Mod, FMLFileResourcePack:jtrent238's Food Mod, FMLFileResourcePack:jtrent238's Lots Of Blocks Mod, FMLFileResourcePack:jtrent238's Weapon Mod
+[21:06:16] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[21:06:18] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[21:06:19] [Sound Library Loader/INFO]: Sound engine started
+[21:06:28] [Client thread/ERROR]: ########## GL ERROR ##########
+[21:06:28] [Client thread/ERROR]: @ Post startup
+[21:06:28] [Client thread/ERROR]: 1286: Invalid framebuffer operation

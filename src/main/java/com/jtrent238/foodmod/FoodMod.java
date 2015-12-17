@@ -14,23 +14,28 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.Achievement;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
 @Mod(modid="foodmod", name="jtrent238's Food Mod", version="1.0.0.0")
 public class FoodMod
 {
+
+
 	@ForgeSubscribe(priority = EventPriority.NORMAL)
     public void eventHandler(RenderGameOverlayEvent event) {
-	}
-    
 
+	}
 	
+
 	//Items
 		//Food
 	public static Item itemcheese;
@@ -64,6 +69,8 @@ public class FoodMod
 	public static Item itempizza;
 	public static Item itemicecream;
 	public static Item itemcorndog;
+	public static Item itemcorndog_mustard;
+	public static Item itemcorndog_ketchup;
 	public static Item itemhotdog;
 	public static Item itemcottoncandy;
 	public static Item itemapplepie;
@@ -93,6 +100,49 @@ public class FoodMod
 	public static Item itemlamb;
 	public static Item itemlambraw;
 	public static Item itemCheesecakeStuffedStrawberries;
+	public static Item itemstrawberry;
+	public static Item itemblueberry;
+	public static Item itemblackberry;
+	public static Item itemcherry;
+	public static Item itemsoup;
+	public static Item itemfrenchfry;
+	public static Item itemlemonpie;
+	public static Item itemasparagus;
+	public static Item itembasil;
+	public static Item itemcilantro;
+	public static Item itembroccoli;
+	public static Item itemorange;
+	public static Item itemkiwi;
+	public static Item itemredpepper;
+	public static Item itemtomato;
+	public static Item itemavocado;
+	public static Item itemgreenpepper;
+	public static Item itemraspberries;
+	public static Item itempear;
+	public static Item itempeach;
+	public static Item itemonions;
+	public static Item itemgarlic;
+	public static Item itemginger;
+	public static Item itemadzukibeans;
+	public static Item itemblackbeans;
+	public static Item itemblackeyepeas;
+	public static Item itemgarbanzobeans;
+	public static Item itemkidneybeans;
+	public static Item itemlentils;
+	public static Item itempintobeans;
+	public static Item itemwhitebeans;
+	public static Item itembeetroot;
+
+	
+	
+		//Kitchen Utensils
+	public static Item itemknife;
+	public static Item itemfork;
+	public static Item itemspoon;
+	public static Item itemplate;
+	public static Item itembowl;
+	public static Item itemtowel;
+	public static Item itemnapkin;
 	
 	
 	
@@ -106,6 +156,7 @@ public class FoodMod
 	//Blocks
 	public static Block blockstove;
 	public static Block blockmicrowave;
+	public static Block blockfridge;
 		//Plants
 	public static Block plantpeanut;
 
@@ -225,6 +276,14 @@ public void preInit(FMLPreInitializationEvent event)
     itemcorndog = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemcorndog").setTextureName("foodmod:itemcorndog").setCreativeTab(FoodMod);
     GameRegistry.registerItem(itemcorndog, itemcorndog.getUnlocalizedName().substring(5));
     
+    //Corn Dog With Ketchup
+    itemcorndog_ketchup = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemcorndog_ketchup").setTextureName("foodmod:itemcorndog_ketchup").setCreativeTab(FoodMod);
+    GameRegistry.registerItem( itemcorndog_ketchup,  itemcorndog_ketchup.getUnlocalizedName().substring(5));
+    
+    //Corn Dog With Ketchup
+    itemcorndog_mustard = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemcorndog_mustard").setTextureName("foodmod:itemcorndog_mustard").setCreativeTab(FoodMod);
+    GameRegistry.registerItem( itemcorndog_mustard,  itemcorndog_mustard.getUnlocalizedName().substring(5));
+    
     //Hot Dog
     itemhotdog = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemhotdog").setTextureName("foodmod:itemhotdog").setCreativeTab(FoodMod);
     GameRegistry.registerItem(itemhotdog, itemhotdog.getUnlocalizedName().substring(5));
@@ -333,6 +392,134 @@ public void preInit(FMLPreInitializationEvent event)
     itemCheesecakeStuffedStrawberries = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemCheesecakeStuffedStrawberries").setTextureName("foodmod:itemCheesecakeStuffedStrawberries").setCreativeTab(FoodMod);
     GameRegistry.registerItem(itemCheesecakeStuffedStrawberries, itemCheesecakeStuffedStrawberries.getUnlocalizedName().substring(5));
     
+    //Strawberry 
+    itemstrawberry = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemstrawberry").setTextureName("foodmod:itemstrawberry").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemstrawberry, itemstrawberry.getUnlocalizedName().substring(5));
+    
+    //Blueberry
+    itemblueberry = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemblueberry").setTextureName("foodmod:itemblueberry").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemblueberry, itemblueberry.getUnlocalizedName().substring(5));
+    
+    //Blackberry
+    itemblackberry = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemblackberry").setTextureName("foodmod:itemblackberry").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemblackberry, itemblackberry.getUnlocalizedName().substring(5));
+    
+    //Cherry
+    itemcherry = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemcherry").setTextureName("foodmod:itemcherry").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemcherry, itemcherry.getUnlocalizedName().substring(5));
+    
+    //Soup
+    itemsoup = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemsoup").setTextureName("foodmod:itemsoup").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemsoup, itemsoup.getUnlocalizedName().substring(5));
+    
+    //French Fry
+    itemfrenchfry = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemfrenchfry").setTextureName("foodmod:itemfrenchfry").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemfrenchfry, itemfrenchfry.getUnlocalizedName().substring(5));
+    
+    //Lemon Pie
+    itemlemonpie = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemlemonpie").setTextureName("foodmod:itemlemonpie").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemlemonpie, itemlemonpie.getUnlocalizedName().substring(5));
+    
+    //Asparagus
+    itemasparagus = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemasparagus").setTextureName("foodmod:itemasparagus").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemasparagus, itemasparagus.getUnlocalizedName().substring(5));
+    
+    //Basil
+    itembasil = new ItemFood(3, 0.2F, true).setUnlocalizedName("itembasil").setTextureName("foodmod:itembasil").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itembasil, itembasil.getUnlocalizedName().substring(5));
+    
+    //Cilantro
+    itemcilantro = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemcilantro").setTextureName("foodmod:itemcilantro").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemcilantro, itemcilantro.getUnlocalizedName().substring(5));
+    
+    //Broccoli
+    itembroccoli = new ItemFood(3, 0.2F, true).setUnlocalizedName("itembroccoli").setTextureName("foodmod:itembroccoli").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itembroccoli, itembroccoli.getUnlocalizedName().substring(5));
+    
+    //Orange
+    itemorange = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemorange").setTextureName("foodmod:itemorange").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemorange, itemorange.getUnlocalizedName().substring(5));
+    
+    //Kiwi
+    itemkiwi = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemkiwi").setTextureName("foodmod:itemkiwi").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemkiwi, itemkiwi.getUnlocalizedName().substring(5));
+    
+    //Red Pepper
+    itemredpepper = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemredpepper").setTextureName("foodmod:itemredpepper").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemredpepper, itemredpepper.getUnlocalizedName().substring(5));
+    
+    //Tomato
+    itemtomato = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemtomato").setTextureName("foodmod:itemtomato").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemtomato, itemtomato.getUnlocalizedName().substring(5));
+    
+    //Avocado
+    itemavocado = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemavocado").setTextureName("foodmod:itemavocado").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemavocado, itemavocado.getUnlocalizedName().substring(5));
+    
+    //Green Pepper
+    itemgreenpepper = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemgreenpepper").setTextureName("foodmod:itemgreenpepper").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemgreenpepper, itemgreenpepper.getUnlocalizedName().substring(5));
+    
+    //Raspberries
+    itemraspberries = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemraspberries").setTextureName("foodmod:itemraspberries").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemraspberries, itemraspberries.getUnlocalizedName().substring(5));
+    
+    //Pear
+    itempear = new ItemFood(3, 0.2F, true).setUnlocalizedName("itempear").setTextureName("foodmod:itempear").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itempear, itempear.getUnlocalizedName().substring(5));
+    
+    //Peach
+    itempeach = new ItemFood(3, 0.2F, true).setUnlocalizedName("itempeach").setTextureName("foodmod:itempeach").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itempeach, itempeach.getUnlocalizedName().substring(5));
+    
+    //Onions
+    itemonions = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemonions").setTextureName("foodmod:itemonions").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemonions, itemonions.getUnlocalizedName().substring(5));
+    
+    //Garlic
+    itemgarlic = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemgarlic").setTextureName("foodmod:itemgarlic").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemgarlic, itemgarlic.getUnlocalizedName().substring(5));
+    
+    //Ginger
+    itemginger = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemginger").setTextureName("foodmod:itemginger").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemginger, itemginger.getUnlocalizedName().substring(5));
+    
+    //Adzuki Beans
+    itemadzukibeans = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemadzukibeans").setTextureName("foodmod:itemadzukibeans").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemadzukibeans, itemadzukibeans.getUnlocalizedName().substring(5));
+    
+    //Black Beans
+    itemblackbeans = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemblackbeans").setTextureName("foodmod:itemblackbeans").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemblackbeans, itemblackbeans.getUnlocalizedName().substring(5));
+    
+    //Black Eye Peas
+    itemblackeyepeas = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemblackeyepeas").setTextureName("foodmod:itemblackeyepeas").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemblackeyepeas, itemblackeyepeas.getUnlocalizedName().substring(5));
+    
+    //Garbanzo Beans
+    itemgarbanzobeans = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemgarbanzobeans").setTextureName("foodmod:itemgarbanzobeans").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemgarbanzobeans, itemgarbanzobeans.getUnlocalizedName().substring(5));
+    
+    //Kidney Beans
+    itemkidneybeans = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemkidneybeans").setTextureName("foodmod:itemkidneybeans").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemkidneybeans, itemkidneybeans.getUnlocalizedName().substring(5));
+    
+    //Lentils
+    itemlentils = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemlentils").setTextureName("foodmod:itemlentils").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemlentils, itemlentils.getUnlocalizedName().substring(5));
+    
+    //Pinto Beans
+    itempintobeans = new ItemFood(3, 0.2F, true).setUnlocalizedName("itempintobeans").setTextureName("foodmod:itempintobeans").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itempintobeans, itempintobeans.getUnlocalizedName().substring(5));
+    
+    //White Beans
+    itemwhitebeans = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemwhitebeans").setTextureName("foodmod:itemwhitebeans").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemwhitebeans, itemwhitebeans.getUnlocalizedName().substring(5));
+    
+    //Beetroot
+    itembeetroot = new ItemFood(3, 0.2F, true).setUnlocalizedName("itembeetroot").setTextureName("foodmod:itembeetroot").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itembeetroot, itembeetroot.getUnlocalizedName().substring(5));
+    
     
     //Stove
     blockstove = new Blockstove(Material.iron).setBlockName("blockstove").setBlockTextureName("foodmod:blockstove").setCreativeTab(FoodMod);
@@ -343,6 +530,13 @@ public void preInit(FMLPreInitializationEvent event)
     blockmicrowave = new Blockmicrowave(Material.iron).setBlockName("blockmicrowave").setBlockTextureName("foodmod:blockmicrowave").setCreativeTab(FoodMod);
     GameRegistry.registerBlock(blockmicrowave, blockmicrowave.getUnlocalizedName().substring(5));
     System.out.println(blockmicrowave.getUnlocalizedName().substring(5));
+    
+    //Fridge
+    blockfridge = new Blockfridge(Material.iron).setBlockTextureName("foodmod:blockfridge").setCreativeTab(FoodMod);
+    GameRegistry.registerBlock(blockfridge, blockfridge.getUnlocalizedName().substring(5));
+    System.out.println(blockfridge.getUnlocalizedName().substring(5));
+    
+    
     
     //Peanut Seeds
     itempeanutSeeds = new itempeanutSeeds(FoodModBlocks.itempeanut, Blocks.farmland);
@@ -359,22 +553,26 @@ public void init(FMLInitializationEvent event)
     //END/•//Crafting Recipes//•/END//
     
     //•//Smelting Recipes//•// 
-    	//Lamb Furnace Recipe
-    GameRegistry.addSmelting(FoodModItems.itemlambraw, new ItemStack (FoodModItems.itemlamb, 1), 0.2F );
+    	
+		//Lamb Furnace Recipe
+    GameRegistry.addSmelting(itemlambraw, new ItemStack (itemlamb, 1), 0.2F );
     	//Mutton Furnace Recipe
-    GameRegistry.addSmelting(FoodModItems.itemmuttonraw, new ItemStack (FoodModItems.itemmutton, 1), 0.2F );
+    GameRegistry.addSmelting(itemmuttonraw, new ItemStack (itemmutton, 1), 0.2F );
     	//Fishsticks Furnace Recipe
-    GameRegistry.addSmelting(FoodModItems.itemfishsticks, new ItemStack (FoodModItems.itemfishsticks, 1), 0.2F );
+    GameRegistry.addSmelting(itemfishsticks, new ItemStack (itemfishsticks, 1), 0.2F );
     	//Chicken Nuggets Furnace Recipe
-    GameRegistry.addSmelting(FoodModItems.itemchicken_nuggetsraw, new ItemStack (FoodModItems.itemchicken_nuggets, 1), 0.2F );
-    	//Chicken Wings
-    GameRegistry.addSmelting(FoodModItems.itemchickenwingsraw, new ItemStack (FoodModItems.itemchickenwings, 1), 0.2F );
-    	//Meatball 
-    GameRegistry.addSmelting(FoodModItems.itemmeatballraw, new ItemStack (FoodModItems.itemmeatball, 1), 0.2F );
-    
+    GameRegistry.addSmelting(itemchicken_nuggetsraw, new ItemStack (itemchicken_nuggets, 1), 0.2F );
+    	//Chicken Wings Furnace Recipe
+    GameRegistry.addSmelting(itemchickenwingsraw, new ItemStack (itemchickenwings, 1), 0.2F );
+    	//Meatball Furnace Recipe
+    GameRegistry.addSmelting(itemmeatballraw, new ItemStack (itemmeatball, 1), 0.2F );
+    	//Flesh Furnace Recipe
+    GameRegistry.addSmelting(itemflesh, new ItemStack (itemcookedflesh, 1), 0.2F );
     
     //END/•//Smelting Recipes//•/END//
+    
   NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+  //Not Implemented Yet//NetworkRegistry.INSTANCE.registerGuiHandler(FridgeGUI.instance, new GuiHandler());
 }
 
 
@@ -397,11 +595,19 @@ public static CreativeTabs FoodMod = new CreativeTabs("FoodMod")
 	//Block
 		//Plants
 		public static Block blockpeanutPlant;
+		
+		//Achievements
+		public static Item bootsOfSafeFalling;
+		public static Achievement achievementStartMagicBeans;
+		public static Item magicBeans;
 
 @Mod.EventHandler
 public void postInit(FMLPostInitializationEvent event) {
 	{
 	    MinecraftForge.EVENT_BUS.register(new Guioven(Minecraft.getMinecraft()));
+	    MinecraftForge.EVENT_BUS.register(new MobDropsHandler());
+	    MinecraftForge.EVENT_BUS.register(new itemnetherstarapple());
+	    MinecraftForge.EVENT_BUS.register(new ItemPeanut());
 	  }
 }
 }
