@@ -780,3 +780,197 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 3
 [21:06:28] [Client thread/ERROR] [TEXTURE ERRORS/]:     No other errors exist for domain weaponmod
 [21:06:28] [Client thread/ERROR] [TEXTURE ERRORS/]: ==================================================
 [21:06:28] [Client thread/ERROR] [TEXTURE ERRORS/]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+[21:11:01] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerAboutToStartEvent to mod mcp
+[21:11:01] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerAboutToStartEvent to mod mcp
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - Minecraft Coder Pack took 0.001s
+[21:11:01] [Server thread/TRACE] [FML/FML]: Sending event FMLServerAboutToStartEvent to mod FML
+[21:11:01] [Server thread/TRACE] [FML/FML]: Sent event FMLServerAboutToStartEvent to mod FML
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - Forge Mod Loader took 0.001s
+[21:11:01] [Server thread/TRACE] [Forge/Forge]: Sending event FMLServerAboutToStartEvent to mod Forge
+[21:11:01] [Server thread/TRACE] [Forge/Forge]: Sent event FMLServerAboutToStartEvent to mod Forge
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - Minecraft Forge took 0.000s
+[21:11:01] [Server thread/TRACE] [jtcoremod/jtcoremod]: Sending event FMLServerAboutToStartEvent to mod jtcoremod
+[21:11:01] [Server thread/TRACE] [jtcoremod/jtcoremod]: Sent event FMLServerAboutToStartEvent to mod jtcoremod
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - jtrent238's Core Mod took 0.000s
+[21:11:01] [Server thread/TRACE] [foodmod/foodmod]: Sending event FMLServerAboutToStartEvent to mod foodmod
+[21:11:01] [Server thread/TRACE] [foodmod/foodmod]: Sent event FMLServerAboutToStartEvent to mod foodmod
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - jtrent238's Food Mod took 0.000s
+[21:11:01] [Server thread/TRACE] [lotsofblocks/lotsofblocks]: Sending event FMLServerAboutToStartEvent to mod lotsofblocks
+[21:11:01] [Server thread/TRACE] [lotsofblocks/lotsofblocks]: Sent event FMLServerAboutToStartEvent to mod lotsofblocks
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - jtrent238's Lots Of Blocks Mod took 0.001s
+[21:11:01] [Server thread/TRACE] [weaponmod/weaponmod]: Sending event FMLServerAboutToStartEvent to mod weaponmod
+[21:11:01] [Server thread/TRACE] [weaponmod/weaponmod]: Sent event FMLServerAboutToStartEvent to mod weaponmod
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ServerAboutToStart - jtrent238's Weapon Mod took 0.000s
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Finished: ServerAboutToStart took 0.004s
+[21:11:01] [Server thread/INFO] [FML/]: Injecting existing block and item data into this server instance
+[21:11:01] [Server thread/DEBUG] [FML/]: Registry consistency check successful
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed block id mismatch weaponmod:blockdragonegg: 177 (init) -> 176 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed block id mismatch weaponmod:blockrubyore: 176 (init) -> 169 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed block id mismatch foodmod:plantpeanut: 179 (init) -> 181 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed block id mismatch foodmod:null: 167 (init) -> 178 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed block id mismatch weaponmod:blocknetherstar: 178 (init) -> 177 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed block id mismatch weaponmod:blockLightingShard: 168 (init) -> 167 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed block id mismatch weaponmod:blockruby: 169 (init) -> 168 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemironFragment: 4187 (init) -> 4186 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemlightingwand: 4199 (init) -> 4198 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itembiggoldsword: 4209 (init) -> 4208 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemlapizFragment: 4189 (init) -> 4188 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itembigironsword: 4212 (init) -> 4211 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemrubysword: 4193 (init) -> 4192 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemrubyshovel: 4197 (init) -> 4196 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemcoalFragment: 4188 (init) -> 4187 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itembigcheesesword: 4213 (init) -> 4212 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itembigwoodsword: 4211 (init) -> 4210 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:blockdragonegg: 177 (init) -> 176 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemcheeseknife: 4207 (init) -> 4206 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemdiamondknife: 4202 (init) -> 4201 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemLightingShard: 4200 (init) -> 4199 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemrubyaxe: 4194 (init) -> 4193 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:blockruby: 169 (init) -> 168 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch foodmod:null: 167 (init) -> 178 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:blockLightingShard: 168 (init) -> 167 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemwoodknife: 4204 (init) -> 4203 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itembigrubysword: 4214 (init) -> 4213 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemredstoneFragment: 4190 (init) -> 4189 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemruby: 4192 (init) -> 4191 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemdiamondFragment: 4184 (init) -> 4183 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemrubyhoe: 4196 (init) -> 4195 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemgodsword: 4215 (init) -> 4214 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itememerldFragment: 4186 (init) -> 4185 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:blockrubyore: 176 (init) -> 169 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itembigstonesword: 4210 (init) -> 4209 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemgoldFragment: 4185 (init) -> 4184 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemgoldknife: 4203 (init) -> 4202 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemrainbowFragment: 4191 (init) -> 4190 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itembigdiamondsword: 4208 (init) -> 4207 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemrubyknife: 4201 (init) -> 4200 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:blocknetherstar: 178 (init) -> 177 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch foodmod:plantpeanut: 179 (init) -> 181 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemstoneknife: 4205 (init) -> 4204 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch foodmod:itembeetroot: 4183 (init) -> 4216 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemironknife: 4206 (init) -> 4205 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemrubypickaxe: 4195 (init) -> 4194 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Fixed item id mismatch weaponmod:itemrubyfragment: 4198 (init) -> 4197 (map).
+[21:11:01] [Server thread/DEBUG] [FML/]: Registry consistency check successful
+[21:11:01] [Server thread/TRACE] [mcp/mcp]: Sending event FMLModIdMappingEvent to mod mcp
+[21:11:01] [Server thread/TRACE] [mcp/mcp]: Sent event FMLModIdMappingEvent to mod mcp
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Minecraft Coder Pack took 0.001s
+[21:11:01] [Server thread/TRACE] [FML/FML]: Sending event FMLModIdMappingEvent to mod FML
+[21:11:01] [Server thread/TRACE] [FML/FML]: Sent event FMLModIdMappingEvent to mod FML
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Forge Mod Loader took 0.001s
+[21:11:01] [Server thread/TRACE] [Forge/Forge]: Sending event FMLModIdMappingEvent to mod Forge
+[21:11:01] [Server thread/TRACE] [Forge/Forge]: Sent event FMLModIdMappingEvent to mod Forge
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - Minecraft Forge took 0.003s
+[21:11:01] [Server thread/TRACE] [jtcoremod/jtcoremod]: Sending event FMLModIdMappingEvent to mod jtcoremod
+[21:11:01] [Server thread/TRACE] [jtcoremod/jtcoremod]: Sent event FMLModIdMappingEvent to mod jtcoremod
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - jtrent238's Core Mod took 0.000s
+[21:11:01] [Server thread/TRACE] [foodmod/foodmod]: Sending event FMLModIdMappingEvent to mod foodmod
+[21:11:01] [Server thread/TRACE] [foodmod/foodmod]: Sent event FMLModIdMappingEvent to mod foodmod
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - jtrent238's Food Mod took 0.001s
+[21:11:01] [Server thread/TRACE] [lotsofblocks/lotsofblocks]: Sending event FMLModIdMappingEvent to mod lotsofblocks
+[21:11:01] [Server thread/TRACE] [lotsofblocks/lotsofblocks]: Sent event FMLModIdMappingEvent to mod lotsofblocks
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - jtrent238's Lots Of Blocks Mod took 0.000s
+[21:11:01] [Server thread/TRACE] [weaponmod/weaponmod]: Sending event FMLModIdMappingEvent to mod weaponmod
+[21:11:01] [Server thread/TRACE] [weaponmod/weaponmod]: Sent event FMLModIdMappingEvent to mod weaponmod
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Step: ModIdMapping - jtrent238's Weapon Mod took 0.001s
+[21:11:01] [Server thread/DEBUG] [FML/]: Bar Finished: ModIdMapping took 0.007s
+[21:11:01] [Server thread/INFO] [FML/]: Applying holder lookups
+[21:11:01] [Server thread/INFO] [FML/]: Holder lookups applied
+[21:11:01] [Server thread/DEBUG] [FML/]: Loading persistent fluid defaults from world
+[21:11:01] [Server thread/DEBUG] [FML/]: The fluid minecraft:lava has been selected as the default fluid for lava
+[21:11:01] [Server thread/DEBUG] [FML/]: The fluid minecraft:water has been selected as the default fluid for water
+[21:11:01] [Server thread/INFO] [FML/]: Loading dimension 0 (Copy of TEST_WORLD) (net.minecraft.server.integrated.IntegratedServer@1cafc50)
+[21:11:01] [Server thread/INFO] [FML/]: Loading dimension 1 (Copy of TEST_WORLD) (net.minecraft.server.integrated.IntegratedServer@1cafc50)
+[21:11:01] [Server thread/INFO] [FML/]: Loading dimension -1 (Copy of TEST_WORLD) (net.minecraft.server.integrated.IntegratedServer@1cafc50)
+[21:11:05] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerStartingEvent to mod mcp
+[21:11:05] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerStartingEvent to mod mcp
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - Minecraft Coder Pack took 0.001s
+[21:11:05] [Server thread/TRACE] [FML/FML]: Sending event FMLServerStartingEvent to mod FML
+[21:11:05] [Server thread/TRACE] [FML/FML]: Sent event FMLServerStartingEvent to mod FML
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - Forge Mod Loader took 0.001s
+[21:11:05] [Server thread/TRACE] [Forge/Forge]: Sending event FMLServerStartingEvent to mod Forge
+[21:11:05] [Server thread/TRACE] [Forge/Forge]: Sent event FMLServerStartingEvent to mod Forge
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - Minecraft Forge took 0.004s
+[21:11:05] [Server thread/TRACE] [jtcoremod/jtcoremod]: Sending event FMLServerStartingEvent to mod jtcoremod
+[21:11:05] [Server thread/TRACE] [jtcoremod/jtcoremod]: Sent event FMLServerStartingEvent to mod jtcoremod
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - jtrent238's Core Mod took 0.000s
+[21:11:05] [Server thread/TRACE] [foodmod/foodmod]: Sending event FMLServerStartingEvent to mod foodmod
+[21:11:05] [Server thread/TRACE] [foodmod/foodmod]: Sent event FMLServerStartingEvent to mod foodmod
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - jtrent238's Food Mod took 0.001s
+[21:11:05] [Server thread/TRACE] [lotsofblocks/lotsofblocks]: Sending event FMLServerStartingEvent to mod lotsofblocks
+[21:11:05] [Server thread/TRACE] [lotsofblocks/lotsofblocks]: Sent event FMLServerStartingEvent to mod lotsofblocks
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - jtrent238's Lots Of Blocks Mod took 0.000s
+[21:11:05] [Server thread/TRACE] [weaponmod/weaponmod]: Sending event FMLServerStartingEvent to mod weaponmod
+[21:11:05] [Server thread/TRACE] [weaponmod/weaponmod]: Sent event FMLServerStartingEvent to mod weaponmod
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarting - jtrent238's Weapon Mod took 0.000s
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Finished: ServerStarting took 0.008s
+[21:11:05] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerStartedEvent to mod mcp
+[21:11:05] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerStartedEvent to mod mcp
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - Minecraft Coder Pack took 0.001s
+[21:11:05] [Server thread/TRACE] [FML/FML]: Sending event FMLServerStartedEvent to mod FML
+[21:11:05] [Server thread/TRACE] [FML/FML]: Sent event FMLServerStartedEvent to mod FML
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - Forge Mod Loader took 0.001s
+[21:11:05] [Server thread/TRACE] [Forge/Forge]: Sending event FMLServerStartedEvent to mod Forge
+[21:11:05] [Server thread/TRACE] [Forge/Forge]: Sent event FMLServerStartedEvent to mod Forge
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - Minecraft Forge took 0.001s
+[21:11:05] [Server thread/TRACE] [jtcoremod/jtcoremod]: Sending event FMLServerStartedEvent to mod jtcoremod
+[21:11:05] [Server thread/TRACE] [jtcoremod/jtcoremod]: Sent event FMLServerStartedEvent to mod jtcoremod
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - jtrent238's Core Mod took 0.001s
+[21:11:05] [Server thread/TRACE] [foodmod/foodmod]: Sending event FMLServerStartedEvent to mod foodmod
+[21:11:05] [Server thread/TRACE] [foodmod/foodmod]: Sent event FMLServerStartedEvent to mod foodmod
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - jtrent238's Food Mod took 0.001s
+[21:11:05] [Server thread/TRACE] [lotsofblocks/lotsofblocks]: Sending event FMLServerStartedEvent to mod lotsofblocks
+[21:11:05] [Server thread/TRACE] [lotsofblocks/lotsofblocks]: Sent event FMLServerStartedEvent to mod lotsofblocks
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - jtrent238's Lots Of Blocks Mod took 0.002s
+[21:11:05] [Server thread/TRACE] [weaponmod/weaponmod]: Sending event FMLServerStartedEvent to mod weaponmod
+[21:11:05] [Server thread/TRACE] [weaponmod/weaponmod]: Sent event FMLServerStartedEvent to mod weaponmod
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Step: ServerStarted - jtrent238's Weapon Mod took 0.001s
+[21:11:05] [Server thread/DEBUG] [FML/]: Bar Finished: ServerStarted took 0.006s
+[21:11:06] [Netty Client IO #0/DEBUG] [FML/]: Server FML protocol version 2, 4 byte dimension received 0
+[21:11:06] [Netty Client IO #0/TRACE] [FML/]: $ServerHello->FMLHandshakeClientState$2:HELLO
+[21:11:07] [Netty Client IO #0/INFO] [FML/]: Server protocol version 2
+[21:11:07] [Netty Client IO #0/DEBUG] [FML/]: Received override dimension 0
+[21:11:07] [Netty IO #1/TRACE] [FML/]: $ClientHello->FMLHandshakeServerState$2:HELLO
+[21:11:07] [Netty IO #1/INFO] [FML/]: Client protocol version 2
+[21:11:07] [Netty IO #1/TRACE] [FML/]: $ModList:7 mods->FMLHandshakeServerState$2:HELLO
+[21:11:07] [Netty IO #1/INFO] [FML/]: Client attempting to join with 7 mods : lotsofblocks@1.0.0.0,FML@7.10.99.99,foodmod@1.0.0.0,weaponmod@1.0.0.0,Forge@10.13.4.1566,mcp@9.05,jtcoremod@1.0.0.0
+[21:11:07] [Netty IO #1/INFO] [FML/]: Attempting connection with missing mods [] at CLIENT
+[21:11:07] [Netty Client IO #0/TRACE] [FML/]: $ModList:7 mods->FMLHandshakeClientState$3:WAITINGSERVERDATA
+[21:11:07] [Netty Client IO #0/INFO] [FML/]: Attempting connection with missing mods [] at SERVER
+[21:11:07] [Netty IO #1/TRACE] [FML/]: $HandshakeAck:{2}->FMLHandshakeServerState$3:WAITINGCACK
+[21:11:07] [Netty Client IO #0/TRACE] [FML/]: $HandshakeAck:{2}->FMLHandshakeClientState$5:PENDINGCOMPLETE
+[21:11:07] [Netty IO #1/TRACE] [FML/]: $HandshakeAck:{4}->FMLHandshakeServerState$4:COMPLETE
+[21:11:07] [Netty Client IO #0/TRACE] [FML/]: $HandshakeAck:{3}->FMLHandshakeClientState$6:COMPLETE
+[21:11:07] [Netty IO #1/TRACE] [FML/]: $HandshakeAck:{5}->FMLHandshakeServerState$5:DONE
+[21:11:07] [Client thread/DEBUG] [FML/]: The fluid minecraft:lava has been selected as the default fluid for lava
+[21:11:07] [Client thread/DEBUG] [FML/]: The fluid minecraft:water has been selected as the default fluid for water
+[21:11:07] [Client thread/INFO] [FML/]: [Client thread] Client side modded connection established
+[21:11:07] [Server thread/INFO] [FML/]: [Server thread] Server side modded connection established
+[21:11:07] [Client thread/DEBUG] [FML/]: Overriding dimension: using 0
+[21:11:35] [Client thread/INFO] [STDOUT/]: [paulscode.sound.SoundSystemLogger:message:69]: 
+[21:11:35] [Client thread/INFO] [STDOUT/]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
+[21:11:36] [Server thread/TRACE] [mcp/mcp]: Sending event FMLServerStoppingEvent to mod mcp
+[21:11:36] [Server thread/TRACE] [mcp/mcp]: Sent event FMLServerStoppingEvent to mod mcp
+[21:11:36] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - Minecraft Coder Pack took 0.007s
+[21:11:36] [Server thread/TRACE] [FML/FML]: Sending event FMLServerStoppingEvent to mod FML
+[21:11:36] [Server thread/TRACE] [FML/FML]: Sent event FMLServerStoppingEvent to mod FML
+[21:11:36] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - Forge Mod Loader took 0.002s
+[21:11:36] [Server thread/TRACE] [Forge/Forge]: Sending event FMLServerStoppingEvent to mod Forge
+[21:11:36] [Server thread/TRACE] [Forge/Forge]: Sent event FMLServerStoppingEvent to mod Forge
+[21:11:36] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - Minecraft Forge took 0.001s
+[21:11:36] [Server thread/TRACE] [jtcoremod/jtcoremod]: Sending event FMLServerStoppingEvent to mod jtcoremod
+[21:11:36] [Server thread/TRACE] [jtcoremod/jtcoremod]: Sent event FMLServerStoppingEvent to mod jtcoremod
+[21:11:36] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - jtrent238's Core Mod took 0.001s
+[21:11:36] [Server thread/TRACE] [foodmod/foodmod]: Sending event FMLServerStoppingEvent to mod foodmod
+[21:11:36] [Server thread/TRACE] [foodmod/foodmod]: Sent event FMLServerStoppingEvent to mod foodmod
+[21:11:36] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - jtrent238's Food Mod took 0.001s
+[21:11:36] [Server thread/TRACE] [lotsofblocks/lotsofblocks]: Sending event FMLServerStoppingEvent to mod lotsofblocks
+[21:11:36] [Server thread/TRACE] [lotsofblocks/lotsofblocks]: Sent event FMLServerStoppingEvent to mod lotsofblocks
+[21:11:36] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - jtrent238's Lots Of Blocks Mod took 0.001s
+[21:11:36] [Server thread/TRACE] [weaponmod/weaponmod]: Sending event FMLServerStoppingEvent to mod weaponmod
+[21:11:36] [Server thread/TRACE] [weaponmod/weaponmod]: Sent event FMLServerStoppingEvent to mod weaponmod
+[21:11:36] [Server thread/DEBUG] [FML/]: Bar Step: ServerStopping - jtrent238's Weapon Mod took 0.001s
+[21:11:36] [Server thread/DEBUG] [FML/]: Bar Finished: ServerStopping took 0.012s
+[21:11:36] [Server thread/DEBUG] [FML/]: Gathering id map for writing to world save Copy of TEST_WORLD
+[21:11:36] [Client thread/INFO] [STDOUT/]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
+[21:11:36] [Client thread/INFO] [STDOUT/]: [paulscode.sound.SoundSystemLogger:message:69]: 
