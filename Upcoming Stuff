@@ -13,6 +13,8 @@
   public static Item itemcream;
   public static Item itembutter;
   public static Item itemice;
+  public static Item itempufferfish_cooked;
+  public static Item itemclownfish_raw;
   
 
    //Blocks
@@ -73,4 +75,13 @@
     //Ice
     itemice = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemice").setTextureName("foodmod:itemice").setCreativeTab(FoodMod);
     GameRegistry.registerItem(itemice, itemice.getUnlocalizedName().substring(5));
+    
+    //Cooked PufferFish
+    itempufferfish_cooked = new ItemFood(3, 0.2F, true).setUnlocalizedName("itempufferfish_cooked").setTextureName("foodmod:itempufferfish_cooked").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itempufferfish_cooked, itempufferfish_cooked.getUnlocalizedName().substring(5));
+    
+    //Cooked Clownfish
+    itemclownfish_cooked = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemclownfish_cooked").setTextureName("foodmod:itemclownfish_cooked").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemclownfish_cooked, itemclownfish_cooked.getUnlocalizedName().substring(5));
+    
     
