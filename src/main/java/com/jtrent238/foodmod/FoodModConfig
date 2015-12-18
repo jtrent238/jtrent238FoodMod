@@ -1,0 +1,40 @@
+package com.jtrent238.foodmod
+
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.Property;
+
+public class FoodModConfig
+{
+  static int ChocoCakeID;
+  static int AppleCakeID;
+  static int CarrotCakeID;
+  static int MagicCakeID;
+  static int BChocolateID;
+  static int caramelCakeID;
+  public static int AppleCakeItemID;
+  public static int ChocoCakeItemID;
+  public static int CarrotCakeItemID;
+  public static int CaramelCakeItemID;
+  public static Configuration config;
+  
+  public static void FC_Configuration(FMLPreInitializationEvent event)
+  {
+    config = new Configuration(event.getSuggestedConfigurationFile());
+    config.load();
+    
+    ChocoCakeID = config.getBlock("Chocolate Cake", 503).getInt();
+    AppleCakeID = config.getBlock("Apple Cake", 504).getInt();
+    CarrotCakeID = config.getBlock("Carrot Cake", 505).getInt();
+    MagicCakeID = config.getBlock("Magic Cake", 506).getInt();
+    BChocolateID = config.getBlock("Chocolate Block", 507).getInt();
+    caramelCakeID = config.getBlock("Caramel Cake", 509).getInt();
+    
+    ChocoCakeItemID = config.getItem("ChocoCakeItem", 4016).getInt();
+    AppleCakeItemID = config.getItem("AppleCakeItem", 4017).getInt();
+    CarrotCakeItemID = config.getItem("CarrotCakeItem", 4018).getInt();
+    MagicCakeItemID = config.getItem("MagicCakeItem", 4019).getInt();
+    
+    config.save();
+  }
+}
