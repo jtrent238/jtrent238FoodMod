@@ -12,6 +12,8 @@
   public static Item itemgrape;
   public static Item itemcream;
   public static Item itembutter;
+  public static Item itemice;
+  
 
    //Blocks
   public static Block
@@ -67,4 +69,8 @@
     //Butter
     itembutter = new ItemFood(3, 0.2F, true).setUnlocalizedName("itembutter").setTextureName("foodmod:itembutter").setCreativeTab(FoodMod);
     GameRegistry.registerItem(itembutter, itembutter.getUnlocalizedName().substring(5));
+    
+    //Ice
+    itemice = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemice").setTextureName("foodmod:itemice").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemice, itemice.getUnlocalizedName().substring(5));
     
