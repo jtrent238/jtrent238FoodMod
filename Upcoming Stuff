@@ -1,14 +1,21 @@
-  //Items
-public static Item itembanana;
-public static Item itemgrits;
-public static Item itembean;
-public static Item itempopcorn;
-public static Item itemcorn;
-public static Item itemlettuce;
-public static Item itemtomato;
-public static Item itemgreen_tomato;
-public static Item itemblackbeans;
-public static Item item
+   //Items
+  public static Item itembanana;
+  public static Item itemgrits;
+  public static Item itembean;
+  public static Item itempopcorn;
+  public static Item itemcorn;
+  public static Item itemlettuce;
+  public static Item itemtomato;
+  public static Item itemgreen_tomato;
+  public static Item itemblackbeans;
+	public static Item itemlime;
+  public static Item itemgrape;
+  public static Item itemcream;
 
-  //Blocks
-public static Block
+   //Blocks
+  public static Block
+
+  //Banana
+    itembanana = new ItemFood(3, 0.2F, true).setUnlocalizedName("itembanana").setTextureName("foodmod:itembanana").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itembanana, itembanana.getUnlocalizedName().substring(5));
+    
