@@ -84,6 +84,10 @@
     itemclownfish_cooked = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemclownfish_cooked").setTextureName("foodmod:itemclownfish_cooked").setCreativeTab(FoodMod);
     GameRegistry.registerItem(itemclownfish_cooked, itemclownfish_cooked.getUnlocalizedName().substring(5));
     
+    //Milk Bottle
+    itemmilkBottle = new FE_ItemBottle(FoodModConfig.itemmilkbottleID - 256).d("foodmod:itemmilkBottle").b("itemmilkBottle");
+    
+    
     //Chocolate Cake
     itemchocolatecake = new Cake(CakeID, ItemID).c(0.5F).c("itemchocolatecake");
    
