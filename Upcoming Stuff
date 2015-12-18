@@ -8,9 +8,10 @@
   public static Item itemtomato;
   public static Item itemgreen_tomato;
   public static Item itemblackbeans;
-	public static Item itemlime;
+  public static Item itemlime;
   public static Item itemgrape;
   public static Item itemcream;
+  public static Item itembutter;
 
    //Blocks
   public static Block
@@ -18,4 +19,52 @@
   //Banana
     itembanana = new ItemFood(3, 0.2F, true).setUnlocalizedName("itembanana").setTextureName("foodmod:itembanana").setCreativeTab(FoodMod);
     GameRegistry.registerItem(itembanana, itembanana.getUnlocalizedName().substring(5));
+    
+  //Grits
+    itemgrits = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemgrits").setTextureName("foodmod:itemgrits").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemgrits, itemgrits.getUnlocalizedName().substring(5));
+    
+   //Bean
+    itembean = new ItemFood(3, 0.2F, true).setUnlocalizedName("itembean").setTextureName("foodmod:itembean").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itembean, itembean.getUnlocalizedName().substring(5));
+    
+    //PopCorn
+    itempopcorn = new ItemFood(3, 0.2F, true).setUnlocalizedName("itempopcorn").setTextureName("foodmod:itempopcorn").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itempopcorn, itempopcorn.getUnlocalizedName().substring(5));
+    
+    //Corn
+    itemcorn = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemcorn").setTextureName("foodmod:itemcorn").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemcorn, itemcorn.getUnlocalizedName().substring(5));
+    
+    //Lettuce
+    itemlettuce = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemlettuce").setTextureName("foodmod:itemlettuce").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemlettuce, itemlettuce.getUnlocalizedName().substring(5));
+    
+    //Tomato
+    itemtomato = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemtomato").setTextureName("foodmod:itemtomato").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemtomato, itemtomato.getUnlocalizedName().substring(5));
+    
+     //Green Tomato
+    itemgreen_tomato = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemgreen_tomato").setTextureName("foodmod:itemgreen_tomato").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemgreen_tomato, itemgreen_tomato.getUnlocalizedName().substring(5));
+    
+     //Black Beans
+    itemblackbeans = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemblackbeans").setTextureName("foodmod:itemblackbeans").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemblackbeans, itemblackbeans.getUnlocalizedName().substring(5));
+    
+     //Lime
+    itemlime = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemlime").setTextureName("foodmod:itemlime").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemlime, itemlime.getUnlocalizedName().substring(5));
+    
+     //Grape
+    itemgrape = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemgrape").setTextureName("foodmod:itemgrape").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemgrape, itemgrape.getUnlocalizedName().substring(5));
+    
+    //Cream
+    itemcream = new ItemFood(3, 0.2F, true).setUnlocalizedName("itemcream").setTextureName("foodmod:itemcream").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itemcream, itemcream.getUnlocalizedName().substring(5));
+    
+    //Butter
+    itembutter = new ItemFood(3, 0.2F, true).setUnlocalizedName("itembutter").setTextureName("foodmod:itembutter").setCreativeTab(FoodMod);
+    GameRegistry.registerItem(itembutter, itembutter.getUnlocalizedName().substring(5));
     
