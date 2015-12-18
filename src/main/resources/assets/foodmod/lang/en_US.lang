@@ -112,6 +112,52 @@ item.itemgrape.name=Grape
 item.itemcream.name=Cream
 item.itembutter.name=Butter
 item.itemice.name=Ice
+item.itemeggroll.name=Egg Roll
+item.itemfriedegg.name=Fried Egg
+item.itembaconegg.name=Bacon & Egg
+item.itempancake.name=Pancake
+item.itemburger.name=Cheeseburger
+item.itemsausage.name=Sausage
+item.itemrawsausage.name=Raw Sausage
+item.itemoil.name=Oil
+item.itemchocolatecake.name=Chocolate Cake
+item.itemapplecake.name=Apple Cake
+item.itemcarrotcake.name=Carrot Cake
+item.itemmagiccake.name=Magic Cake
+item.itempumpkinsoup.name=Pumpkin Soup
+item.itemchickensoup.name=Chicken Soup
+item.itemmagicsalade.name=Magic Salad
+item.itemfruitsalade.name=Fruit Salad
+item.itempotatosalade.name=Potato Salad
+item.itemcacao.name=Hot Chocolate
+item.itemapplejuice.name=Apple Juice
+item.itemmelonjuice.name=Melon Juice
+item.itemmagicjuice.name=Magic Juice
+item.itemcarrotjuice.name=Carrot Juice
+item.itemfishsandwich.name=Fish Burger
+item.itemtoast.name=Toast
+item.itemsandwich.name=Sandwich
+item.itemrawPancake.name=Raw Pancake
+item.itemdough.name=Dough
+item.itemmilkbottle.name=Milk Bottle
+item.itemstuffedMushroom.name=Stuffed Mushroom
+item.itembakedMushroom.name=Baked Stuffed Mushroom
+item.itemcaramel.name=Caramel
+item.itemcaramelchoco.name=Chocolate Bar with Caramel
+item.itempancakeChoco.name=Chocolate Pancake
+item.itempancakeCaramel.name=Caramel Pancake
+item.itemcaramelcake.name=Caramel Cake
+item.itemrawSquid.name=Raw Calamari
+item.itemcookedSquid.name=Cooked Calamari
+item.itemfilledFish.name=Stuffed Fish
+item.itembakedFilledFish.name=Baked Stuffed Fish
+item.itemfishNchips.name=Fish and Chips
+item.itemtomatoSauce.name=Tomato Sauce
+item.itempizzaraw.name=Raw Pizza
+item.itemrawTortilla.name=Raw Tortilla
+item.itemcookedTortilla.name=Tortilla
+item.itemtaco.name=Taco
+
 
 itemknife.name=Knife
 item.itemfork.name=Fork
@@ -134,7 +180,13 @@ item.itemmicrowave.name=Microwave
 //Blocks
 tile.blockstove.name=Stove
 tile.blockmicrowave.name=Microwave
+tile.blockreed.name=Reed Block
+tile.blocksugar.name=Sugar Block
+tile.blockchocolate.name=Chocolate Block
+tile.blockcaramel.name=Caramel Block
+
 tile.itempeanutplant.name=Peanut Plant
+
 
 tile.plantpeanut.name=Peanut Plant
 
