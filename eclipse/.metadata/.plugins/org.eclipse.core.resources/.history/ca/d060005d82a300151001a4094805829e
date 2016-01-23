@@ -1,7 +1,0 @@
-package com.jtrent238.foodmod;
-
-import net.minecraft.block.Block;
-
-public class Blockstove extends Block {
-
-}

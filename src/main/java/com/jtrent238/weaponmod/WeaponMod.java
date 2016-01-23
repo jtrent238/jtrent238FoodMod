@@ -2,6 +2,8 @@ package com.jtrent238.weaponmod;
 
 
 import com.jtrent238.coremod.ForgeSubscribe;
+import com.jtrent238.foodmod.test_plant;
+import com.jtrent238.weaponmod.ItemToolEmerald.EnumToolEmerald;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Instance;
@@ -19,12 +21,15 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 
-@Mod(modid="weaponmod", name="jtrent238's Weapon Mod", version="1.0.0.0")
+@Mod(modid="weaponmod", name="jtrent238's Weapon Mod", version="1.0.0.1")
 public class WeaponMod
 {
 	private static final String weaponmod = null;
@@ -77,6 +82,32 @@ public class WeaponMod
   public static Item itemchessepickaxe;
   public static Item itemcheesehoe;
   public static Item itemcheeseshovel;
+  public static Item EmeraldAxe;
+  public static Item EmeraldPickaxe;
+  public static Item EmeraldSword;
+  public static Item EmeraldShovel;
+  public static Item EmeraldHoe;
+  public static Item EmeraldArmorHelmet;
+  public static Item EmeraldArmorChestplate;
+  public static Item EmeraldArmorLegs;
+  public static Item EmeraldArmorBoots;
+  public static Item iteminfinous;
+  public static Item itempolishedprismiumFragment;
+  public static Item itempolishedprismium;
+  public static Item eliteSword;
+  public static Item eliteAxe;
+  public static Item elitePickaxe;
+  public static Item eliteHoe;
+  public static Item eliteShovel;
+  public static Item redStoneSword;
+  public static Item redStoneAxe;
+  public static Item redStoneHoe;
+  public static Item redStoneShovel;
+  public static Item redStonePickaxe;
+  public static Item redstoneHelmet;
+  public static Item redstoneChestplate;
+  public static Item redstoneLeggings;
+  public static Item redstoneBoots;
 
   
   //Blocks
@@ -87,8 +118,34 @@ public class WeaponMod
   public static Block blocknetherstar;
   public static Block blockarmorcrafter;
   public static Block blockcreeperinajar;
+  public static Block redstoneGrass;
+  public static Block redstoneDirt;
+  
   
 
+  
+  public static final ArmorMaterial EMERALDARMOR = EnumHelper.addArmorMaterial("EMERALDARMOR", 2000, new int[] {2,7,5,3}, 54844);
+  
+public static void init() {    
+    
+      
+	
+
+	
+      //Emerald Toolset
+      EmeraldAxe =	new ItemAxeEmerald(EnumToolEmerald.EMERALD);
+      EmeraldPickaxe =	new ItemPickaxeEmerald(EnumToolEmerald.EMERALD);
+      EmeraldSword =	new ItemSwordEmerald(EnumToolEmerald.EMERALD);
+      EmeraldShovel =	new ItemShovelEmerald(EnumToolEmerald.EMERALD);
+      EmeraldHoe =	new ItemHoeEmerald(EnumToolEmerald.EMERALD);
+    
+    //EmeraldArmor Armor Set
+      EmeraldArmorHelmet		=	new EmeraldArmorItemArmor(EMERALDARMOR, 6, 0).setUnlocalizedName("emeraldarmorHelmet").setTextureName("emeraldarmorHelmet");
+      EmeraldArmorChestplate		=	new EmeraldArmorItemArmor(EMERALDARMOR, 6, 1).setUnlocalizedName("emeraldarmorChestplate").setTextureName("emeraldarmorChestplate");
+      EmeraldArmorLegs		=	new EmeraldArmorItemArmor(EMERALDARMOR, 6, 2).setUnlocalizedName("emeraldarmorLegs").setTextureName("emeraldarmorLegs");
+      EmeraldArmorBoots		=	new EmeraldArmorItemArmor(EMERALDARMOR, 6, 3).setUnlocalizedName("emeraldarmorBoots").setTextureName("emeraldarmorBoots");
+    
+    }
   
   @Mod.EventHandler
   public void preInit(FMLPreInitializationEvent event)
@@ -173,6 +230,7 @@ public class WeaponMod
     itemrubyfragment = new Itemrubyfragment().setUnlocalizedName("itemrubyfragment").setTextureName("weaponmod:itemrubyfragment").setCreativeTab(tabWeaponMod);
     GameRegistry.registerItem(itemrubyfragment, itemrubyfragment.getUnlocalizedName().substring(5));
     
+    
     //Lighting Wand
     itemlightingwand = new Itemlightingwand().setUnlocalizedName("itemlightingwand").setTextureName("weaponmod:itemlightingwand").setCreativeTab(tabWeaponMod);
     GameRegistry.registerItem(itemlightingwand, itemlightingwand.getUnlocalizedName().substring(5));
@@ -256,6 +314,11 @@ public class WeaponMod
     itemgodsword = new Itemgodsword().setUnlocalizedName("itemgodsword").setFull3D().setTextureName("weaponmod:itemgodsword").setCreativeTab(tabWeaponMod);
     GameRegistry.registerItem(itemgodsword, itemgodsword.getUnlocalizedName().substring(5));
     
+    //Infinous Sword
+    iteminfinous = new iteminfinous().setUnlocalizedName("iteminfinous").setFull3D().setTextureName("weaponmod:iteminfinous").setCreativeTab(tabWeaponMod);
+    GameRegistry.registerItem(iteminfinous, iteminfinous.getUnlocalizedName().substring(5));
+    
+    
     //DragonEgg Block
     blockdragonegg = new Blockdragonegg(Material.dragonEgg).setBlockName("blockdragonegg").setBlockTextureName("weaponmod:blockdragonegg").setCreativeTab(tabWeaponMod);
     GameRegistry.registerBlock(blockdragonegg, blockdragonegg.getUnlocalizedName().substring(5));
@@ -272,7 +335,36 @@ public class WeaponMod
     
  
     //•//Crafting Recipes//•//
+  //Emerald Pickaxe Recipe    
+    GameRegistry.addRecipe(new ItemStack(EmeraldPickaxe, 1), new Object []{ "yyy" , " z " , " z " ,
+      Character.valueOf('y'), Items.emerald
+      , Character.valueOf('z'), Items.stick });
+    //Emerald Shovel Recipe    
+    GameRegistry.addRecipe(new ItemStack(EmeraldShovel, 1), new Object []{ " y " , " z " , " z " ,
+      Character.valueOf('y'), Items.emerald
+      , Character.valueOf('z'), Items.stick });
+    //Emerald Axe Recipe    
+    GameRegistry.addRecipe(new ItemStack(EmeraldAxe, 1), new Object []{ "yy " , "yz " , " z " ,
+      Character.valueOf('y'), Items.emerald
+      , Character.valueOf('z'), Items.stick });
+    //Emerald Hoe Recipe    
+    GameRegistry.addRecipe(new ItemStack(EmeraldHoe, 1), new Object []{ "yy " , " z " , " z " ,
+      Character.valueOf('y'), Items.emerald
+      , Character.valueOf('z'), Items.stick });
+    //Emerald Sword Recipe    
+    GameRegistry.addRecipe(new ItemStack(EmeraldSword, 1), new Object []{ " y " , " y " , " z " ,
+      Character.valueOf('y'), Items.emerald
+      , Character.valueOf('z'), Items.stick });
+    //" . $ar_name . " Helmet Recipe
+    GameRegistry.addRecipe(new ItemStack(EmeraldArmorHelmet, 1), new Object[] {"XXX", "X X","   ", 'X', Items.emerald });
+    //" . $ar_name . " Chestplate Recipe
+    GameRegistry.addRecipe(new ItemStack(EmeraldArmorChestplate, 1), new Object[] {"X X", "XXX","XXX", 'X', Items.emerald });
+    //" . $ar_name . " Legs Recipe
+    GameRegistry.addRecipe(new ItemStack(EmeraldArmorLegs, 1), new Object[] {"XXX", "X X","X X", 'X', Items.emerald });
+    //" . $ar_name . " Boots Recipe
+    GameRegistry.addRecipe(new ItemStack(EmeraldArmorBoots, 1), new Object[] {"   ", "X X","X X", 'X', Items.emerald });
     
+
     //END/•//Crafting Recipes//•/END//
     
     //•//Smelting Recipes//•//
@@ -285,6 +377,8 @@ public class WeaponMod
   public void init(FMLInitializationEvent event)
   {
     NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+    MinecraftForge.EVENT_BUS.register(new ItemToolEmerald());
+
   }
   
 
@@ -299,6 +393,7 @@ public class WeaponMod
 
 
 	}
+  
   ;
   
   @Mod.EventHandler

@@ -41,9 +41,24 @@ public class EventBonemeal {
 						{
 							event.world.setBlock(x, var14, z, FoodModBlocks.plant, i, 2);
 						}
-					}          
+					}          for (int i2 = 0; i2 < i1 / 16; ++i2)
+					{
+						x += event.world.rand.nextInt(3) - 1;
+						var14 += (event.world.rand.nextInt(3) - 1) * event.world.rand.nextInt(3) / 2;
+						z += event.world.rand.nextInt(3) - 1;
+					}
+					if (event.world.getBlock(x, var14, z).isAir(world, x, var14, z))
+					{    
+						if (FoodModBlocks.Strawberry.canReplace(world, x, var14, z, 0, new ItemStack(FoodModBlocks.Strawberry, 1, i)))
+						{
+							if (!event.world.isRemote)
+							{
+								event.world.setBlock(x, var14, z, FoodModBlocks.Strawberry, i, 2);
+							}
 				}
 			}
 		}
+	}
+}
 	}
 }

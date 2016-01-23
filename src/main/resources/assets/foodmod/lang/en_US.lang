@@ -44,28 +44,28 @@ item.itemoreo.name=Oreo
 item.item_mms.name=M&M's
 item.itemlemonade.name=Lemonade
 item.itemlemon.name=Lemon
-item.itemmeatball.name=Meatball
+item.itemmeatball.name=Cooked Meatball
 item.itemmeatballraw.name=Raw Meatball
 item.itempasta.name=Pasta
-item.itemchickenwings.name=Chicken Wings
-item.itemchickenwingsraw.name=Raw Chicken Wings
-item.itemchicken_nuggets.name=Chicken Nuggets
+item.itemchickenwings.name=Cooked Chicken Wing
+item.itemchickenwingsraw.name=Raw Chicken Wing
+item.itemchicken_nuggets.name=Cooked Chicken Nuggets
 item.itemchicken_nuggetsraw.name=Raw Chicken Nuggets
 item.itempeanut.name=Peanut
 item.itempeanutseeds.name=Peanut Seeds
 item.itempeanutplant.name=Peanut Plant
 item.itembean.name=Bean
 item.itemgoatmilk.name=Goat Milk
-item.itemfishsticks.name=Fishsticks
+item.itemfishsticks.name=Cooked Fishsticks
 item.itemfishsticksraw.name=Raw Fishsticks
 item.itempie.name=Pie
-item.itemmutton.name=Mutton
+item.itemmutton.name=Cooked Mutton
 item.itemmuttonraw.name=Raw Mutton
-item.itemlamb.name=Lamb
+item.itemlamb.name=Cooked Lamb
 item.itemlambraw.name=Raw Lamb
 item.itemCheesecakeStuffedStrawberries.name=Cheesecake Stuffed Strawberries
-item.strawberry.name=Strawberry
-item.blueberry.name=Blueberry
+item.itemstrawberry.name=Strawberry
+item.itemblueberry.name=Blueberry
 item.itemblackberry.name=Blackberry
 item.itemcherry.name=Cherry
 item.itemsoup.name=Soup
@@ -117,7 +117,7 @@ item.itemfriedegg.name=Fried Egg
 item.itembaconegg.name=Bacon & Egg
 item.itempancake.name=Pancake
 item.itemburger.name=Cheeseburger
-item.itemsausage.name=Sausage
+item.itemsausage.name=Cooked Sausage
 item.itemrawsausage.name=Raw Sausage
 item.itemoil.name=Oil
 item.itemchocolatecake.name=Chocolate Cake
@@ -157,9 +157,54 @@ item.itempizzaraw.name=Raw Pizza
 item.itemrawTortilla.name=Raw Tortilla
 item.itemcookedTortilla.name=Tortilla
 item.itemtaco.name=Taco
+item.itemketchup.name=Ketchup
+item.itemmustard.name=Mustard
+item.itemranch.name=Ranch
+item.itemmayo.name=Mayo
+item.itemhoneymustard.name=Honey Mustard
+item.itemchickensoup.name=Chicken Soup
+item.itemchickenlegraw.name=Raw Chicken Leg
+item.itemchickenleg.name=Cooked Chicken Leg
+item.itemcabbage.name=Cabbage
+item.itembun.name=Bun
+item.itempickle.name=Pickle
+item.itemcucumber.name=Cucumber
+item.itemsquash.name=Squash
+item.itemsugarcube.name=Sugar Cube
+item.itemflour.name=Flour
+item.itemlemonjuice.name=Lemon Juice
+item.itemmashedbananas.name=Mashed Bananas
+item.itemchoppednuts.name=Chopped Nuts
+item.itemchoppedgrass.name=Chopped Grass
+item.itembakingpowder.name=Baking Powder
+item.itemcinnamon.name=Cinnamon
+item.itemgroundginger.name=Ground Ginger
+item.itemalmonds.name=Almonds
+item.itemgroundalmonds.name=Ground Almonds
+item.itemhoney.name=Honey
+item.itemsesameseeds.name=Sesame Seeds
+item.itemshortening.name=Shortening
+item.itembrownsugar.name=Brown Sugar
+item.itemmeltedbutter.name=Melted Butter
+item.itembayleaf.name=Bay Leaf
+item.itemhamburger.name=Hamburger
+item.itembeefbroth.name=Beef Broth
+item.itemjalapenopeppers.name=Jalapeno Peppers
+item.itemmintleaves.name=Mint Leaves
+item.itemHealingApple.name=Healing Apple
+item.StrawberrySeeds.name=StrawBerry Seeds
+item.GoldenCarrot.name=Golden Carrot
+item.itembuttercandy.name=Butter Candy
+item.itemhorsemeat_raw.name=Raw Horsemeat
+item.itemhorsemeat.name=Cooked Horsemeat
+item.itemluckycandy.name=Lucky Candy
 
 
-itemknife.name=Knife
+item.itemtea.name=Tea
+
+
+
+item.knife.name=Knife
 item.itemfork.name=Fork
 item.itemspoon.name=Spoon
 item.itemplate.name=Plate
@@ -184,15 +229,46 @@ tile.blockreed.name=Reed Block
 tile.blocksugar.name=Sugar Block
 tile.blockchocolate.name=Chocolate Block
 tile.blockcaramel.name=Caramel Block
+tile.blocksugarore.name=Sugar Ore
+tile.blocksugarbricks.name=Sugar Bricks
+tile.blocksugar.name=Sugar Block
+tile.blockfoodtnt.name=Food TNT
+tile.blockpeppermintlog.name=Peppermint Log
+tile.jtrent238skull.name=§2jtrent238's Head
+tile.BlockOven.name=Oven
+tile.blockbuttercandyore.name=Butter Candy Ore
+tile.blockcandystone.name=Candy Stone
+tile.blockcandydirt.name=Candy Dirt
+tile.blockcandygrass.name=Candy Grass
+tile.blockcherryworkbench.name=Cherry Crafting Table
+tile.blockcandyportal.name=Candy Portal
+
+//Cakes
+tile.blockgoldcake.name=Yellow Cake
+tile.blockbluecake.name=Blue Cake
+tile.blockredcake.name=Red Cake
+tile.blockmagentacake.name=Magenta Cake
+tile.blockchocolatecake.name=Chocolate Cake
+tile.blockposioncake.name=Posion Cake
+tile.blockblackcake.name=Black Cake
+tile.blockcreepercakeblue.name=Blue Creeper Cake
+tile.blockcreepercakegreen.name=Green Creeper Cake
+tile.blockredvelvetcake.name=Red Velvet Cake
+tile.blockdeepdishpizza.name=Deep Dish Pizza
+
 
 tile.itempeanutplant.name=Peanut Plant
 
 
 tile.plantpeanut.name=Peanut Plant
 
+
+//Entitys
+entity.EntityCandyPig.name=Candy Pig
+entity.EntityCandyGolem.name=Candy Golem
+entity.EntityCandyStealer.name=Candy Stealer
+
 //Achievements
-achievement.startmagicbeans=Magic Beans
-achievement.startmagicbeans.desc=Feed a golden carrot to a cow
 
 //Creative Tabs
 itemGroup.FoodMod=jtrent238's Food Mod

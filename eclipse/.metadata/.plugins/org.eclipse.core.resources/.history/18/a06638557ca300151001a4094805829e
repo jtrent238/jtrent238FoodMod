@@ -1,7 +1,0 @@
-package com.jtrent238.weaponmod.copy;
-
-import net.minecraft.item.Item;
-
-public class Itemgoldknife extends Item {
-
-}
