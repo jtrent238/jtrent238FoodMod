@@ -175,7 +175,7 @@ public class Strawberry extends BlockCrops
      */
     protected Item func_149865_P()
     {
-        return FoodMod.itemstrawberry;
+        return ItemLoader.itemstrawberry;
     }    
 
     /**

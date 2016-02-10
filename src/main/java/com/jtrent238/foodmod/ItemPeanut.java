@@ -179,7 +179,7 @@ public class ItemPeanut extends BlockCrops
     */
    protected Item func_149865_P()
    {
-		return FoodMod.itempeanut;
+		return ItemLoader.itempeanut;
    }    
 
    /**

@@ -18,7 +18,7 @@ public class MobDropsHandler
         if (event.entity instanceof EntitySheep)
         {
  
-            ItemStack stack = new ItemStack(FoodMod.itemmuttonraw);
+            ItemStack stack = new ItemStack(ItemLoader.itemmuttonraw);
             EntityItem drop = new EntityItem(event.entity.worldObj, event.entity.posX, event.entity.posY, event.entity.posZ, stack);
  
             event.drops.add(drop);
@@ -27,7 +27,7 @@ public class MobDropsHandler
         if (event.entity instanceof EntityHorse)
         {
  
-            ItemStack stack = new ItemStack(FoodMod.itemhorsemeat_raw);
+            ItemStack stack = new ItemStack(ItemLoader.itemhorsemeat_raw);
             EntityItem drop = new EntityItem(event.entity.worldObj, event.entity.posX, event.entity.posY, event.entity.posZ, stack);
  
             event.drops.add(drop);

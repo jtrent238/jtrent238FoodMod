@@ -17,11 +17,11 @@ public class Blockbuttercandyore {
 	}
 
 	public Block setBlockName(String string) {
-		return FoodMod.blockbuttercandyore;
+		return BlockLoader.blockbuttercandyore;
 	}
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
 	  {
-	    return FoodMod.itembuttercandy;
+	    return ItemLoader.itembuttercandy;
 	  }
 
 	  public int quantityDropped(Random p_149745_1_)

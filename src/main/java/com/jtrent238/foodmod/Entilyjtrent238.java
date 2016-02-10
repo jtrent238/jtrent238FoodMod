@@ -94,9 +94,13 @@ import java.util.*;
 
 @SuppressWarnings("unchecked")
 public class Entilyjtrent238 {
-
+	
+	static int colorBase = (264) + (52) + 241; //RGB Value "rgb(X, X, X)"
+    static int colorSpots  = (312) + (45) + 245; //RGB Value "rgb(X, X, X)"
+    
 	public static int mobid = 0;
 	public Object instance;
+	private World worldObj;
 
     public void load(){}
 
@@ -107,11 +111,11 @@ public class Entilyjtrent238 {
 	}
 	@SideOnly(Side.CLIENT)
 	public void registerRenderers(){
-		RenderingRegistry.registerEntityRenderingHandler(Entilyjtrent238.Entityjtrent238.class, new RenderBiped(new ModelBiped(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("foodmod:jtrent238.png");}
+		RenderingRegistry.registerEntityRenderingHandler(Entilyjtrent238.Entityjtrent238.class, new RenderLiving(new ModelBiped(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("Entilyjtrent238.png");}
 
 public void doRender(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9){
 super.doRender(par1EntityLiving, par2, par4, par6, par8, par9);
-BossStatus.setBossStatus((Entityjtrent238)par1EntityLiving, false);
+BossStatus.setBossStatus((Entityjtrent238)par1EntityLiving, true);
 }
 
 });
@@ -122,39 +126,57 @@ BossStatus.setBossStatus((Entityjtrent238)par1EntityLiving, false);
 		mobid = entityID;
 		EntityRegistry.registerGlobalEntityID(Entilyjtrent238.Entityjtrent238.class, "jtrent238", entityID);
 		EntityRegistry.registerModEntity(Entilyjtrent238.Entityjtrent238.class, "jtrent238", entityID, instance, 64, 1, true);
-		EntityList.entityEggs.put(Integer.valueOf(entityID), new EntityList.EntityEggInfo(entityID, (51 << 16) + (153 << 8) + 0, (0 << 16) + (51 << 8) + 51));
-		EntityRegistry.addSpawn(Entilyjtrent238.Entityjtrent238.class, 10, 1, 1, EnumCreatureType.monster , new BiomeGenBase[]{BiomeGenBase.ocean, BiomeGenBase.plains, BiomeGenBase.desert, BiomeGenBase.extremeHills, BiomeGenBase.forest, BiomeGenBase.taiga, BiomeGenBase.swampland, BiomeGenBase.river, BiomeGenBase.frozenOcean, BiomeGenBase.frozenRiver, BiomeGenBase.icePlains, BiomeGenBase.iceMountains, BiomeGenBase.mushroomIsland, BiomeGenBase.mushroomIslandShore, BiomeGenBase.beach, BiomeGenBase.desertHills, BiomeGenBase.forestHills, BiomeGenBase.taigaHills, BiomeGenBase.extremeHillsEdge, BiomeGenBase.jungle, BiomeGenBase.jungleHills, BiomeGenBase.jungleEdge, BiomeGenBase.deepOcean, BiomeGenBase.stoneBeach, BiomeGenBase.coldBeach, BiomeGenBase.birchForest, BiomeGenBase.birchForestHills, BiomeGenBase.roofedForest, BiomeGenBase.coldTaiga, BiomeGenBase.coldTaigaHills, BiomeGenBase.megaTaiga, BiomeGenBase.megaTaigaHills, BiomeGenBase.extremeHillsPlus, BiomeGenBase.savanna, BiomeGenBase.savannaPlateau, BiomeGenBase.mesa, BiomeGenBase.mesaPlateau_F, BiomeGenBase.mesaPlateau});
+		EntityRegistry.addSpawn(Entilyjtrent238.Entityjtrent238.class, 10, 1, 1, EnumCreatureType.ambient , new BiomeGenBase[]{});
 
         DungeonHooks.addDungeonMob("jtrent238", 180);
 	}
 
-    /*public Entity spawnEntity(int var1, World var2, double var3, double var5, double var7)
-    {
-        if(var1==mobid)
-                return new mcreator_jtrent238.Entityjtrent238(var2);
-        else
-                return null;
-    }*/
 
 
-   public static class Entityjtrent238 extends EntityIronGolem implements IBossDisplayData
+   public static class Entityjtrent238 extends EntityGolem implements IBossDisplayData
 	{
 		World world = null;
+		private int attackTimer;
 	    public Entityjtrent238(World var1)
 	    {
 	        super(var1);
 	        world = var1;
 	        experienceValue = 5;
 	        this.isImmuneToFire = true;
+	        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, 1.0D, true));
+	        this.tasks.addTask(2, new EntityAIMoveTowardsTarget(this, 0.9D, 32.0F));
+	        this.tasks.addTask(3, new EntityAIMoveThroughVillage(this, 0.6D, true));
+	        this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, 1.0D));
+	        this.tasks.addTask(6, new EntityAIWander(this, 0.6D));
+	        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+	        this.tasks.addTask(8, new EntityAILookIdle(this));
+	        this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, false));
+	        this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityLiving.class, 0, false, true, IMob.mobSelector));
 	        addRandomArmor();
-        	
+	    }
+	    
+	   
+	    protected void applyEntityAttributes()
+	    {
+	        super.applyEntityAttributes();
+	        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(50D);
+	        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.25D);
 	    }
 
-	    
+	    public boolean attackEntityAsMob(Entity p_70652_1_)
+	    {
+	        this.attackTimer = 10;
+	        this.worldObj.setEntityState(this, (byte)4);
+	        boolean flag = p_70652_1_.attackEntityFrom(DamageSource.causeMobDamage(this), (float)(7 + this.rand.nextInt(15)));
 
-	    
+	        if (flag)
+	        {
+	            p_70652_1_.motionY += 0.4000000059604645D;
+	        }
 
-	    
+	        this.playSound("", 1.0F, 1.0F);
+	        return flag;
+	    }
 protected void addRandomArmor(){
 
 }
@@ -168,13 +190,25 @@ this.dropItem(Items.nether_star, 1);
 		{
 			   return true;
     	}
-
+    	   
+    	/**
+         * Determines if an entity can be despawned, used on idle far away entities
+         */
+        protected boolean canDespawn()
+        {
+            return false;
+        }
+        
 	    /**
-	     * Drop 0-2 items of this living's type
+	     * Drop items of this living's type
 	     */
 	    protected void dropFewItems(boolean var1, int var2)
 	    {
+	    	this.entityDropItem(new ItemStack(BlockLoader.jtrent238skull), 0.0F);
 	        this.entityDropItem(new ItemStack(Items.diamond), 0.0F);
+	        this.entityDropItem(new ItemStack(Items.apple), 0.0F);
+	        this.entityDropItem(new ItemStack(Items.written_book), 0.0F);
+	        this.entityDropItem(new ItemStack(Items.potionitem), 0.0F);
 	    }
 
 	    /**
@@ -190,7 +224,7 @@ this.dropItem(Items.nether_star, 1);
 	     */
 	    protected String getHurtSound()
 	    {
-	        return "";
+	        return "mob.villager.hit";
 	    }
 
 	    /**
@@ -198,7 +232,7 @@ this.dropItem(Items.nether_star, 1);
 	     */
 	    protected String getDeathSound()
 	    {
-	        return "";
+	        return "mob.villager.death";
 	    }
 
 	    public void onStruckByLightning(EntityLightningBolt entityLightningBolt){
@@ -248,7 +282,13 @@ this.dropItem(Items.nether_star, 1);
 		}
 
 	}
-
-	
-
+   /**
+    * Will return how many at most can spawn in a chunk at once.
+    */
+   public int getMaxSpawnedInChunk()
+   {
+       return 4;
+   }
+   
+   
 }

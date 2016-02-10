@@ -25,6 +25,8 @@ public class ItemLuckyCandy extends ItemFood {
         this.setCreativeTab(FoodMod.FoodMod);
         this.registerItem("itemluckycandy");
         this.effects = effects;
+        this.setPotionEffect(Potion.wither.id, 5, 5, 0.5F); //potion effect, duration, effect level, probability of effect (1.0F = always, 0.0F = never)
+        this.setPotionEffect(Potion.regeneration.id, 5, 5, 0.5F); //potion effect, duration, effect level, probability of effect (1.0F = always, 0.0F = never)
     }
 
 
@@ -41,24 +43,12 @@ public class ItemLuckyCandy extends ItemFood {
 
 	public ItemLuckyCandy() {
 		super(healAmount, alwaysEdible);
-	}
-
-
-
-	public void onFoodEaten(ItemStack p_77654_1_, World p_77654_2_,
-	        EntityPlayer p_77654_3_) {
-		this.addPotionEffect(new PotionEffect(Potion.regeneration.id, 200, 4), 0.5);
-        this.addPotionEffect(new PotionEffect(Potion.wither.id, 200, 4), 0.5);
-
 
 	}
 
 
-	private void addPotionEffect(PotionEffect potionEffect, double d) {
-		this.addPotionEffect(new PotionEffect(Potion.regeneration.id, 200, 4), 0.5);
-        this.addPotionEffect(new PotionEffect(Potion.wither.id, 200, 4), 0.5);
 
-	}
+
 	/**
      * Set the field 'alwaysEdible' to true, and make the food edible even if the player don't need to eat.
      */

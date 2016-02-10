@@ -16,11 +16,10 @@ import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
-public class TeleporterCandyLand{
-	
-
-	private final WorldServer worldServerInstance;
-    /** A private Random() function in TeleporterCandyLand */
+public class TeleporterCandyLand extends Teleporter
+{
+    private final WorldServer worldServerInstance;
+    /** A private Random() function in Teleporter */
     private final Random random;
     /** Stores successful portal placement locations for rapid lookup. */
     private final LongHashMap destinationCoordinateCache = new LongHashMap();
@@ -28,11 +27,14 @@ public class TeleporterCandyLand{
      * A list of valid keys for the destinationCoordainteCache. These are based on the X & Z of the players initial
      * location.
      */
-    private final List destinationCoordinateKeys = new ArrayList();
-    private static final String __OBFID = "CL_00000153";
+    @SuppressWarnings("rawtypes")
+	private final List destinationCoordinateKeys = new ArrayList();
+    @SuppressWarnings("unused")
+	private static final String __OBFID = "CL_00000153";
 
     public TeleporterCandyLand(WorldServer p_i1963_1_)
     {
+    	super(p_i1963_1_);
         this.worldServerInstance = p_i1963_1_;
         this.random = new Random(p_i1963_1_.getSeed());
     }
@@ -42,7 +44,7 @@ public class TeleporterCandyLand{
      */
     public void placeInPortal(Entity p_77185_1_, double p_77185_2_, double p_77185_4_, double p_77185_6_, float p_77185_8_)
     {
-        if (this.worldServerInstance.provider.dimensionId != 2)
+        if (this.worldServerInstance.provider.dimensionId != 1)
         {
             if (!this.placeInExistingPortal(p_77185_1_, p_77185_2_, p_77185_4_, p_77185_6_, p_77185_8_))
             {
@@ -68,7 +70,7 @@ public class TeleporterCandyLand{
                         int l1 = j + j1;
                         int i2 = k + i1 * b1 - l * b0;
                         boolean flag = j1 < 0;
-                        this.worldServerInstance.setBlock(k1, l1, i2, flag ? Blocks.obsidian : Blocks.air);
+                        this.worldServerInstance.setBlock(k1, l1, i2, flag ? Blocks.stone : Blocks.air);
                     }
                 }
             }
@@ -81,7 +83,8 @@ public class TeleporterCandyLand{
     /**
      * Place an entity in a nearby portal which already exists.
      */
-    public boolean placeInExistingPortal(Entity p_77184_1_, double p_77184_2_, double p_77184_4_, double p_77184_6_, float p_77184_8_)
+    @SuppressWarnings("unchecked")
+	public boolean placeInExistingPortal(Entity p_77184_1_, double p_77184_2_, double p_77184_4_, double p_77184_6_, float p_77184_8_)
     {
         short short1 = 128;
         double d3 = -1.0D;
@@ -117,9 +120,9 @@ public class TeleporterCandyLand{
 
                     for (int i2 = this.worldServerInstance.getActualHeight() - 1; i2 >= 0; --i2)
                     {
-                        if (this.worldServerInstance.getBlock(l3, i2, l1) == FoodMod.blockcandyportal)
+                        if (this.worldServerInstance.getBlock(l3, i2, l1) == BlockLoader.blockcandyportal)
                         {
-                            while (this.worldServerInstance.getBlock(l3, i2 - 1, l1) == FoodMod.blockcandyportal)
+                            while (this.worldServerInstance.getBlock(l3, i2 - 1, l1) == BlockLoader.blockcandyportal)
                             {
                                 --i2;
                             }
@@ -146,6 +149,7 @@ public class TeleporterCandyLand{
             {
                 this.destinationCoordinateCache.add(j1, new TeleporterCandyLand.PortalPosition(i, j, k, this.worldServerInstance.getTotalWorldTime()));
                 this.destinationCoordinateKeys.add(Long.valueOf(j1));
+                System.out.println("Location " + j1);
             }
 
             double d11 = (double)i + 0.5D;
@@ -153,22 +157,22 @@ public class TeleporterCandyLand{
             d7 = (double)k + 0.5D;
             int i4 = -1;
 
-            if (this.worldServerInstance.getBlock(i - 1, j, k) == FoodMod.blockcandyportal)
+            if (this.worldServerInstance.getBlock(i - 1, j, k) == BlockLoader.blockcandyportal)
             {
                 i4 = 2;
             }
 
-            if (this.worldServerInstance.getBlock(i + 1, j, k) == FoodMod.blockcandyportal)
+            if (this.worldServerInstance.getBlock(i + 1, j, k) == BlockLoader.blockcandyportal)
             {
                 i4 = 0;
             }
 
-            if (this.worldServerInstance.getBlock(i, j, k - 1) == FoodMod.blockcandyportal)
+            if (this.worldServerInstance.getBlock(i, j, k - 1) == BlockLoader.blockcandyportal)
             {
                 i4 = 3;
             }
 
-            if (this.worldServerInstance.getBlock(i, j, k + 1) == FoodMod.blockcandyportal)
+            if (this.worldServerInstance.getBlock(i, j, k + 1) == BlockLoader.blockcandyportal)
             {
                 i4 = 1;
             }
@@ -469,7 +473,7 @@ public class TeleporterCandyLand{
                     i4 = j2 + k3;
                     j4 = k2 + (j3 - 1) * l2;
                     flag = j3 == 0 || j3 == 3 || k3 == -1 || k3 == 3;
-                    this.worldServerInstance.setBlock(l3, i4, j4, (Block)(flag ? Blocks.obsidian : FoodMod.blockcandyportal), 0, 2);
+                    this.worldServerInstance.setBlock(l3, i4, j4, (Block)(flag ? Blocks.stone : BlockLoader.blockcandyportal), 0, 2);
                 }
             }
 
@@ -496,7 +500,8 @@ public class TeleporterCandyLand{
     {
         if (p_85189_1_ % 100L == 0L)
         {
-            Iterator iterator = this.destinationCoordinateKeys.iterator();
+            @SuppressWarnings("rawtypes")
+			Iterator iterator = this.destinationCoordinateKeys.iterator();
             long j = p_85189_1_ - 600L;
 
             while (iterator.hasNext())
@@ -517,7 +522,8 @@ public class TeleporterCandyLand{
     {
         /** The worldtime at which this PortalPosition was last verified */
         public long lastUpdateTime;
-        private static final String __OBFID = "CL_00000154";
+        @SuppressWarnings("unused")
+		private static final String __OBFID = "CL_00000154";
 
         public PortalPosition(int p_i1962_2_, int p_i1962_3_, int p_i1962_4_, long p_i1962_5_)
         {

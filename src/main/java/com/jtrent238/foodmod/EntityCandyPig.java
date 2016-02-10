@@ -20,6 +20,7 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -30,7 +31,7 @@ import net.minecraft.stats.AchievementList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class EntityCandyPig extends EntityPig {
+public class EntityCandyPig extends EntityAnimal {
 
 	/** AI task for player control. */
     private final EntityAIControlledByPlayer aiControlledByPlayer;
@@ -95,12 +96,12 @@ public class EntityCandyPig extends EntityPig {
     /**
      * (abstract) Protected helper method to write subclass entity data to NBT.
      */
-    public void writeEntityToNBT(NBTTagCompound p_70014_1_)
+    /*public void writeEntityToNBT(NBTTagCompound p_70014_1_)
     {
         super.writeEntityToNBT(p_70014_1_);
         p_70014_1_.setBoolean("Saddle", this.getSaddled());
     }
-
+     */
     /**
      * (abstract) Protected helper method to read subclass entity data from NBT.
      */
@@ -142,7 +143,7 @@ public class EntityCandyPig extends EntityPig {
     /**
      * Called when a player interacts with a mob. e.g. gets milk from a cow, gets into the saddle on a pig.
      */
-    public boolean interact(EntityPlayer p_70085_1_)
+    /*public boolean interact(EntityPlayer p_70085_1_)
     {
         if (super.interact(p_70085_1_))
         {
@@ -158,10 +159,10 @@ public class EntityCandyPig extends EntityPig {
             return false;
         }
     }
-
+     */
     protected Item getDropItem()
     {
-        return this.isBurning() ? Items.cooked_porkchop : Items.porkchop;
+        return this.isBurning() ? Items.cooked_porkchop : ItemLoader.itemcandycane;
     }
 
     /**
@@ -180,24 +181,24 @@ public class EntityCandyPig extends EntityPig {
             }
             else
             {
-                this.dropItem(Items.porkchop, 1);
+                this.dropItem(ItemLoader.itemcandycane, 1);
             }
         }
-
+        /*
         if (this.getSaddled())
         {
             this.dropItem(Items.saddle, 1);
-        }
+        }*/
     }
 
     /**
      * Returns true if the pig is saddled.
      */
-    public boolean getSaddled()
+    /*public boolean getSaddled()
     {
         return (this.dataWatcher.getWatchableObjectByte(16) & 1) != 0;
     }
-
+     */
     /**
      * Set or remove the saddle of the pig.
      */
@@ -217,16 +218,22 @@ public class EntityCandyPig extends EntityPig {
      * Called when a lightning bolt hits the entity.
      */
     public void onStruckByLightning(EntityLightningBolt p_70077_1_)
-    {
+    {	
+    	//Spawns Zombie Pigman
         if (!this.worldObj.isRemote)
         {
             EntityPigZombie entitypigzombie = new EntityPigZombie(this.worldObj);
-            entitypigzombie.setCurrentItemOrArmor(0, new ItemStack(Items.golden_sword));
+            entitypigzombie.setCurrentItemOrArmor(0, new ItemStack(Items.diamond_sword));
+            entitypigzombie.setCurrentItemOrArmor(1, new ItemStack(Items.diamond_helmet));
+            entitypigzombie.setCurrentItemOrArmor(2, new ItemStack(Items.diamond_chestplate));
+            entitypigzombie.setCurrentItemOrArmor(3, new ItemStack(Items.diamond_leggings));
+            entitypigzombie.setCurrentItemOrArmor(4, new ItemStack(Items.diamond_boots));
             entitypigzombie.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
             this.worldObj.spawnEntityInWorld(entitypigzombie);
             this.setDead();
         }
-    }
+        
+        }
 
     /**
      * Called when the mob is falling. Calculates and applies fall damage.
@@ -241,9 +248,9 @@ public class EntityCandyPig extends EntityPig {
         }
     }
 
-    public EntityPig createChild(EntityAgeable p_90011_1_)
+    public EntityCandyPig createChild(EntityAgeable p_90011_1_)
     {
-        return new EntityPig(this.worldObj);
+        return new EntityCandyPig(this.worldObj);
     }
 
     /**
@@ -252,7 +259,7 @@ public class EntityCandyPig extends EntityPig {
      */
     public boolean isBreedingItem(ItemStack p_70877_1_)
     {
-        return p_70877_1_ != null && p_70877_1_.getItem() == Items.carrot;
+        return p_70877_1_ != null && p_70877_1_.getItem() == ItemLoader.itemcandycane;
     }
 
     /**

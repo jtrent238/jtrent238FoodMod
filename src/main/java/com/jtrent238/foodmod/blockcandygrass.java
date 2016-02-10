@@ -41,11 +41,11 @@ public class blockcandygrass extends BlockGrass{
 	/**
      * Gets the block's texture. Args: side, meta
      */
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int p_149691_1_, int p_149691_2_)
-    {
-        return p_149691_1_ == 1 ? this.field_149991_b : (p_149691_1_ == 0 ? FoodMod.blockcandydirt.getBlockTextureFromSide(p_149691_1_) : this.blockIcon);
-    }
+    //@SideOnly(Side.CLIENT)
+    //public IIcon getIcon(int p_149691_1_, int p_149691_2_)
+    //{
+    //    return p_149691_1_ == 1 ? this.field_149991_b : (p_149691_1_ == 0 ? BlockLoader.blockcandydirt.getBlockTextureFromSide(p_149691_1_) : this.blockIcon);
+    //}
 
     /**
      * Ticks the block if it's been scheduled
@@ -56,7 +56,7 @@ public class blockcandygrass extends BlockGrass{
         {
             if (p_149674_1_.getBlockLightValue(p_149674_2_, p_149674_3_ + 1, p_149674_4_) < 4 && p_149674_1_.getBlockLightOpacity(p_149674_2_, p_149674_3_ + 1, p_149674_4_) > 2)
             {
-                p_149674_1_.setBlock(p_149674_2_, p_149674_3_, p_149674_4_, FoodMod.blockcandydirt);
+                p_149674_1_.setBlock(p_149674_2_, p_149674_3_, p_149674_4_, BlockLoader.blockcandydirt);
             }
             else if (p_149674_1_.getBlockLightValue(p_149674_2_, p_149674_3_ + 1, p_149674_4_) >= 9)
             {
@@ -67,9 +67,9 @@ public class blockcandygrass extends BlockGrass{
                     int k1 = p_149674_4_ + p_149674_5_.nextInt(3) - 1;
                     Block block = p_149674_1_.getBlock(i1, j1 + 1, k1);
 
-                    if (p_149674_1_.getBlock(i1, j1, k1) == FoodMod.blockcandydirt && p_149674_1_.getBlockMetadata(i1, j1, k1) == 0 && p_149674_1_.getBlockLightValue(i1, j1 + 1, k1) >= 4 && p_149674_1_.getBlockLightOpacity(i1, j1 + 1, k1) <= 2)
+                    if (p_149674_1_.getBlock(i1, j1, k1) == BlockLoader.blockcandydirt && p_149674_1_.getBlockMetadata(i1, j1, k1) == 0 && p_149674_1_.getBlockLightValue(i1, j1 + 1, k1) >= 4 && p_149674_1_.getBlockLightOpacity(i1, j1 + 1, k1) <= 2)
                     {
-                        p_149674_1_.setBlock(i1, j1, k1, FoodMod.blockcandygrass);
+                        p_149674_1_.setBlock(i1, j1, k1, BlockLoader.blockcandygrass);
                     }
                 }
             }
@@ -78,7 +78,7 @@ public class blockcandygrass extends BlockGrass{
 
     public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return FoodMod.blockcandydirt.getItemDropped(0, p_149650_2_, p_149650_3_);
+        return BlockLoader.blockcandydirt.getItemDropped(0, p_149650_2_, p_149650_3_);
     }
 
     public boolean func_149851_a(World p_149851_1_, int p_149851_2_, int p_149851_3_, int p_149851_4_, boolean p_149851_5_)
@@ -100,7 +100,7 @@ public class blockcandygrass extends BlockGrass{
         }
         else if (p_149673_5_ == 0)
         {
-            return FoodMod.blockcandydirt.getBlockTextureFromSide(p_149673_5_);
+            return BlockLoader.blockcandydirt.getBlockTextureFromSide(p_149673_5_);
         }
         else
         {
@@ -129,7 +129,7 @@ public class blockcandygrass extends BlockGrass{
    @SideOnly(Side.CLIENT)
     public static IIcon getIconSideOverlay()
     {
-        return (IIcon) FoodMod.blockcandygrass;
+        return (IIcon) BlockLoader.blockcandygrass;
     }
 
     public void func_149853_b(World p_149853_1_, Random p_149853_2_, int p_149853_3_, int p_149853_4_, int p_149853_5_)
@@ -151,7 +151,7 @@ public class blockcandygrass extends BlockGrass{
                     j1 += (p_149853_2_.nextInt(3) - 1) * p_149853_2_.nextInt(3) / 2;
                     k1 += p_149853_2_.nextInt(3) - 1;
 
-                    if (p_149853_1_.getBlock(i1, j1 - 1, k1) == FoodMod.blockcandygrass && !p_149853_1_.getBlock(i1, j1, k1).isNormalCube())
+                    if (p_149853_1_.getBlock(i1, j1 - 1, k1) == BlockLoader.blockcandygrass && !p_149853_1_.getBlock(i1, j1, k1).isNormalCube())
                     {
                         ++l1;
                         continue;

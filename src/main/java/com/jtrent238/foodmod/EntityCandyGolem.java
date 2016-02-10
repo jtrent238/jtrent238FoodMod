@@ -271,10 +271,15 @@ public class EntityCandyGolem extends EntityIronGolem{
 
         for (int l = 0; l < k; ++l)
         {
-            this.dropItem(FoodMod.itembuttercandy, 6);
+            this.dropItem(ItemLoader.itembuttercandy, 6);
         }
     }
-
+    
+    protected boolean canDespawn()
+    {
+        return true;
+    }
+    
     public int getHoldRoseTick()
     {
         return this.holdRoseTick;

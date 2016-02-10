@@ -198,7 +198,16 @@ item.itembuttercandy.name=Butter Candy
 item.itemhorsemeat_raw.name=Raw Horsemeat
 item.itemhorsemeat.name=Cooked Horsemeat
 item.itemluckycandy.name=Lucky Candy
+item.itemunstablecandy.name=§i§8§k0000§r§i §6Unstable Candy §r§i§8§k0000
+item.itemcandycane.name=CandyCane
+item.itemcandycanestick.name=CandyCane Stick
 
+//Potion Apples
+item.itemapple_swiftness.name=Apple Of Swiftness
+item.itemapple_strength.name=Apple Of Strength
+item.itemapple_fireresistance.name=Apple Of Fire Resistance
+item.itemapple_posion.name=Apple Of Posion
+item.itemapple_regeneration.name=Apple Of Regeneration
 
 item.itemtea.name=Tea
 
@@ -242,6 +251,10 @@ tile.blockcandydirt.name=Candy Dirt
 tile.blockcandygrass.name=Candy Grass
 tile.blockcherryworkbench.name=Cherry Crafting Table
 tile.blockcandyportal.name=Candy Portal
+tile.CandyRail.name=Candy Rail
+tile.blockcandybars.name=Candy Bars
+tile.blockfrozenpumpkin.name=Frozen Pumpkin
+
 
 //Cakes
 tile.blockgoldcake.name=Yellow Cake
@@ -267,8 +280,27 @@ tile.plantpeanut.name=Peanut Plant
 entity.EntityCandyPig.name=Candy Pig
 entity.EntityCandyGolem.name=Candy Golem
 entity.EntityCandyStealer.name=Candy Stealer
+entity.EntityFrostedVilliger.name=Candy Villager
+entity.EntityCandyDragon.name=Candy Dragon §4[WIP]
+entity.Entityjtrent238.name=jtrent238
+entity.EntityCandyStalker.name=Candy Stalker §4[WIP]
+entity.EntityCandyWitherBoss.name=Candy Wither §4[WIP]
+entity.EntityCandyCreeper.name=Pink Candy Creeper
+entity.EntityCandyChicken.name=Candy Chicken
+entity.EntityGingerBreadMan.name=GingerBread Man
+entity.EntityCandyGhast.name=Candy Ghast
+entity.EntityCandyCow.name=Candy Cow
+entity.EntityCandyBat.name=Candy Bat
+entity.EntityCandySpider.name=Candy Spider
+entity.EntityCandySlime.name=Candy Slime
+entity.EntityCandyCreeperBlue.name=Blue Candy Creeper
+
 
 //Achievements
 
 //Creative Tabs
 itemGroup.FoodMod=jtrent238's Food Mod
+
+//NULL ERRORS (tile / item)
+tile.null.name=Block Name Error[Please Report To jtrent238]
+item.null.name=Item Name Error[Please Report To jtrent238]

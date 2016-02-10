@@ -1,159 +1,82 @@
 package com.jtrent238.foodmod;
 
-import cpw.mods.fml.client.*;
-import cpw.mods.fml.client.registry.*;
-import cpw.mods.fml.common.*;
-import cpw.mods.fml.common.asm.*;
-import cpw.mods.fml.common.asm.transformers.*;
-import cpw.mods.fml.common.discovery.*;
-import cpw.mods.fml.common.discovery.asm.*;
-import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.common.functions.*;
-import cpw.mods.fml.common.network.*;
-import cpw.mods.fml.common.registry.*;
-import cpw.mods.fml.common.toposort.*;
-import cpw.mods.fml.common.versioning.*;
-import cpw.mods.fml.relauncher.*;
-import cpw.mods.fml.server.*;
-import net.minecraft.block.*;
-import net.minecraft.block.material.*;
-import net.minecraft.client.*;
-import net.minecraft.client.audio.*;
-import net.minecraft.client.entity.*;
-import net.minecraft.client.gui.*;
-import net.minecraft.client.gui.achievement.*;
-import net.minecraft.client.gui.inventory.*;
-import net.minecraft.client.model.*;
-import net.minecraft.client.multiplayer.*;
-import net.minecraft.client.particle.*;
-import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.culling.*;
-import net.minecraft.client.renderer.entity.*;
-import net.minecraft.client.renderer.tileentity.*;
-import net.minecraft.client.settings.*;
-import net.minecraft.command.*;
-import net.minecraft.crash.*;
-import net.minecraft.creativetab.*;
-import net.minecraft.dispenser.*;
-import net.minecraft.enchantment.*;
-import net.minecraft.entity.*;
-import net.minecraft.entity.ai.*;
-import net.minecraft.entity.boss.*;
-import net.minecraft.entity.effect.*;
-import net.minecraft.entity.item.*;
-import net.minecraft.entity.monster.*;
-import net.minecraft.entity.passive.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.entity.projectile.*;
-import net.minecraft.inventory.*;
-import net.minecraft.item.*;
-import net.minecraft.item.crafting.*;
-import net.minecraft.nbt.*;
-import net.minecraft.network.*;
-import net.minecraft.network.rcon.*;
-import net.minecraft.pathfinding.*;
-import net.minecraft.potion.*;
-import net.minecraft.profiler.*;
-import net.minecraft.server.*;
-import net.minecraft.server.dedicated.*;
-import net.minecraft.server.gui.*;
-import net.minecraft.server.integrated.*;
-import net.minecraft.server.management.*;
-import net.minecraft.src.*;
-import net.minecraft.stats.*;
-import net.minecraft.tileentity.*;
-import net.minecraft.util.*;
-import net.minecraft.village.*;
-import net.minecraft.world.*;
-import net.minecraft.world.biome.*;
-import net.minecraft.world.chunk.*;
-import net.minecraft.world.chunk.storage.*;
-import net.minecraft.world.demo.*;
-import net.minecraft.world.gen.*;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.layer.*;
-import net.minecraft.world.gen.structure.*;
-import net.minecraft.world.storage.*;
-import net.minecraftforge.classloading.*;
-import net.minecraftforge.client.*;
-import net.minecraftforge.client.event.*;
-import net.minecraftforge.client.event.sound.*;
-import net.minecraftforge.common.*;
-import net.minecraftforge.event.*;
-import net.minecraftforge.event.entity.*;
-import net.minecraftforge.event.entity.item.*;
-import net.minecraftforge.event.entity.living.*;
-import net.minecraftforge.event.entity.minecart.*;
-import net.minecraftforge.event.entity.player.*;
-import net.minecraftforge.event.terraingen.*;
-import net.minecraftforge.event.world.*;
-import net.minecraftforge.oredict.*;
-import net.minecraftforge.transformers.*;
-import net.minecraft.init.*;
 import java.util.Random;
 
-public class BiomeCandyLand{
+import net.minecraft.block.Block;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.gen.feature.WorldGenTallGrass;
+import net.minecraft.world.gen.feature.WorldGenVines;
+import net.minecraft.world.gen.feature.WorldGenerator;
 
-public static BiomeGenCandyLand biome = new BiomeGenCandyLand();
+public class BiomeCandyLand extends ModBiomes{
 
-public Object instance;
 
-public BiomeCandyLand(){}
+	public static int treesPerChunk;
 
-public void load(){
-BiomeDictionary.registerBiomeType(biome, BiomeDictionary.Type.FOREST);
-BiomeManager.addSpawnBiome(biome);
-BiomeManager.warmBiomes.add(new BiomeManager.BiomeEntry(biome, 10));
-}
+    protected BiomeDecoratorMod decorator;
 
-public void generateNether(World world, Random random, int chunkX, int chunkZ){}
-public void generateSurface(World world, Random random, int chunkX, int chunkZ){}
-public void registerRenderers(){}
-public int addFuel(ItemStack fuel){
-	return 0;
-}
-public void serverLoad(FMLServerStartingEvent event){}
-public void preInit(FMLPreInitializationEvent event){}
 
-static class BiomeGenCandyLand extends BiomeGenBase
-{
-	@SuppressWarnings("unchecked")
-    public BiomeGenCandyLand()
-    {
-        super(40);
-        setBiomeName("CandyLand");
-        topBlock = FoodMod.blockcandygrass;
-        fillerBlock = FoodMod.blockcandydirt;
-        theBiomeDecorator.generateLakes = false;
-	theBiomeDecorator.treesPerChunk = 0;
-	theBiomeDecorator.flowersPerChunk = 0;
-	theBiomeDecorator.grassPerChunk = 0;
-	theBiomeDecorator.deadBushPerChunk = 0;
-	theBiomeDecorator.mushroomsPerChunk = 0;
-	theBiomeDecorator.reedsPerChunk = 0;
-	theBiomeDecorator.cactiPerChunk = 0;
-   	theBiomeDecorator.sandPerChunk = 0;
-   	rainfall = 0.0F;
-   	setHeight(new BiomeGenBase.Height(0.1F, 0.3F));
-   	waterColorMultiplier = 0xff9999;
-
-   	
-this.spawnableMonsterList.clear();
-this.spawnableCreatureList.clear();
-this.spawnableWaterCreatureList.clear();
-this.spawnableCaveCreatureList.clear();
-this.spawnableMonsterList.add(new SpawnListEntry(EntityCreeper.class, 5, 1, 5));
-
+    public BiomeCandyLand(int biomeId) {
+        super(biomeId);
+        this.setTemperatureRainfall(0.8F, 0.4F);
+        this.setHeight(height_Default);
+        BiomeCandyLand.treesPerChunk = 2;
+        this.theBiomeDecorator.treesPerChunk = -999;
+        this.theBiomeDecorator.flowersPerChunk = 4;
+        this.topBlock = BlockLoader.blockcandygrass;
+        this.fillerBlock = BlockLoader.blockcandydirt;
+        //Creatures
+        this.spawnableCreatureList.clear();
+        this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityCandyPig.class, 5, 2, 6));//Spawns Candy Pig In CandyLand
+        this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityCandyGolem.class, 5, 2, 6));//Spawns Candy Golem In CandyLand
+        this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityCandyStealer.class, 5, 2, 6));//Spawns Candy Stealer In CandyLand
+        this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityFrostedVilliger.class, 5, 2, 6));//Spawns Candy Villager In CandyLand
+        this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityCandyStalker.class, 5, 2, 6));//Spawns Candy Stalker In CandyLand
+        this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityCandyCreeper.class, 5, 2, 6));//Spawns Candy Creeper In CandyLand
+        this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityCandyChicken.class, 5, 2, 6));//Spawns Candy Chicken In CandyLand
+        this.spawnableCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityCandyCow.class, 5, 2, 6));//Spawns Candy Cow In CandyLand
+        //Water Creatures
+        this.spawnableWaterCreatureList.clear();
+        //Monsters
+        this.spawnableMonsterList.clear();
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityCandySpider.class, 5, 2, 6));//Spawns Candy Spider In CandyLand
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityCandySlime.class, 5, 2, 6));//Spawns Candy Slime In CandyLand
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityCandyCreeperBlue.class, 5, 2, 6));//Spawns Blue Candy Creeper In CandyLand
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityCandyGhast.class, 5, 2, 6));//Spawns Candy Ghast In CandyLand
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityGingerBreadMan.class, 5, 2, 6));//Spawns GingerBread Man In CandyLand
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityCandyStalker.class, 5, 2, 6));//Spawns Candy Stalker In CandyLand
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityCandyCreeper.class, 5, 2, 6));//Spawns Candy Creeper In CandyLand
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityCandyStealer.class, 5, 2, 6));//Spawns Candy Stealer In CandyLand
+        //Cave Creatures
+        this.spawnableCaveCreatureList.clear();
+        this.spawnableCaveCreatureList.add(new BiomeGenBase.SpawnListEntry(EntityCandyBat.class, 5, 2, 6));//Spawns Candy Bat In CandyLand
+        this.flowers.clear();
+        this.addFlower(Blocks.red_flower,    biomeId,  biomeId);
+        this.addFlower(Blocks.yellow_flower, biomeId, biomeId);
     }
 
-    
-    @SideOnly(Side.CLIENT)
-public int getBiomeGrassColor(){return 0xff9999;}
-@SideOnly(Side.CLIENT)
-public int getBiomeFoliageColor(){return 0xff9999;}
-@SideOnly(Side.CLIENT)
-public int getSkyColorByTemp(float par1){return 0xffcccc;}
+    /**
+     * Gets a WorldGen appropriate for this biome.
+     */
+    public WorldGenerator getRandomWorldGenForGrass(Random random){
+        return random.nextInt(2) == 0 ? new WorldGenTallGrass(Blocks.tallgrass, 1) : new WorldGenTallGrass(Blocks.tallgrass, 2);
+    }
 
-}
-
+    /**
+     * Remove this to remove vines from dimension
+     */
+    public void decorate(World world, Random random, int par3, int par4) {
+        super.decorate(world, random, par3, par4);
+//        WorldGenVines worldgenvines = new WorldGenVines();
+//
+//        for (int k = 0; k < 50; ++k) {
+//            int l = par3 + random.nextInt(16) + 8;
+//            byte b0 = 64;
+//            int i1 = par4 + random.nextInt(16) + 8;
+//            worldgenvines.generate(world, random, l, b0, i1);
+//        }
+    }
 }

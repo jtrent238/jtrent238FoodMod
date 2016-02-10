@@ -23,7 +23,8 @@ public class lotsofblocks
 {
 
 	public static Block blockspawner;
-	public static Block BlockNewBlock;
+	public static Block blockChest;
+	public static Block blockCraftingTable;
 	
 
 
@@ -36,6 +37,16 @@ public void preInit(FMLPreInitializationEvent event)
     GameRegistry.registerBlock(blockspawner, blockspawner.getUnlocalizedName().substring(5));
     System.out.println(blockspawner.getUnlocalizedName().substring(5));
     
+    //Chest
+    int p_i45397_1_ = 0;
+  	blockChest = new Blockchest(p_i45397_1_).setBlockName("blockChest").setBlockTextureName("lotsofblocks:blockChest").setCreativeTab(lotsofblocks);
+    GameRegistry.registerBlock(blockChest, blockChest.getUnlocalizedName().substring(5));
+    System.out.println(blockChest.getUnlocalizedName().substring(5));
+    //Crafting Table
+  	blockCraftingTable = new BlockCraftingTable(Material.wood).setBlockName("blockCraftingTable").setBlockTextureName("lotsofblocks:blockCraftingTable").setCreativeTab(lotsofblocks);
+    GameRegistry.registerBlock(blockCraftingTable, blockCraftingTable.getUnlocalizedName().substring(5));
+    System.out.println(blockCraftingTable.getUnlocalizedName().substring(5));
+      
     
   
     //•//Crafting Recipes//•//
