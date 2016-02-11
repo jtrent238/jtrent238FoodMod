@@ -1,7 +1,7 @@
 package com.jtrent238.foodmod;
-  
+
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -11,9 +11,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
-import cpw.mods.fml.common.registry.GameRegistry;
 
-public class StrawberrySeeds extends Item implements IPlantable
+public class SeedsGoldenCarrot extends Item implements IPlantable
 { 
     
     /**
@@ -24,22 +23,13 @@ public class StrawberrySeeds extends Item implements IPlantable
     /** BlockID of the block the seeds can be planted on. */
     private Block soilBlockID;
     
-    private String name = "SeedsStrawberry";
-    
-    public StrawberrySeeds(Block par2, Block par3)
-    {
-  		setUnlocalizedName("SeedsStrawberry");
-  		setTextureName("foodmod:SeedsStrawberry");
-  		this.setCreativeTab(FoodMod.FoodMod); 
-  		
-  		this.blockType = par2;
-  		this.soilBlockID = par3;
-  		
-  		GameRegistry.registerItem(this, name);
-    }    
+    private String name = "SeedsGoldenCarrot";
 
    
-    /**
+    public SeedsGoldenCarrot(Block goldenCarrot, Block farmland) {
+	}
+
+	/**
      * Callback for item usage. If the item does something special on right clicking, he will have one of those. Return
      * True if something happen and false if it don't. This is for ITEMS, not BLOCKS
      */

@@ -81,7 +81,7 @@ public class FoodModItems {
 
 		HealingApple = new HealingApple(20, 1F, false);
 		StrawberrySeeds = new StrawberrySeeds(FoodModBlocks.Strawberry, Blocks.farmland);
-		GoldenCarrotSeeds = new GoldenCarrotSeeds(FoodModBlocks.GoldenCarrot, Blocks.farmland);
+		GoldenCarrotSeeds = new SeedsGoldenCarrot(FoodModBlocks.GoldenCarrot, Blocks.farmland);
 	}
 
 	 	public static Item itemcandyarmorhelmet;
@@ -94,7 +94,7 @@ public class FoodModItems {
 	      
 	    
 	      itemcandyfloss = new itemcandyfloss(1, 1F, true);
-	      GoldenCarrotSeeds = new GoldenCarrotSeeds(FoodModBlocks.GoldenCarrot, Blocks.farmland);
+	      GoldenCarrotSeeds = new SeedsGoldenCarrot(FoodModBlocks.GoldenCarrot, Blocks.farmland);
 	      
 	      //CandyArmor Armor Set
 	      itemcandyarmorhelmet		=	new CandyArmorItemArmor(CANDYARMOR, 6, 0).setUnlocalizedName("itemcandyarmorhelmet").setTextureName("foodmod:itemcandyarmorhelmet");

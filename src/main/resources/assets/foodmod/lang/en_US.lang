@@ -192,7 +192,7 @@ item.itembeefbroth.name=Beef Broth
 item.itemjalapenopeppers.name=Jalapeno Peppers
 item.itemmintleaves.name=Mint Leaves
 item.itemHealingApple.name=Healing Apple
-item.StrawberrySeeds.name=StrawBerry Seeds
+item.SeedsStrawberry.name=StrawBerry Seeds
 item.GoldenCarrot.name=Golden Carrot
 item.itembuttercandy.name=Butter Candy
 item.itemhorsemeat_raw.name=Raw Horsemeat
@@ -201,6 +201,7 @@ item.itemluckycandy.name=Lucky Candy
 item.itemunstablecandy.name=§i§8§k0000§r§i §6Unstable Candy §r§i§8§k0000
 item.itemcandycane.name=CandyCane
 item.itemcandycanestick.name=CandyCane Stick
+item.itemcandycanereed.name=CandyCane Reed
 
 //Potion Apples
 item.itemapple_swiftness.name=Apple Of Swiftness
@@ -254,6 +255,9 @@ tile.blockcandyportal.name=Candy Portal
 tile.CandyRail.name=Candy Rail
 tile.blockcandybars.name=Candy Bars
 tile.blockfrozenpumpkin.name=Frozen Pumpkin
+tile.blockcandybeacon.name=Candy Beacon
+tile.blockcandyfire.name=Candy Fire
+
 
 
 //Cakes
@@ -272,8 +276,11 @@ tile.blockdeepdishpizza.name=Deep Dish Pizza
 
 tile.itempeanutplant.name=Peanut Plant
 
-
+//Plants
 tile.plantpeanut.name=Peanut Plant
+tile.PlantStrawberry.name=StrawBerry Plant
+tile.PlantGoldenCarrot.name=Golden Carrot Plant
+tile.blockcandycanereed.name=CandyCane Reed
 
 
 //Entitys
@@ -300,7 +307,8 @@ entity.EntityCandyCreeperBlue.name=Blue Candy Creeper
 
 //Creative Tabs
 itemGroup.FoodMod=jtrent238's Food Mod
+itemGroup.TestStuff=TestStuff §4***May Break Your Game***
 
 //NULL ERRORS (tile / item)
-tile.null.name=Block Name Error[Please Report To jtrent238]
-item.null.name=Item Name Error[Please Report To jtrent238]
+tile.null.name=Block Name Error -- Please Report To jtrent238
+item.null.name=Item Name Error -- Please Report To jtrent238

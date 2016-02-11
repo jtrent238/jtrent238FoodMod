@@ -14,7 +14,7 @@ public class liquidMilkFlowing extends BlockDynamicLiquid {
             this.blockHardness = 100.0F;
             this.setLightOpacity(3);
             this.disableStats();
-            this.setCreativeTab(FoodMod.FoodMod);
+            this.setCreativeTab(FoodMod.TestStuff);
             //Uncomment this if you wish to test and need it in creative mode!
             }
 }

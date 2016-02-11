@@ -11,7 +11,7 @@ public class liquidMilkStill extends BlockStaticLiquid{
             this.blockHardness = 100.0F;
             this.setLightOpacity(3);
             this.disableStats();
-            this.setCreativeTab(FoodMod.FoodMod);
+            this.setCreativeTab(FoodMod.TestStuff);
             }
     
 }

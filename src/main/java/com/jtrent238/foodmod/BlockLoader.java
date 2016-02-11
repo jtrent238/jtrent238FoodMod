@@ -33,6 +33,9 @@ public class BlockLoader {
 		public static Block blockcandyportal;
 		public static Block blockcandyrail;
 		public static Block blockfrozenpumpkin;
+		public static Block blockcandybeacon;
+		public static Block blockcandyfire;
+		public static Block blockcandycanereed;
 		
 		public static Block blockdeepdishpizza;
 
@@ -91,9 +94,12 @@ public class BlockLoader {
 		    blockcandystone = new Blockcandystone(Material.ground).setBlockName("blockcandystone").setHardness(1.5F).setStepSound(Block.soundTypeStone).setBlockTextureName("foodmod:blockcandystone").setCreativeTab(FoodMod.FoodMod);
 		    blockcandydirt = new blockcandydirt(Material.grass).setBlockName("blockcandydirt").setHardness(0.5F).setStepSound(Block.soundTypeGravel).setBlockTextureName("foodmod:blockcandydirt").setCreativeTab(FoodMod.FoodMod);
 		    blockcandygrass = new blockcandygrass(Material.grass).setBlockName("blockcandygrass").setHardness(0.6F).setStepSound(Block.soundTypeGrass).setBlockTextureName("foodmod:blockcandygrass").setCreativeTab(FoodMod.FoodMod);
-		    blockcandyportal = new Blockcandyportal("blockcandyportal").setHardness(100F).setBlockTextureName("foodmod:blockcandyportal").setCreativeTab(FoodMod.FoodMod);
+		    blockcandyportal = new Blockcandyportal("blockcandyportal").setHardness(100F).setBlockTextureName("foodmod:blockcandyportal").setCreativeTab(FoodMod.TestStuff);
 		    blockcandyrail = new Blockcandyrail("blockcandyrail").setBlockTextureName("foodmod:blockcandyrail").setCreativeTab(FoodMod.FoodMod);
 		    blockfrozenpumpkin = new Blockfrozenpumpkin(true).setBlockTextureName("foodmod:blockfrozenpumpkin").setCreativeTab(FoodMod.FoodMod);
+		    blockcandybeacon = new Blockcandybeacon().setBlockTextureName("foodmod:blockcandybeacon").setCreativeTab(FoodMod.FoodMod);
+		    blockcandyfire = new Blockcandyfire().setBlockTextureName("foodmod:blockcandyfire").setCreativeTab(FoodMod.TestStuff);
+		    blockcandycanereed = new Blockcandycanereed().setBlockTextureName("foodmod:blockcandycanereed").setCreativeTab(FoodMod.TestStuff);
 		    
 			
 			registerBlocks();
@@ -133,9 +139,14 @@ public class BlockLoader {
 			GameRegistry.registerBlock(blockcandyportal, "blockcandyportal");
 			GameRegistry.registerBlock(blockcandyrail, "blockcandyrail");
 			GameRegistry.registerBlock(blockfrozenpumpkin, "blockfrozenpumpkin");
+            GameRegistry.registerBlock(blockcandybeacon, "blockcandybeacon");
+            GameRegistry.registerBlock(blockcandyfire, "blockcandyfire");
+            GameRegistry.registerBlock(blockcandycanereed, "blockcandycanereed");
+            
 			GameRegistry.registerBlock(liquidMilkStill, "liquidMilkStill");
             GameRegistry.registerBlock(liquidMilkFlowing, "liquidMilkFlowing");
-			
+
+            
 		}
 	}
 

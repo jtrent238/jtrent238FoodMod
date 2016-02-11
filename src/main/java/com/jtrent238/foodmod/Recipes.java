@@ -34,6 +34,7 @@ public class Recipes {
 		GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.blocksugarbricks), "YYY", "XXY", "XXY", 'X', BlockLoader.blocksugar);
 		GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.blocksugar), "XXX", "XXX", "XXX", 'X', Items.sugar);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemsugarcube), "YYY", "XXY", "XXY", 'X', Items.sugar);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcandycanestick,4),"YYY", "YYX", "YYX", 'X', ItemLoader.itemcandycane);
 		
 	}
 
@@ -41,7 +42,7 @@ public class Recipes {
 	 * Add Shapeless Recipes.
 	 */
 	private static void addShaplessRecpies(){
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemLoader.itemcandycanestick), ItemLoader.itemcandycane);
+
 		
 		}
 	/**

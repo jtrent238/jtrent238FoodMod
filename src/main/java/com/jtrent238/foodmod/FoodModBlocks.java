@@ -23,8 +23,8 @@ public class FoodModBlocks {
     public static void init() {
     
         Flourblock = new BlockFlour();        
-        Strawberry = new Strawberry();   
-        GoldenCarrot = new GoldenCarrot();
+        Strawberry = new PlantStrawberry();   
+        GoldenCarrot = new PlantGoldenCarrot();
     }
 	
 

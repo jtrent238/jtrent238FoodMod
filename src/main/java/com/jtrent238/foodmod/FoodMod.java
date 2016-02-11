@@ -79,7 +79,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
 
-@Mod(modid="foodmod", name="jtrent238's Food Mod", version="1.0.0.2")
+@Mod(modid="foodmod", name="jtrent238's Food Mod", version="1.0.0.3")
 public class FoodMod
 {
 
@@ -197,7 +197,17 @@ public static CreativeTabs FoodMod = new CreativeTabs("FoodMod")
 
 	}
 ;
+public static CreativeTabs TestStuff = new CreativeTabs("TestStuff")
+{
+	public Item getTabIconItem() {
 
+		return new ItemStack(ItemLoader.itempeach).getItem();
+		//Old Icon//return new ItemStack(Items.golden_apple).getItem();
+	}
+
+
+	}
+;
 	//Items
 		//Seeds
 		public static Item itempeanutSeeds;

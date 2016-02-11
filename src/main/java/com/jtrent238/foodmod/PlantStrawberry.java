@@ -18,25 +18,24 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Strawberry extends BlockCrops
+public class PlantStrawberry extends BlockCrops
 {
     @SideOnly(Side.CLIENT)
     private IIcon[] field_149867_a;
 
-	  private String name = "Strawberry";
+	  private String name = "PlantStrawberry";
 
-    protected Strawberry()
+    protected PlantStrawberry()
     {
         super();
         this.setTickRandomly(true);
         float f = 0.5F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
-        this.setCreativeTab((CreativeTabs)null);
+        this.setCreativeTab(FoodMod.TestStuff);
         this.setHardness(0.0F);
         this.setStepSound(soundTypeGrass);
         this.disableStats();
-        
-        this.setBlockName("Strawberry");
+        this.setBlockName("PlantStrawberry");
         GameRegistry.registerBlock(this, name);
     }
 

@@ -181,7 +181,7 @@ public class EntityCandyPig extends EntityAnimal {
             }
             else
             {
-                this.dropItem(ItemLoader.itemcandycane, 1);
+                this.dropItem(ItemLoader.itemcandycane, 4);
             }
         }
         /*

@@ -18,25 +18,25 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GoldenCarrot extends BlockCrops
+public class PlantGoldenCarrot extends BlockCrops
 {
     @SideOnly(Side.CLIENT)
     private IIcon[] field_149867_a;
 
-	  private String name = "GoldenCarrot";
+	  private String name = "PlantGoldenCarrot";
 
-    protected GoldenCarrot()
+    protected PlantGoldenCarrot()
     {
         super();
         this.setTickRandomly(true);
         float f = 0.5F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
-        this.setCreativeTab((CreativeTabs)null);
+        this.setCreativeTab(FoodMod.TestStuff);
         this.setHardness(0.0F);
         this.setStepSound(soundTypeGrass);
         this.disableStats();
         
-        this.setBlockName("GoldenCarrot");
+        this.setBlockName("PlantGoldenCarrot");
         GameRegistry.registerBlock(this, name);
     }
 
