@@ -25,6 +25,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.SoundRegistry;
 import net.minecraft.client.model.ModelBat;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelBoat;
@@ -79,7 +80,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
 
-@Mod(modid="foodmod", name="jtrent238's Food Mod", version="1.0.0.3")
+@Mod(modid="foodmod", name="jtrent238's Food Mod", version="1.0.0.4")
 public class FoodMod
 {
 
@@ -175,6 +176,7 @@ public void init(FMLInitializationEvent event)
 	BlockLoader.loadBlocks();
 	ItemLoader.LoadItems();
 	EntityLoader.LoadEntitys();
+	//SoundEvents.LoadSounds();
 	ModBiomes.registerWithBiomeDictionary();
 	Dimension.registerWorldProvider();
 	Dimension.registerDimensions();
@@ -182,7 +184,7 @@ public void init(FMLInitializationEvent event)
     Recipes.registerRecpies();
 	MinecraftForge.EVENT_BUS.register(new Blockchocolatemilk());
 	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
-  //Not Implemented Yet//NetworkRegistry.INSTANCE.registerGuiHandler(FridgeGUI.instance, new GuiHandler());
+	//Not Implemented Yet//NetworkRegistry.INSTANCE.registerGuiHandler(FridgeGUI.instance, new GuiHandler());
 }
 
 
@@ -339,10 +341,11 @@ public void postInit(FMLPostInitializationEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(EntityCandyBoat.class, new RenderLiving(new ModelBoat(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyBoat.png");}});//Sets CandyBoat Texture
 			
 
-
+		
 		
 		//DimensionManager.registerDimension(2, elec);
 		FMLCommonHandler playerMP;
+
 
 	}
 	

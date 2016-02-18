@@ -31,11 +31,19 @@ public class Recipes {
 	private static void addShapedRecpies(){
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemapple_swiftness), new Object[] {"yxy","wzw","yvy", 'v', Items.potionitem, 'w', Items.sugar, 'x', Items.nether_wart, 'y', Items.blaze_powder , 'z', Items.apple});
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemapple_strength), new Object[] {"yxy","wzw","yvy", 'v', Items.potionitem, 'w', Items.blaze_rod, 'x', Items.nether_wart, 'y', Items.blaze_powder , 'z', Items.apple});
-		GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.blocksugarbricks), "YYY", "XXY", "XXY", 'X', BlockLoader.blocksugar);
+		GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.blocksugarbricks), "XX", "XX", 'X', BlockLoader.blocksugar);
 		GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.blocksugar), "XXX", "XXX", "XXX", 'X', Items.sugar);
-		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemsugarcube), "YYY", "XXY", "XXY", 'X', Items.sugar);
-		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcandycanestick,4),"YYY", "YYX", "YYX", 'X', ItemLoader.itemcandycane);
-		
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemsugarcube), "XX", "XX", 'X', Items.sugar);//Should Be Shapeless
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcandycanestick,4), "X", "X", 'X', ItemLoader.itemcandycane);//Should Be Shapeless
+		GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.blockcandyrail,16),"XZX", "XYX", "XZX", 'X', ItemLoader.itemcandycanestick, 'Y', Items.iron_ingot);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemdiamondapple),"XXX", "XYX", "XXX", 'X', Items.diamond, 'Y', Items.apple);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemgoldapple),"XXX", "XYX", "XXX", 'X', Items.gold_ingot, 'Y', Items.apple);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itememeraldapple),"XXX", "XYX", "XXX", 'X', Items.emerald, 'Y', Items.apple);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemredstoneapple),"XXX", "XYX", "XXX", 'X', Items.redstone, 'Y', Items.apple);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemironapple),"XXX", "XYX", "XXX", 'X', Items.iron_ingot, 'Y', Items.apple);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcoalapple),"XXX", "XYX", "XXX", 'X', Items.coal, 'Y', Items.apple);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemlapizapple),"XXX", "XYX", "XXX", 'X', Items.dye, 'Y', Items.apple);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemchickenlegraw),"X", 'X', Items.chicken);
 	}
 
 	/**

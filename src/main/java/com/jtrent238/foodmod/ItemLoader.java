@@ -166,6 +166,7 @@ public class ItemLoader {
 		public static Item itemcandycane;
 		public static Item itemcandycanestick;
 		public static Item itemcandycanereed;
+		public static Item itemnyanapple;
 		
 			//Drinks
 		public static Item itemtea;
@@ -361,6 +362,7 @@ public class ItemLoader {
 		itemcandycane = new ItemFood(2, 0.3F, false).setUnlocalizedName("itemcandycane").setTextureName("foodmod:itemcandycane").setCreativeTab(FoodMod.FoodMod);
 		itemcandycanestick = new ItemCandyCaneStick().setUnlocalizedName("itemcandycanestick").setTextureName("foodmod:itemcandycanestick").setCreativeTab(FoodMod.FoodMod);
 		itemcandycanereed = new Itemcandycanereed().setUnlocalizedName("itemcandycanereed").setTextureName("foodmod:itemcandycanereed").setCreativeTab(FoodMod.FoodMod);
+		itemnyanapple = new  ItemNyanApple(2, 0.3F, false).setUnlocalizedName("itemnyanapple").setTextureName("foodmod:itemnyanapple").setCreativeTab(FoodMod.FoodMod);
 		
 		
 		
@@ -523,6 +525,7 @@ public class ItemLoader {
 		GameRegistry.registerItem(itemcandycane, itemcandycane.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(itemcandycanestick, itemcandycanestick.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(itemcandycanereed, itemcandycanereed.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemnyanapple, itemnyanapple.getUnlocalizedName().substring(5));
 		
 		
 }
