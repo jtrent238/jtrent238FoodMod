@@ -1,0 +1,20 @@
+//jtrent238's Developer Mod Lang File
+//en_US
+
+//Items
+item.itemlightingwand.name=lightingwand
+//Blocks
+tile.blockspawner.name=Monster Spawner
+
+//Entitys
+//Container
+//Generators
+//Achievements
+
+//Creative Tabs
+itemGroup.devmod=§2jtrent238's Developer Mod
+itemGroup.devmod.hiddenstuff=§2jtrent238's Developer Mod - Hidden Stuff
+
+//NULL ERRORS (tile / item)
+tile.null.name=§4Block Name Error -- Please Report To jtrent238
+item.null.name=§4Item Name Error -- Please Report To jtrent238

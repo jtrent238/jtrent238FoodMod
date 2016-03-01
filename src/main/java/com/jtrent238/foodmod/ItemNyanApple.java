@@ -55,7 +55,7 @@ public class ItemNyanApple extends ItemFood{
 	@Override
 	protected void onFoodEaten(ItemStack stack, World world, EntityPlayer player) {
 	    super.onFoodEaten(stack, world, player);
-	        world.playSoundEffect(20, 70, 20, "foodmod:sounds/Nyan.ogg", 1, 1);
+	    	world.playSoundAtEntity(player, "FoodMod:nyansound", 1.0F, 1.0F);
 	        this.setPotionEffect(potionid, 255, 1, 100);
 	        this.setPotionEffect(2, 255, 1, 1F);
 	        this.setPotionEffect(3, 255, 1, 1F);

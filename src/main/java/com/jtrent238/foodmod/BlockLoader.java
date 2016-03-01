@@ -2,6 +2,7 @@ package com.jtrent238.foodmod;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
 
 public class BlockLoader {
@@ -36,6 +37,8 @@ public class BlockLoader {
 		public static Block blockcandybeacon;
 		public static Block blockcandyfire;
 		public static Block blockcandycanereed;
+		public static Block blockfoodprocessor;
+		
 		
 		public static Block blockdeepdishpizza;
 
@@ -59,9 +62,12 @@ public class BlockLoader {
 		public static Block plantpeanut;
 		public static Block BlockOvenActive;
 		public static Block BlockCandyFire;
+		public static Block blockfoodcontainer;
 		
-		public final static Block liquidMilkFlowing = new liquidMilkFlowing(500).setBlockName("liquidMilkFlowing");
-        public final static Block liquidMilkStill = new liquidMilkStill(501).setBlockName("liquidMilkStill");
+		
+		
+		public final static Block liquidMilkFlowing = new liquidMilkFlowing(500, 0).setBlockName("liquidMilkFlowing");
+        public final static Block liquidMilkStill = new liquidMilkStill(501, 0).setBlockName("liquidMilkStill");
 		/**
 		 * Load Blocks.
 		 */
@@ -83,10 +89,10 @@ public class BlockLoader {
 			blocksugar = new Blocksugar(Material.ground).setBlockName("blocksugar").setBlockTextureName("foodmod:blocksugar").setHardness(3F).setStepSound(Block.soundTypeStone).setCreativeTab(FoodMod.FoodMod);
 		    blockfoodtnt = new Blockfoodtnt(Material.ground).setStepSound(Block.soundTypeGravel).setBlockName("blockfoodtnt").setBlockTextureName("foodmod:blockfoodtnt").setCreativeTab(FoodMod.FoodMod);
 		    blocklight = new Blocklight(Material.ground).setBlockName("blocklight").setBlockTextureName("foodmod:blocklight").setCreativeTab(FoodMod.FoodMod);
-		    blocktestportal = new Blocktestportal(Material.portal).setBlockName("blocktestportal").setBlockTextureName("foodmod:blocktestportal");
+		    blocktestportal = new Blocktestportal(Material.portal).setBlockName("blocktestportal").setBlockTextureName("foodmod:blocktestportal").setCreativeTab(FoodMod.TestStuff);
 		    blockpeppermintlog = new Blockpeppermintlog(Material.wood).setBlockName("blockpeppermintlog").setBlockTextureName("foodmod:blockpeppermintlog").setCreativeTab(FoodMod.FoodMod);
-		    Cherryleaves = new Cherryleaves(Material.leaves).setBlockName("Cherryleaves").setHardness(0.2F).setStepSound(Block.soundTypeGrass).setBlockTextureName("foodmod:leaves_cherry").setCreativeTab(FoodMod.FoodMod);
-		    jtrent238skull = new jtrent238skull(Material.ground).setBlockName("jtrent238skull").setBlockTextureName("foodmod:jtrent238skull").setCreativeTab(FoodMod.FoodMod);
+		    Cherryleaves = new Cherryleaves(Material.leaves, null).setBlockName("Cherryleaves").setHardness(0.2F).setStepSound(Block.soundTypeGrass).setBlockTextureName("foodmod:leaves_cherry").setCreativeTab(FoodMod.FoodMod);
+		    jtrent238skull = new jtrent238skull(Material.ground).setBlockName("jtrent238skull").setBlockTextureName("foodmod:jtrent238skull").setCreativeTab(FoodMod.TestStuff);
 		    BlockOven = new BlockOven(Material.anvil).setBlockName("BlockOven").setBlockTextureName("foodmod:BlockOven").setCreativeTab(FoodMod.FoodMod);
 		    BlockOvenActive = new BlockOvenActive(Material.anvil).setBlockName("BlockOvenActive").setBlockTextureName("foodmod:BlockOvenActive").setCreativeTab(FoodMod.FoodMod);
 		    blockcherryworkbench = new Blockcherryworkbench(Material.wood).setBlockName("blockcherryworkbench").setHardness(2.5F).setStepSound(Block.soundTypeWood).setBlockTextureName("foodmod:cherryworkbench").setCreativeTab(FoodMod.FoodMod);
@@ -97,10 +103,13 @@ public class BlockLoader {
 		    blockcandyportal = new Blockcandyportal("blockcandyportal").setHardness(100F).setBlockTextureName("foodmod:blockcandyportal").setCreativeTab(FoodMod.TestStuff);
 		    blockcandyrail = new Blockcandyrail("blockcandyrail").setBlockTextureName("foodmod:blockcandyrail").setCreativeTab(FoodMod.FoodMod);
 		    blockfrozenpumpkin = new Blockfrozenpumpkin(true).setBlockTextureName("foodmod:blockfrozenpumpkin").setCreativeTab(FoodMod.FoodMod);
-		    blockcandybeacon = new Blockcandybeacon().setBlockTextureName("foodmod:blockcandybeacon").setCreativeTab(FoodMod.FoodMod);
+		    blockcandybeacon = new Blockcandybeacon().setBlockTextureName("foodmod:blockcandybeacon").setCreativeTab(FoodMod.TestStuff);
 		    blockcandyfire = new Blockcandyfire().setBlockTextureName("foodmod:blockcandyfire").setCreativeTab(FoodMod.TestStuff);
 		    blockcandycanereed = new Blockcandycanereed().setBlockTextureName("foodmod:blockcandycanereed").setCreativeTab(FoodMod.TestStuff);
-		    
+		    blockfoodprocessor = new BlockFoodProcessor(Material.rock).setBlockName("blockfoodprocessor").setHardness(1.5F).setBlockTextureName("foodmod:blockfoodprocessor").setCreativeTab(FoodMod.TestStuff);
+		    cakechest = new BlockCakeChest(0).setBlockName("cakechest").setHardness(1.5F).setBlockTextureName("foodmod:cakechest").setCreativeTab(FoodMod.TestStuff);
+		    blockfoodcontainer = new BlockFoodcontainer(Material.anvil).setBlockName("blockfoodcontainer").setHardness(1.5F).setBlockTextureName("foodmod:blockfoodcontainer").setCreativeTab(FoodMod.TestStuff);
+                 
 			
 			registerBlocks();
 		}
@@ -142,6 +151,10 @@ public class BlockLoader {
             GameRegistry.registerBlock(blockcandybeacon, "blockcandybeacon");
             GameRegistry.registerBlock(blockcandyfire, "blockcandyfire");
             GameRegistry.registerBlock(blockcandycanereed, "blockcandycanereed");
+            GameRegistry.registerBlock(blockfoodprocessor, "blockfoodprocessor");
+            GameRegistry.registerBlock(cakechest, "cakechest");
+            GameRegistry.registerBlock(blockfoodcontainer, "blockfoodcontainer");
+            
             
 			GameRegistry.registerBlock(liquidMilkStill, "liquidMilkStill");
             GameRegistry.registerBlock(liquidMilkFlowing, "liquidMilkFlowing");

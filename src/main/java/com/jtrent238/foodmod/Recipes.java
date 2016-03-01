@@ -43,7 +43,9 @@ public class Recipes {
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemironapple),"XXX", "XYX", "XXX", 'X', Items.iron_ingot, 'Y', Items.apple);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcoalapple),"XXX", "XYX", "XXX", 'X', Items.coal, 'Y', Items.apple);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemlapizapple),"XXX", "XYX", "XXX", 'X', Items.dye, 'Y', Items.apple);
-		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemchickenlegraw),"X", 'X', Items.chicken);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemchickenlegraw,2),"X", 'X', Items.chicken);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemchickenleg,2),"X", 'X', Items.cooked_chicken);
+		
 	}
 
 	/**

@@ -5,6 +5,7 @@ import com.google.common.base.Predicates;
 import com.google.common.collect.Iterators;
 
 import com.jtrent238.foodmod.Entilyjtrent238.Entityjtrent238;
+import com.jtrent238.foodmod.Entilytatapatt.Entitytatapatt;
 import com.jtrent238.foodmod.BlockLoader;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
@@ -16,6 +17,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.EventPriority;
@@ -35,9 +37,11 @@ import net.minecraft.client.model.ModelChicken;
 import net.minecraft.client.model.ModelCow;
 import net.minecraft.client.model.ModelCreeper;
 import net.minecraft.client.model.ModelGhast;
+import net.minecraft.client.model.ModelHorse;
 import net.minecraft.client.model.ModelIronGolem;
 import net.minecraft.client.model.ModelPig;
 import net.minecraft.client.model.ModelQuadruped;
+import net.minecraft.client.model.ModelSkeleton;
 import net.minecraft.client.model.ModelSlime;
 import net.minecraft.client.model.ModelSpider;
 import net.minecraft.client.model.ModelVillager;
@@ -46,6 +50,8 @@ import net.minecraft.client.model.ModelWither;
 import net.minecraft.client.model.ModelZombie;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentArrowKnockback;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -64,15 +70,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.stats.Achievement;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldServer;
+import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeCache;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.BiomeGenPlains;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.MinecraftForge;
@@ -90,7 +99,6 @@ public class FoodMod
 	
 	@Instance(MODID)
     public static FoodMod instance;
-
 
 
 	@ForgeSubscribe(priority = EventPriority.NORMAL)
@@ -112,7 +120,10 @@ public class FoodMod
 	protected static final BiomeGenBase.Height height_candyland = new BiomeGenBase.Height(0.1F, 0.2F);
 	//public static final BiomeGenBase candyland = (new BiomeGenCandyLand(p_i1986_1_)).setColor(9286496).setBiomeName("CandyLand");
 	public static final BiomeGenBase plains = (new BiomeGenPlains(1)).setColor(9286496).setBiomeName("Plains");
-    
+	public static WorldType tutorialWorld = new WorldTypeCustom(15, "CUSTOM");
+	
+	//Enchantments
+	public static final Enchantment candy = new EnchantCandy(64, 22, 0);
 	
 		//saplings
 	public static Block itemapplesapling;
@@ -132,7 +143,7 @@ public class FoodMod
 	
 	//public static BiomeCache candybiome;
 	
-	
+	public GuiHandler guiHandler = new GuiHandler();
     
 
 @Mod.EventHandler
@@ -184,7 +195,13 @@ public void init(FMLInitializationEvent event)
     Recipes.registerRecpies();
 	MinecraftForge.EVENT_BUS.register(new Blockchocolatemilk());
 	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+	ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(ItemLoader.itemnyanapple), 2, 5, 20));
+	MinecraftForge.addGrassSeed(new ItemStack(FoodModItems.StrawberrySeeds), 5);
+	//NetworkRegistry.instance().registerGuiHandler(instance, guiHandler);
 	//Not Implemented Yet//NetworkRegistry.INSTANCE.registerGuiHandler(FridgeGUI.instance, new GuiHandler());
+	
+	/** RecipeAPI */
+	FMLInterModComms.sendMessage("cfm", "register", "com.jtrent238.foodmod.FurnitureRecipes.register");
 }
 
 
@@ -204,7 +221,6 @@ public static CreativeTabs TestStuff = new CreativeTabs("TestStuff")
 	public Item getTabIconItem() {
 
 		return new ItemStack(ItemLoader.itempeach).getItem();
-		//Old Icon//return new ItemStack(Items.golden_apple).getItem();
 	}
 
 
@@ -221,6 +237,9 @@ public static CreativeTabs TestStuff = new CreativeTabs("TestStuff")
 		public static Block tutBlock;
 		public static Item tutItem;
 		public static Block BlockOvenActive;
+
+
+
 		
 @Mod.EventHandler
 public void postInit(FMLPostInitializationEvent event) {
@@ -251,96 +270,7 @@ public void postInit(FMLPostInitializationEvent event) {
 	    
 	    Recipes.registerRecpies();
 	    
-	//Candy Pig Registry
-	    EntityRegistry.registerGlobalEntityID(EntityCandyPig.class, "EntityCandyPig",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyPig.colorBase, com.jtrent238.foodmod.EntityCandyPig.colorSpots);
-	    //EntityRegistry.addSpawn(EntityCandyPig.class, 17, 80, 4, EnumCreatureType.monster, ModBiomes.candyland);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyPig.class, new RenderLiving(new ModelPig(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyPig.png");}});//Sets Candy Pigs Texture
-		
-	//Candy Golem Registry
-	    EntityRegistry.registerGlobalEntityID(EntityCandyGolem.class, "EntityCandyGolem",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyGolem.colorBase, com.jtrent238.foodmod.EntityCandyGolem.colorSpots);
-		//EntityRegistry.addSpawn(EntityCandyGolem.class, 1, 1, 1, EnumCreatureType.monster, ModBiomes.candyland);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyGolem.class, new RenderLiving(new ModelIronGolem(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyGolem.png");}});//Sets Candy Golems Texture
-		
-	//Candy Stealer Registry
-	    EntityRegistry.registerGlobalEntityID(EntityCandyStealer.class, "EntityCandyStealer",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyStealer.colorBase, com.jtrent238.foodmod.EntityCandyStealer.colorSpots);
-		//EntityRegistry.addSpawn(EntityCandyStealer.class, 1, 1, 1, EnumCreatureType.monster, ModBiomes.candyland);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyStealer.class, new RenderLiving(new ModelWitch(elec), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyStealer.png");}});//Sets Candy Stealer Texture
 	
-	//Frosted Villager Registry
-		EntityRegistry.registerGlobalEntityID(EntityFrostedVilliger.class, "EntityFrostedVilliger",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityFrostedVilliger.colorBase, com.jtrent238.foodmod.EntityFrostedVilliger.colorSpots);
-	
-	//EntityRegistry.addSpawn(EntityFrostedVilliger.class, 1, 1, 1, EnumCreatureType.monster, ModBiomes.candyland);
-		RenderingRegistry.registerEntityRenderingHandler(EntityFrostedVilliger.class, new RenderLiving(new ModelVillager(elec), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityFrostedVilliger.png");}});//Sets Frosted Villager Texture
-	
-	//Candy Dragon Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandyDragon.class, "EntityCandyDragon",EntityRegistry.findGlobalUniqueEntityId());
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyDragon.class, new RenderLiving(new ModelVillager(elec), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyDragon.png");}});//Sets CandyDragon Texture
-	
-	//CandyStalker Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandyStalker.class, "EntityCandyStalker",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyStalker.colorBase, com.jtrent238.foodmod.EntityCandyStalker.colorSpots);
-	
-	//EntityRegistry.addSpawn(EntityCandyStalker.class, 1, 1, 1, EnumCreatureType.monster, ModBiomes.candyland);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyStalker.class, new RenderLiving(new ModelCandyStalker(elec), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyStalker.png");}});//Sets CandyStalker Texture	
-	
-	//Candy Wither Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandyWitherBoss.class, "EntityCandyWitherBoss",EntityRegistry.findGlobalUniqueEntityId());
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyWitherBoss.class, new RenderLiving(new ModelWither(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyWitherBoss.png");}});//Sets CandyWither Texture
-	
-	//Candy Creeper Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandyCreeper.class, "EntityCandyCreeper",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyCreeper.colorBase, com.jtrent238.foodmod.EntityCandyCreeper.colorSpots);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyCreeper.class, new RenderLiving(new ModelCreeper(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyCreeper.png");}});//Sets CandyCreeper Texture
-	
-	//Candy Chicken Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandyChicken.class, "EntityCandyChicken",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyChicken.colorBase, com.jtrent238.foodmod.EntityCandyChicken.colorSpots);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyChicken.class, new RenderLiving(new ModelChicken(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyChicken.png");}});//Sets CandyChicken Texture
-	
-	//Ginger Bread Man Registry
-		EntityRegistry.registerGlobalEntityID(EntityGingerBreadMan.class, "EntityGingerBreadMan",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityGingerBreadMan.colorBase, com.jtrent238.foodmod.EntityGingerBreadMan.colorSpots);
-		RenderingRegistry.registerEntityRenderingHandler(EntityGingerBreadMan.class, new RenderLiving(new ModelZombie(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityGingerBreadMan.png");}});//Sets GingerBread Man Texture
-	
-	//Candy Ghast Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandyGhast.class, "EntityCandyGhast",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyGhast.colorBase, com.jtrent238.foodmod.EntityCandyGhast.colorSpots);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyGhast.class, new RenderLiving(new ModelGhast(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyGhast.png");}});//Sets CandyGhast Texture
-		
-	//Candy Cow Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandyCow.class, "EntityCandyCow",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyCow.colorBase, com.jtrent238.foodmod.EntityCandyCow.colorSpots);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyCow.class, new RenderLiving(new ModelCow(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyCow.png");}});//Sets CandyCow Texture
-			
-	//Candy Bat Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandyBat.class, "EntityCandyBat",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyBat.colorBase, com.jtrent238.foodmod.EntityCandyBat.colorSpots);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyBat.class, new RenderLiving(new ModelBat(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyBat.png");}});//Sets CandyBat Texture
-		
-	//Candy Spider Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandySpider.class, "EntityCandySpider",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandySpider.colorBase, com.jtrent238.foodmod.EntityCandySpider.colorSpots);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandySpider.class, new RenderLiving(new ModelQuadruped(elec, elec), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyBat.png");}});//Sets CandySpider Texture
-	
-	//Candy Spider Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandySlime.class, "EntityCandySlime",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandySlime.colorBase, com.jtrent238.foodmod.EntityCandySlime.colorSpots);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandySlime.class, new RenderLiving(new ModelSlime(elec), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandySlime.png");}});//Sets CandySlime Texture
-	
-	//Candy Spider Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandyCreeperBlue.class, "EntityCandyCreeperBlue",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyCreeperBlue.colorBase, com.jtrent238.foodmod.EntityCandyCreeperBlue.colorSpots);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyCreeperBlue.class, new RenderLiving(new ModelCreeper(elec), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyCreeperBlue.png");}});//Sets CandyCreeperBlue Texture
-	
-	
-	//GummyBear Registry
-	EntityRegistry.registerGlobalEntityID(EntityGummyBear.class, "EntityGummyBear",EntityRegistry.findGlobalUniqueEntityId());
-	RenderingRegistry.registerEntityRenderingHandler(EntityGummyBear.class, new RenderLiving(new ModelGummyBear(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityGummyBear.png");}});//Sets GummyBear Texture
-	
-	
-		
-	//jtrent238 Entity Registry
-		EntityRegistry.registerGlobalEntityID(Entityjtrent238.class, "Entityjtrent238",EntityRegistry.findGlobalUniqueEntityId());
-		RenderingRegistry.registerEntityRenderingHandler(Entityjtrent238.class, new RenderLiving(new ModelBiped(elec), 0){protected ResourceLocation getEntityTexture(Entity Entityjtrent238){return new ResourceLocation("Entityjtrent238.png");}});//Sets jtrent238 Texture
-		
-	//CandyXPOrb
-		EntityRegistry.registerGlobalEntityID(EntityCandyXPOrb.class, "EntityCandyXPOrb",EntityRegistry.findGlobalUniqueEntityId());
-	
-	//Candy Boat Registry
-		EntityRegistry.registerGlobalEntityID(EntityCandyBoat.class, "EntityCandyBoat",EntityRegistry.findGlobalUniqueEntityId(), com.jtrent238.foodmod.EntityCandyCreeperBlue.colorBase, com.jtrent238.foodmod.EntityCandyCreeperBlue.colorSpots);
-		RenderingRegistry.registerEntityRenderingHandler(EntityCandyBoat.class, new RenderLiving(new ModelBoat(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation("EntityCandyBoat.png");}});//Sets CandyBoat Texture
-			
-
 		
 		
 		//DimensionManager.registerDimension(2, elec);

@@ -219,17 +219,17 @@ public class EntityCandyPig extends EntityAnimal {
      */
     public void onStruckByLightning(EntityLightningBolt p_70077_1_)
     {	
-    	//Spawns Zombie Pigman
+    	//Spawns Candy Zombie Pigman
         if (!this.worldObj.isRemote)
         {
-            EntityPigZombie entitypigzombie = new EntityPigZombie(this.worldObj);
-            entitypigzombie.setCurrentItemOrArmor(0, new ItemStack(Items.diamond_sword));
-            entitypigzombie.setCurrentItemOrArmor(1, new ItemStack(Items.diamond_helmet));
-            entitypigzombie.setCurrentItemOrArmor(2, new ItemStack(Items.diamond_chestplate));
-            entitypigzombie.setCurrentItemOrArmor(3, new ItemStack(Items.diamond_leggings));
-            entitypigzombie.setCurrentItemOrArmor(4, new ItemStack(Items.diamond_boots));
-            entitypigzombie.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
-            this.worldObj.spawnEntityInWorld(entitypigzombie);
+        	EntityCandyzombie_pigman entityCandyzombie_pigman = new EntityCandyzombie_pigman(this.worldObj);
+        	entityCandyzombie_pigman.setCurrentItemOrArmor(0, new ItemStack(Items.diamond_sword));
+        	entityCandyzombie_pigman.setCurrentItemOrArmor(1, new ItemStack(Items.diamond_helmet));
+        	entityCandyzombie_pigman.setCurrentItemOrArmor(2, new ItemStack(Items.diamond_chestplate));
+        	entityCandyzombie_pigman.setCurrentItemOrArmor(3, new ItemStack(Items.diamond_leggings));
+        	entityCandyzombie_pigman.setCurrentItemOrArmor(4, new ItemStack(Items.diamond_boots));
+        	entityCandyzombie_pigman.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            this.worldObj.spawnEntityInWorld(entityCandyzombie_pigman);
             this.setDead();
         }
         

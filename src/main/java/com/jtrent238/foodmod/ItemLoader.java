@@ -44,7 +44,7 @@ public class ItemLoader {
 		public static Item itemcorndog_mustard;
 		public static Item itemcorndog_ketchup;
 		public static Item itemhotdog;
-		public static Item itemcottoncandy;
+		public static Item itemcottoncandy_pink;
 		public static Item itemcandyapple;
 		public static Item itemsugarcookie;
 		public static Item itemoreo;
@@ -167,6 +167,16 @@ public class ItemLoader {
 		public static Item itemcandycanestick;
 		public static Item itemcandycanereed;
 		public static Item itemnyanapple;
+		public static Item itemOven;
+		
+		//Puddings
+		public static Item itemvanillapuding;
+		public static Item itemchocolatepuding;
+		public static Item itemstrawberrypudding;
+		public static Item itembananapudding;
+		public static Item itemlemonpudding;
+		public static Item itemcookiesncreampudding;
+		public static Item itempistachiopudding;
 		
 			//Drinks
 		public static Item itemtea;
@@ -205,6 +215,7 @@ public class ItemLoader {
 		
 			//Seeds
 		public static Item itemappleseed;
+
 		
 
 		
@@ -242,7 +253,7 @@ public class ItemLoader {
 	    itemcorndog_ketchup = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemcorndog_ketchup").setTextureName("foodmod:itemcorndog_ketchup").setCreativeTab(FoodMod.FoodMod);
 	    itemcorndog_mustard = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemcorndog_mustard").setTextureName("foodmod:itemcorndog_mustard").setCreativeTab(FoodMod.FoodMod);
 	    itemhotdog = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemhotdog").setTextureName("foodmod:itemhotdog").setCreativeTab(FoodMod.FoodMod);
-	    itemcottoncandy = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemcottoncandy").setTextureName("foodmod:itemcottoncandy").setCreativeTab(FoodMod.FoodMod);
+	    itemcottoncandy_pink = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemcottoncandy_pink").setTextureName("foodmod:itemcottoncandy_pink").setCreativeTab(FoodMod.FoodMod);
 	    itemapplepie = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemapplepie").setTextureName("foodmod:itemapplepie").setCreativeTab(FoodMod.FoodMod);
 	    itemcandyapple = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemcandyapple").setTextureName("foodmod:itemcandyapple").setCreativeTab(FoodMod.FoodMod);
 	    itemsugarcookie = new ItemFood(3, 0.2F, false).setUnlocalizedName("itemsugarcookie").setTextureName("foodmod:itemsugarcookie").setCreativeTab(FoodMod.FoodMod);
@@ -351,7 +362,7 @@ public class ItemLoader {
 	    itemluckycandy = new ItemLuckyCandy(6, 0.2F, false).setUnlocalizedName("itemluckycandy").setTextureName("foodmod:itemluckycandy").setCreativeTab(FoodMod.FoodMod);
 	    itemunstablecandy = new itemunstablecandy().setUnlocalizedName("itemunstablecandy").setTextureName("foodmod:itemunstablecandy").setCreativeTab(FoodMod.FoodMod);
 	    itemsugarcube = new Itemsugarcube().setUnlocalizedName("itemsugarcube").setTextureName("foodmod:itemsugarcube").setCreativeTab(FoodMod.FoodMod);
-		itemflour = new Itemflour().setUnlocalizedName("itemflour").setTextureName("foodmod:itemsugarcube").setCreativeTab(FoodMod.FoodMod);
+		itemflour = new Itemflour().setUnlocalizedName("itemflour").setTextureName("foodmod:itemflour").setCreativeTab(FoodMod.FoodMod);
 		itemapple_swiftness = new Itemapple_swiftness(4, 0.3F, false).setUnlocalizedName("itemapple_swiftness").setTextureName("foodmod:itemapple_swiftness").setCreativeTab(FoodMod.FoodMod);
 		itemapple_strength = new Itemapple_strength(4, 0.3F, false).setUnlocalizedName("itemapple_strength").setTextureName("foodmod:itemapple_strength").setCreativeTab(FoodMod.FoodMod);
 		itemcandyboat = new Itemcandyboat().setUnlocalizedName("itemcandyboat").setTextureName("foodmod:itemcandyboat").setCreativeTab(FoodMod.FoodMod);
@@ -363,8 +374,13 @@ public class ItemLoader {
 		itemcandycanestick = new ItemCandyCaneStick().setUnlocalizedName("itemcandycanestick").setTextureName("foodmod:itemcandycanestick").setCreativeTab(FoodMod.FoodMod);
 		itemcandycanereed = new Itemcandycanereed().setUnlocalizedName("itemcandycanereed").setTextureName("foodmod:itemcandycanereed").setCreativeTab(FoodMod.FoodMod);
 		itemnyanapple = new  ItemNyanApple(2, 0.3F, false).setUnlocalizedName("itemnyanapple").setTextureName("foodmod:itemnyanapple").setCreativeTab(FoodMod.FoodMod);
-		
-		
+		itemvanillapuding = new  ItemFood(8, 0.8f, false).setUnlocalizedName("itemvanillapuding").setTextureName("foodmod:itemvanillapuding").setCreativeTab(FoodMod.FoodMod);
+		itemchocolatepuding = new  ItemFood(8, 0.8f, false).setUnlocalizedName("itemchocolatepuding").setTextureName("foodmod:itemchocolatepuding").setCreativeTab(FoodMod.FoodMod);
+		itemstrawberrypudding = new  ItemFood(8, 0.8f, false).setUnlocalizedName("itemstrawberrypudding").setTextureName("foodmod:itemstrawberrypudding").setCreativeTab(FoodMod.FoodMod);
+		itembananapudding = new  ItemFood(8, 0.8f, false).setUnlocalizedName("itembananapudding").setTextureName("foodmod:itembananapudding").setCreativeTab(FoodMod.FoodMod);
+		itemlemonpudding = new  ItemFood(8, 0.8f, false).setUnlocalizedName("itemlemonpudding").setTextureName("foodmod:itemlemonpudding").setCreativeTab(FoodMod.FoodMod);
+		itemcookiesncreampudding = new  ItemFood(8, 0.8f, false).setUnlocalizedName("itemcookiesncreampudding").setTextureName("foodmod:itemcookiesncreampudding").setCreativeTab(FoodMod.FoodMod);
+		itempistachiopudding = new  ItemFood(8, 0.8f, false).setUnlocalizedName("itempistachiopudding").setTextureName("foodmod:itempistachiopudding").setCreativeTab(FoodMod.FoodMod);
 		
 		registerItems();
 	
@@ -406,7 +422,7 @@ public class ItemLoader {
 	    GameRegistry.registerItem(itemcorndog_ketchup, itemcorndog_ketchup.getUnlocalizedName().substring(5));
 	    GameRegistry.registerItem(itemcorndog_mustard, itemcorndog_mustard.getUnlocalizedName().substring(5));
 	    GameRegistry.registerItem(itemhotdog, itemhotdog.getUnlocalizedName().substring(5));
-	    GameRegistry.registerItem(itemcottoncandy, itemcottoncandy.getUnlocalizedName().substring(5));
+	    GameRegistry.registerItem(itemcottoncandy_pink, itemcottoncandy_pink.getUnlocalizedName().substring(5));
 	    GameRegistry.registerItem(itemapplepie, itemapplepie.getUnlocalizedName().substring(5));
 	    GameRegistry.registerItem(itemcandyapple, itemcandyapple.getUnlocalizedName().substring(5));
 	    GameRegistry.registerItem(itemsugarcookie, itemsugarcookie.getUnlocalizedName().substring(5));
@@ -526,9 +542,15 @@ public class ItemLoader {
 		GameRegistry.registerItem(itemcandycanestick, itemcandycanestick.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(itemcandycanereed, itemcandycanereed.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(itemnyanapple, itemnyanapple.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemvanillapuding, itemvanillapuding.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemchocolatepuding, itemchocolatepuding.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemstrawberrypudding, itemstrawberrypudding.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itembananapudding, itembananapudding.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemlemonpudding, itemlemonpudding.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemcookiesncreampudding, itemcookiesncreampudding.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itempistachiopudding, itempistachiopudding.getUnlocalizedName().substring(5));
 		
-		
-}
+	}
 }
 
 

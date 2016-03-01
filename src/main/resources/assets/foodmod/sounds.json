@@ -1,3 +1,12 @@
 {
-  "Nyan": {"category": "master","sounds": [{"name": "Nyan","stream": false}]},
-}
+    "nyansound": {"category": "master","sounds": [{"name": "nyansound","stream": false}]},
+
+    "nyanRecord": {"category": "master","sounds": [{"name": "nyanRecord","stream": true}]}
+    }
+{
+    "boil": {"category": "master","sounds": [{"name": "boil","stream": false}]},
+
+    "boilRecord": {"category": "master","sounds": [{"name": "boilRecord","stream": true}]}
+    }
+	
+	

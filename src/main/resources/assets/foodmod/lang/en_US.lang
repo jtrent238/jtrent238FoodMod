@@ -36,7 +36,7 @@ item.itemcorndog.name=Corn Dog
 item.itemcorndog_mustard.name=Corn Dog With Mustard
 item.itemcorndog_ketchup.name=Corn Dog With Ketchup
 item.itemhotdog.name=Hot Dog
-item.itemcottoncandy.name=Cotton Candy
+item.itemcottoncandy_pink.name=Pink Cotton Candy
 item.itemapplepie.name=Apple Pie
 item.itemcandyapple.name=Candy Apple
 item.itemsugarcookie.name=Sugar Cookie
@@ -211,6 +211,20 @@ item.itemapple_fireresistance.name=Apple Of Fire Resistance
 item.itemapple_posion.name=Apple Of Posion
 item.itemapple_regeneration.name=Apple Of Regeneration
 
+//Pudding
+item.itemvanillapuding.name=Vanilla Pudding
+item.itemchocolatepuding.name=Chocolate Pudding
+item.itemstrawberrypudding.name=Strawberry Pudding
+item.itembananapudding.name=Banana Pudding
+item.itemlemonpudding.name=Lemon Pudding
+item.itemcookiesncreampudding.name=Cookies N' Cream Pudding
+item.itempistachiopudding.name=Pistachio Pudding
+item.item.name=
+item.item.name=
+item.item.name=
+item.item.name=
+item.item.name=
+
 item.itemtea.name=Tea
 
 
@@ -256,7 +270,7 @@ tile.blockcandyportal.name=Candy Portal
 tile.CandyRail.name=Candy Rail
 tile.blockcandybars.name=Candy Bars
 tile.blockfrozenpumpkin.name=Frozen Pumpkin
-tile.blockcandybeacon.name=Candy Beacon
+tile.blockcandybeacon.name=Candy Beacon §4[WIP]
 tile.blockcandyfire.name=Candy Fire
 
 
@@ -290,7 +304,6 @@ entity.EntityCandyGolem.name=Candy Golem
 entity.EntityCandyStealer.name=Candy Stealer
 entity.EntityFrostedVilliger.name=Candy Villager
 entity.EntityCandyDragon.name=Candy Dragon §4[WIP]
-entity.Entityjtrent238.name=jtrent238
 entity.EntityCandyStalker.name=Candy Stalker §4[WIP]
 entity.EntityCandyWitherBoss.name=Candy Wither §4[WIP]
 entity.EntityCandyCreeper.name=Pink Candy Creeper
@@ -302,14 +315,28 @@ entity.EntityCandyBat.name=Candy Bat
 entity.EntityCandySpider.name=Candy Spider
 entity.EntityCandySlime.name=Candy Slime
 entity.EntityCandyCreeperBlue.name=Blue Candy Creeper
+entity.EntityCandyHorse.name=Candy Horse
 
+//Mod Devs And Helpers
+entity.Entityjtrent238.name=jtrent238
+entity.Entitytatapatt.name=tatapatt
+entity.EntityCrayfish.name=
+
+//Container
+container.containerfoodprocesser=Food Processer
+
+//Generators
+generator.CUSTOM=Custom World
 
 //Achievements
+
+//Enchantments
+enchantment.candy.all=Candy
 
 //Creative Tabs
 itemGroup.FoodMod=jtrent238's Food Mod
 itemGroup.TestStuff=TestStuff §4***May Break Your Game***
 
 //NULL ERRORS (tile / item)
-tile.null.name=Block Name Error -- Please Report To jtrent238
-item.null.name=Item Name Error -- Please Report To jtrent238
+tile.null.name=§4Block Name Error -- Please Report To jtrent238
+item.null.name=§4Item Name Error -- Please Report To jtrent238
