@@ -2,10 +2,15 @@
 Coming Soon
 
 1.0.0.4
-No Information For This Version
+- Fixed The Glitch Where Block Textures Did Not Load.
+- Added Pudding
+- Added Recipe API For Mr CrayFish's Furniture Mod
+- Added Some More Item Textures
+- Added tatapatt
 
 1.0.0.3
-No Information For This Version
+- Added A Creative Tab For Blocks And Items That Can Break The Game
+- Fixed Some CandyCane Errors
 
 1.0.0.2
 No Information For This Version
