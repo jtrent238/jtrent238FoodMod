@@ -1,5 +1,26 @@
+ChangeLog For jtrent238's FoodMod
+
 1.0.0.5
-Coming Soon
+- Added Potion Tank
+- Added Grinder
+- Added Candy Bed
+- Added Candy Arrow
+- Added Candy Bow
+- Added Knife
+- Added Apple Of WaterBreathing
+- Added Apple Of Leaping
+- Added Potion Protection Enchantment
+- Added Candy Enchantment
+- Added Texture For Pickle
+- Added Texture For Cucumber
+- Added Support For llibary
+- Fixed The Flour Texture Not Being The Correct Texture
+- Fixed The Drunk Potion Not Loading
+- Moved CandyBoat To The TestStuff Creative Tab
+- Moved CandyCane Structure Spawner To The TestStuff Creative Tab
+- Moved Candy Bed To The TestStuff Creative Tab
+- Tweaked The Gamelogger
+- Created API For FoodMod
 
 1.0.0.4
 - Fixed The Glitch Where Block Textures Did Not Load.
