@@ -38,6 +38,9 @@ public class BlockLoader {
 		public static Block blockcandyfire;
 		public static Block blockcandycanereed;
 		public static Block blockfoodprocessor;
+		public static Block blockpotiontank;
+		public static Block blockcandybed;
+		
 		
 		
 		public static Block blockdeepdishpizza;
@@ -109,7 +112,10 @@ public class BlockLoader {
 		    blockfoodprocessor = new BlockFoodProcessor(Material.rock).setBlockName("blockfoodprocessor").setHardness(1.5F).setBlockTextureName("foodmod:blockfoodprocessor").setCreativeTab(FoodMod.TestStuff);
 		    cakechest = new BlockCakeChest(0).setBlockName("cakechest").setHardness(1.5F).setBlockTextureName("foodmod:cakechest").setCreativeTab(FoodMod.TestStuff);
 		    blockfoodcontainer = new BlockFoodcontainer(Material.anvil).setBlockName("blockfoodcontainer").setHardness(1.5F).setBlockTextureName("foodmod:blockfoodcontainer").setCreativeTab(FoodMod.TestStuff);
-                 
+		    blockpotiontank = new BlockPotionTank(Material.iron).setBlockName("blockpotiontank").setHardness(1.5F).setBlockTextureName("foodmod:blockpotiontank").setCreativeTab(FoodMod.TestStuff);
+		    BlockGrinder = new BlockGrinder().setBlockName("BlockGrinder").setHardness(1.5F).setBlockTextureName("foodmod:BlockGrinder").setCreativeTab(FoodMod.TestStuff);
+		    blockcandybed = new Blockcandybed().setHardness(0.5F).setBlockTextureName("foodmod:blockcandybed").setCreativeTab(FoodMod.TestStuff);
+		    
 			
 			registerBlocks();
 		}
@@ -148,13 +154,16 @@ public class BlockLoader {
 			GameRegistry.registerBlock(blockcandyportal, "blockcandyportal");
 			GameRegistry.registerBlock(blockcandyrail, "blockcandyrail");
 			GameRegistry.registerBlock(blockfrozenpumpkin, "blockfrozenpumpkin");
-            GameRegistry.registerBlock(blockcandybeacon, "blockcandybeacon");
+            //This Is Broken//GameRegistry.registerBlock(blockcandybeacon, "blockcandybeacon");
             GameRegistry.registerBlock(blockcandyfire, "blockcandyfire");
             GameRegistry.registerBlock(blockcandycanereed, "blockcandycanereed");
             GameRegistry.registerBlock(blockfoodprocessor, "blockfoodprocessor");
             GameRegistry.registerBlock(cakechest, "cakechest");
             GameRegistry.registerBlock(blockfoodcontainer, "blockfoodcontainer");
-            
+            GameRegistry.registerBlock(blockpotiontank, "blockpotiontank");
+            GameRegistry.registerBlock(BlockGrinder, "BlockGrinder");
+            GameRegistry.registerBlock(blockcandybed, "blockcandybed");
+             
             
 			GameRegistry.registerBlock(liquidMilkStill, "liquidMilkStill");
             GameRegistry.registerBlock(liquidMilkFlowing, "liquidMilkFlowing");

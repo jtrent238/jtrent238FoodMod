@@ -9,4 +9,10 @@
     "boilRecord": {"category": "master","sounds": [{"name": "boilRecord","stream": true}]}
     }
 	
+{
+    "foodgrinder": {"category": "master","sounds": [{"name": "foodgrinder","stream": false}]},
+
+    "foodgrinderRecord": {"category": "master","sounds": [{"name": "foodgrinderRecord","stream": true}]}
+    }
+	
 	

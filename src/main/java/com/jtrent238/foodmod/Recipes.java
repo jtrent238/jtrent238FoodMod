@@ -1,6 +1,7 @@
 package com.jtrent238.foodmod;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.GameRegistry.Type;
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.init.Items;
@@ -10,6 +11,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 
 public class Recipes {
+	
+	public Type BLENDER;
+	public Type OVEN;
+	public Type FRIDGE;
+	public Type FREEZER;
+	public Type MICROWAVE;
 	
 	static ItemStack blocksugar_1 = new ItemStack(BlockLoader.blocksugar,1);
 	static ItemStack sugar_1 = new ItemStack(Items.sugar,1);
@@ -23,6 +30,7 @@ public class Recipes {
 		addShaplessRecpies();
 		addShapedRecpies();
 		addsmeltigrecipies();
+		WorktopCraftingManager();
 	}
 
 	/**
@@ -45,6 +53,8 @@ public class Recipes {
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemlapizapple),"XXX", "XYX", "XXX", 'X', Items.dye, 'Y', Items.apple);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemchickenlegraw,2),"X", 'X', Items.chicken);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemchickenleg,2),"X", 'X', Items.cooked_chicken);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemknife),"ZZX", "ZXZ", "YZZ", 'X', Items.iron_ingot, 'Y', Items.stick);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcandyapple),"XXX", "XYX", "XXX", 'X', ItemLoader.itembuttercandy, 'Y', Items.apple);
 		
 	}
 
@@ -52,7 +62,6 @@ public class Recipes {
 	 * Add Shapeless Recipes.
 	 */
 	private static void addShaplessRecpies(){
-
 		
 		}
 	/**
@@ -71,4 +80,13 @@ public class Recipes {
 	    GameRegistry.addSmelting(ItemLoader.itemchickenlegraw, new ItemStack (ItemLoader.itemchickenleg, 1), 0.2F);
 	
 	}
+	/**
+	 * Add FoodPlus Worktop Recipes //Not Currently Working//
+	 */
+	public static void WorktopCraftingManager(){
+		//TestRecipe//GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.item_mms,2),"X", 'X', ItemLoader.itemapplepie);
+		
+		
 	}
+	}
+	

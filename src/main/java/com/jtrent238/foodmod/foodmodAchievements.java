@@ -13,6 +13,7 @@ public class foodmodAchievements {
 
 	public static Achievement installFoodMod;
 	public static Achievement Pork;
+	public static Achievement nyan;
 	
 	
 	public static AchievementPage page;
@@ -21,13 +22,14 @@ public class foodmodAchievements {
 	
 	public static void loadAchievements()
 {
-	installFoodMod = new Achievement("achievement.foodmod_install", "foodmod_install", 1, 2, new ItemStack(Items.diamond_sword), null).setSpecial();
+	installFoodMod = new Achievement("achievement.foodmod_install", "foodmod_install", 1, 2, new ItemStack(Items.diamond), null).setSpecial();
 	installFoodMod.registerStat();
 	Pork = new Achievement("achievement.Pork", "Pork", 3, 4, Items.cooked_chicken, (Achievement)null);
 	Pork.registerStat();
-
+	nyan = new Achievement("achievement.nyan", "nyan", 2, 3, Items.diamond, (Achievement)null);
+	nyan.registerStat();
 	
-	page = new AchievementPage("jtrent238's Food Mod", installFoodMod, Pork);
+	page = new AchievementPage("jtrent238's Food Mod", installFoodMod, Pork, nyan);
 
 }
 
@@ -41,7 +43,7 @@ public class foodmodAchievements {
 
 
 
-
+/*
 //Pork Achievement
 protected void onFoodEaten(ItemStack itemStack, World world, EntityPlayer entity){
 	onFoodEaten(itemStack, world, entity);float var4 = 1.0F;
@@ -53,4 +55,8 @@ protected void onFoodEaten(ItemStack itemStack, World world, EntityPlayer entity
 	if(entity instanceof EntityPlayer)((EntityPlayer)entity).addStat(Pork, 1);
 	}
 	}
+
+
+
+*/
 }

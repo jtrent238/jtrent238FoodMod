@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.StatBase;
 import net.minecraft.world.World;
 
 public class ItemNyanApple extends ItemFood{
@@ -80,7 +81,7 @@ public class ItemNyanApple extends ItemFood{
 	        this.setPotionEffect(22, 255, 1, 1F);
 	        this.setPotionEffect(23, 255, 1, 1F);
 	        this.setAlwaysEdible();
-	        
+	        //player.addStat(foodmodAchievements.nyan, 1);
 	        
 	    }
 	

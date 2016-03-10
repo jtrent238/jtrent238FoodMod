@@ -89,7 +89,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
 
-@Mod(modid="foodmod", name="jtrent238's Food Mod", version="1.0.0.4")
+@Mod(modid="foodmod", name="jtrent238's Food Mod", version="1.0.0.5")
 public class FoodMod
 {
 
@@ -99,7 +99,7 @@ public class FoodMod
 	
 	@Instance(MODID)
     public static FoodMod instance;
-
+	public static final String MODVERSION = "1.0.0.5";
 
 	@ForgeSubscribe(priority = EventPriority.NORMAL)
     public void eventHandler(RenderGameOverlayEvent event) {
@@ -110,7 +110,16 @@ public class FoodMod
 
 	private static int p_i1986_1_;
 	
+	// Version checking instance
+	public static VersionChecker versionChecker;
+	public static boolean haveWarnedVersionOutOfDate = false;
 	
+	//Enchantments
+	public static final Enchantment candy = new EnchantCandy(64, 22, 0);
+	public static final Enchantment PosionProtection = new EnchantPosionProtection(65, 23, 0);
+	
+	
+			
 	//Biomes
 	BiomeGenBase[] allBiomes = Iterators.toArray(Iterators.filter(Iterators.forArray(BiomeGenBase.getBiomeGenArray()), Predicates.notNull()), BiomeGenBase.class);
 
@@ -122,8 +131,6 @@ public class FoodMod
 	public static final BiomeGenBase plains = (new BiomeGenPlains(1)).setColor(9286496).setBiomeName("Plains");
 	public static WorldType tutorialWorld = new WorldTypeCustom(15, "CUSTOM");
 	
-	//Enchantments
-	public static final Enchantment candy = new EnchantCandy(64, 22, 0);
 	
 		//saplings
 	public static Block itemapplesapling;
@@ -152,13 +159,17 @@ public void preInit(FMLPreInitializationEvent event)
 	
 	FoodModBlocks.init();
     FoodModItems.init();
-
+    
     //ClientProxyFoodMod.registerRenderers(this);
     
   //Achievements
     foodmodAchievements.loadAchievements();
     foodmodAchievements.registerPage();
      
+    /** The Drunk Potion object. */
+	//PotionDrunk = (new PotionDrunk(64, true, 64)).setPotionName("potion.potionDrunk");
+
+    
     //CandyPig
     entitycandypig = new EntityCandyPig(null);
      
@@ -173,6 +184,11 @@ public void preInit(FMLPreInitializationEvent event)
       
     //TileEntity Registry
     GameRegistry.registerTileEntity(TileEntityBlockOven.class, "Oven");
+    
+    //Drunk Potion
+    PotionDrunk = new PotionDrunk(24, true, 64).setUnlocalizedName("PotionDrunk");
+    
+    MinecraftForge.EVENT_BUS.register(new PotionDrunk(24, true, 64));
 }
 
 
@@ -187,6 +203,7 @@ public void init(FMLInitializationEvent event)
 	BlockLoader.loadBlocks();
 	ItemLoader.LoadItems();
 	EntityLoader.LoadEntitys();
+	ModLoader.LoadMods();
 	//SoundEvents.LoadSounds();
 	ModBiomes.registerWithBiomeDictionary();
 	Dimension.registerWorldProvider();
@@ -199,9 +216,10 @@ public void init(FMLInitializationEvent event)
 	MinecraftForge.addGrassSeed(new ItemStack(FoodModItems.StrawberrySeeds), 5);
 	//NetworkRegistry.instance().registerGuiHandler(instance, guiHandler);
 	//Not Implemented Yet//NetworkRegistry.INSTANCE.registerGuiHandler(FridgeGUI.instance, new GuiHandler());
-	
+	GameRegistry.registerTileEntity(com.jtrent238.foodmod.TileEntityGrinder.class, "stringID");
 	/** RecipeAPI */
 	FMLInterModComms.sendMessage("cfm", "register", "com.jtrent238.foodmod.FurnitureRecipes.register");
+	
 }
 
 
@@ -240,6 +258,14 @@ public static CreativeTabs TestStuff = new CreativeTabs("TestStuff")
 
 
 
+		public static Potion PotionDrunk;
+
+
+		
+
+
+
+
 		
 @Mod.EventHandler
 public void postInit(FMLPostInitializationEvent event) {
@@ -267,11 +293,13 @@ public void postInit(FMLPostInitializationEvent event) {
 	    MinecraftForge.EVENT_BUS.register(new CandyLand());
 	    MinecraftForge.EVENT_BUS.register(new ItemLuckyCandy(6, 0.2F, false)); 
 	  //MinecraftForge.EVENT_BUS.register(new TeleporterCandyLand());
+	    MinecraftForge.EVENT_BUS.register(new ModUpdater()); 
+	    MinecraftForge.EVENT_BUS.register(new ItemCandyBow()); 
+	    MinecraftForge.EVENT_BUS.register(new Itemcandycanestructure()); 
+	    MinecraftForge.EVENT_BUS.register(new FoodModEventHooks());
 	    
 	    Recipes.registerRecpies();
 	    
-	
-		
 		
 		//DimensionManager.registerDimension(2, elec);
 		FMLCommonHandler playerMP;

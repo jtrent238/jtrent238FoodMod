@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 
-public class EnchantCandy extends Enchantment
+public class EnchantPosionProtection extends Enchantment
 {
 
     /** Holds the name to be translated of each protection type. */
@@ -27,13 +27,13 @@ public class EnchantCandy extends Enchantment
      */
     private static final int[] thresholdEnchantability = new int[] {20, 20, 20};
     /** Defines the type of damage of the enchantment, 0 = all, 1 = undead, 3 = arthropods */
-    public final int candyType;
+    public final int posionprotType;
     private static final String __OBFID = "CL_00000102";
 
-    public EnchantCandy(int p_i1923_1_, int p_i1923_2_, int p_i1923_3_)
+    public EnchantPosionProtection(int p_i1923_1_, int p_i1923_2_, int p_i1923_3_)
     {
-        super(p_i1923_1_, p_i1923_2_, EnumEnchantmentType.weapon);
-        this.candyType = p_i1923_3_;
+        super(p_i1923_1_, p_i1923_2_, EnumEnchantmentType.armor);
+        this.posionprotType = p_i1923_3_;
     }
 
     /**
@@ -41,7 +41,7 @@ public class EnchantCandy extends Enchantment
      */
     public int getMinEnchantability(int p_77321_1_)
     {
-        return baseEnchantability[this.candyType] + (p_77321_1_ - 1) * levelEnchantability[this.candyType];
+        return baseEnchantability[this.posionprotType] + (p_77321_1_ - 1) * levelEnchantability[this.posionprotType];
     }
 
     /**
@@ -49,7 +49,7 @@ public class EnchantCandy extends Enchantment
      */
     public int getMaxEnchantability(int p_77317_1_)
     {
-        return this.getMinEnchantability(p_77317_1_) + thresholdEnchantability[this.candyType];
+        return this.getMinEnchantability(p_77317_1_) + thresholdEnchantability[this.posionprotType];
     }
 
     /**
@@ -62,7 +62,7 @@ public class EnchantCandy extends Enchantment
 
     public float func_152376_a(int p_152376_1_, EnumCreatureAttribute p_152376_2_)
     {
-        return this.candyType == 0 ? (float)p_152376_1_ * 1.25F : (this.candyType == 1 && p_152376_2_ == EnumCreatureAttribute.UNDEAD ? (float)p_152376_1_ * 2.5F : (this.candyType == 2 && p_152376_2_ == EnumCreatureAttribute.ARTHROPOD ? (float)p_152376_1_ * 2.5F : 0.0F));
+        return this.posionprotType == 0 ? (float)p_152376_1_ * 1.25F : (this.posionprotType == 1 && p_152376_2_ == EnumCreatureAttribute.UNDEAD ? (float)p_152376_1_ * 2.5F : (this.posionprotType == 2 && p_152376_2_ == EnumCreatureAttribute.ARTHROPOD ? (float)p_152376_1_ * 2.5F : 0.0F));
     }
 
     /**
@@ -70,7 +70,7 @@ public class EnchantCandy extends Enchantment
      */
     public String getName()
     {
-        return "enchantment.candy." + protectionName[this.candyType];
+        return "enchantment.posionprotection." + protectionName[this.posionprotType];
     }
 
     /**
@@ -92,7 +92,7 @@ public class EnchantCandy extends Enchantment
         {
             EntityLivingBase entitylivingbase1 = (EntityLivingBase)p_151368_2_;
 
-            if (this.candyType == 2 && entitylivingbase1.getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD)
+            if (this.posionprotType == 2 && entitylivingbase1.getCreatureAttribute() == EnumCreatureAttribute.ARTHROPOD)
             {
                 int j = 20 + p_151368_1_.getRNG().nextInt(10 * p_151368_3_);
                 entitylivingbase1.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, j, 3));

@@ -37,6 +37,7 @@ item.itemcorndog_mustard.name=Corn Dog With Mustard
 item.itemcorndog_ketchup.name=Corn Dog With Ketchup
 item.itemhotdog.name=Hot Dog
 item.itemcottoncandy_pink.name=Pink Cotton Candy
+item.itemcottoncandy_blue.name=Blue Cotton Candy
 item.itemapplepie.name=Apple Pie
 item.itemcandyapple.name=Candy Apple
 item.itemsugarcookie.name=Sugar Cookie
@@ -210,6 +211,8 @@ item.itemapple_strength.name=Apple Of Strength
 item.itemapple_fireresistance.name=Apple Of Fire Resistance
 item.itemapple_posion.name=Apple Of Posion
 item.itemapple_regeneration.name=Apple Of Regeneration
+item.itemapple_waterbreathing.name=Apple Of Water Breathing
+item.itemapple_jump.name=Apple Of Leaping
 
 //Pudding
 item.itemvanillapuding.name=Vanilla Pudding
@@ -229,7 +232,7 @@ item.itemtea.name=Tea
 
 
 
-item.knife.name=Knife
+item.itemknife.name=Knife
 item.itemfork.name=Fork
 item.itemspoon.name=Spoon
 item.itemplate.name=Plate
@@ -270,8 +273,9 @@ tile.blockcandyportal.name=Candy Portal
 tile.CandyRail.name=Candy Rail
 tile.blockcandybars.name=Candy Bars
 tile.blockfrozenpumpkin.name=Frozen Pumpkin
-tile.blockcandybeacon.name=Candy Beacon §4[WIP]
+tile.blockcandybeacon.name=Candy Beacon §4[WIP] §6[WILL BREAK YOUR GAME] §4[DO NOT TOUCH!!!]
 tile.blockcandyfire.name=Candy Fire
+tile.blockpotiontank.name=Potion Tank
 
 
 
@@ -324,19 +328,32 @@ entity.EntityCrayfish.name=
 
 //Container
 container.containerfoodprocesser=Food Processer
+container.containergrinder=Grinder
 
 //Generators
 generator.CUSTOM=Custom World
 
 //Achievements
+achevement.foodmod_install=Install jtrent238's FoodMod
+achevement.foodmod_install.desc=Thanks For Installing jtrent238's FoodMod
+achevement.pork=PorkChops
+achevement.pork.desc=Eat A PorkChop
+achevement.nyan=Nya! Nya! Nya!
+achevement.nyan.desc=Eat A Nyan Apple
+
 
 //Enchantments
 enchantment.candy.all=Candy
+enchantment.posionprotection.all=Posion Protection
+
+//Potions
+potion.drunk=Drunk
+potion.potionDrunk=Drunk
 
 //Creative Tabs
 itemGroup.FoodMod=jtrent238's Food Mod
 itemGroup.TestStuff=TestStuff §4***May Break Your Game***
 
 //NULL ERRORS (tile / item)
-tile.null.name=§4Block Name Error -- Please Report To jtrent238
-item.null.name=§4Item Name Error -- Please Report To jtrent238
+tile.null.name=§4Block Name Error [FoodMod]-- Please Report To jtrent238
+item.null.name=§4Item Name Error [FoodMod]-- Please Report To jtrent238

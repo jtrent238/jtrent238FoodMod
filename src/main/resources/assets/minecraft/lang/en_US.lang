@@ -1,0 +1,24 @@
+//jtrent238's Custom Lang File
+//en_US
+
+//Items
+
+//Blocks
+
+//Entitys
+
+//Container
+
+//Generators
+
+//Achievements
+
+//Enchantments
+
+//Potions
+
+//Creative Tabs
+
+//NULL ERRORS (tile / item)
+tile.null.name=§4Block Name Error -- Please Report To jtrent238
+item.null.name=§4Item Name Error -- Please Report To jtrent238

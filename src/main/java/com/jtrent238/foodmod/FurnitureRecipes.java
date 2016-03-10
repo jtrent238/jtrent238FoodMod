@@ -8,8 +8,8 @@ import net.minecraft.item.ItemStack;
 
 
 public class FurnitureRecipes {
-
-	/*public static void register(IRecipeRegistry registry) {
+/*
+	public static void register(IRecipeRegistry registry) {
 		RecipeVariables customVars = new RecipeVariables();
 		customVars.setInput(new ItemStack (ItemLoader.itemmuttonraw));
 		customVars.setInput(new ItemStack (ItemLoader.itemmutton));

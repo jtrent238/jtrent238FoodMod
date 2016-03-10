@@ -13,9 +13,9 @@ public class GameLogger {
 
 	public static GameLogger log = new GameLogger();
 
-	static File tutorialFolder;
-	static File tutorialLogFolder;
-	static File configTutorialFolder;
+	static File FoodModFolder;
+	static File FoodModLogFolder;
+	static File configFoodModFolder;
 	
 	private static String dir = System.getenv("AppData") + "/.minecraft/";
 
@@ -24,10 +24,10 @@ public class GameLogger {
 	private Logger myLog;
 
 	/**
-	 * Configure the Tutorial logger
+	 * Configure the FoodMod logger
 	 */
 	private static void configureLogging() {
-		log.myLog = Logger.getLogger("TUTORIAL-DIMENSION");
+		log.myLog = Logger.getLogger("FoodMod-DIMENSION");
 		configured = true;
 	}
 
@@ -70,7 +70,7 @@ public class GameLogger {
 	}
 
 	/**
-	 * Gets this Tutorial Logger.
+	 * Gets this FoodMod Logger.
 	 * 
 	 * @return
 	 */
@@ -79,23 +79,23 @@ public class GameLogger {
 	}
 
 	/**
-	 * Creates Tutorial folder.
-	 * Creates Config folder in Tutorial folder.
+	 * Creates FoodMod folder.
+	 * Creates Config folder in FoodMod folder.
 	 */
 	public static void createFolders() {
-		tutorialFolder = new File(dir, "Tutorial");
-		tutorialLogFolder = new File(dir + "Tutorial/TutorialLog/");
-		configTutorialFolder = new File(dir + "Tutorial/Configs/");
+		FoodModFolder = new File(dir, "FoodMod");
+		FoodModLogFolder = new File(dir + "FoodMod/FoodModLog/");
+		configFoodModFolder = new File(dir + "FoodMod/Configs/");
 		
-		if (tutorialFolder.exists() != true || configTutorialFolder.exists() != true) {
-			tutorialFolder.mkdirs();
-			tutorialLogFolder.mkdirs();
-			configTutorialFolder.mkdirs();
+		if (FoodModFolder.exists() != true || configFoodModFolder.exists() != true) {
+			FoodModFolder.mkdirs();
+			FoodModLogFolder.mkdirs();
+			configFoodModFolder.mkdirs();
 		}
 	}
 
 	/**
-	 * Write text to the TutorialLog.log.
+	 * Write text to the FoodModLog.log.
 	 * 
 	 * @param level
 	 * @param text
@@ -105,7 +105,7 @@ public class GameLogger {
 		FileWriter writer;
 		String newLine = System.getProperty("line.separator");
 		try {
-			file = new File(tutorialLogFolder, "Log.log");
+			file = new File(FoodModLogFolder, "FoodMod.log");
 			
 			writer = new FileWriter(file, true);
 			writer.write("[" + Details.MODID + "]" + "[" + level + "]" + " : " + text + newLine);
