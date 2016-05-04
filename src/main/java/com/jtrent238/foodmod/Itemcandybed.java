@@ -36,7 +36,7 @@ public class Itemcandybed extends ItemBed
         else
         {
             ++p_77648_5_;
-            BlockBed blockbed = (BlockBed)BlockLoader.blockcandybed;
+            Blockcandybed blockbed = (Blockcandybed)BlockLoader.blockcandybed;
             int i1 = MathHelper.floor_double((double)(p_77648_2_.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
             byte b0 = 0;
             byte b1 = 0;

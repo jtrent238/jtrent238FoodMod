@@ -11,7 +11,7 @@ import org.apache.commons.io.IOUtils;
 public class VersionChecker implements Runnable
 {
     private static boolean isLatestVersion = false;
-    private static String latestVersion = "1.0.0.5";
+    private static String latestVersion = "1.0.0.6";
 
     /* (non-Javadoc)
      * @see java.lang.Runnable#run()

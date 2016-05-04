@@ -1,5 +1,44 @@
 ChangeLog For jtrent238's FoodMod
 
+1.0.0.6
+- Added josephpica
+- Added FoodMod Command
+- Added 5 New Custom World Generators (For Testing)
+- Added Chair Block
+- Added Fried Egg
+- Added Fudge
+- Added Venison
+- Added Raw Venison
+- Added Search Bar to FoodMod Creative Tab
+- Added Candy Sword Texture
+- Added Knife
+- Added Candy Bow Texture
+- Added Spanish Translation
+- Added Bin
+- Added Welcome Message
+- Fixed Candy Bow Name
+- Fixed Candy Arrow Name
+- Fixed Light Block Not Making Light
+- Fixed Crash When Trying To Place Candy Bed
+- Fixed Candy Bed Name
+- Fixed Achievements Name and Description
+- Moved Candy Bed Item To FoodMod Creative Tab
+- Removed Candy Bed Block From Creative Menu
+- Removed Candy Fire
+- Removed Candy Boat
+- Removed Potion Tank
+- Removed Grinder Block
+- Removed Fridge
+- Removed Food Processor
+- Removed Candy Cane Reed
+- Removed Cherry Planks
+- Removed Cherry Workbench
+- Removed Cherry Leaves
+- Removed Test Portal
+- Removed Cake Chest
+- Removed Food Container
+- Tweaked Oven
+
 1.0.0.5
 - Added Potion Tank
 - Added Grinder

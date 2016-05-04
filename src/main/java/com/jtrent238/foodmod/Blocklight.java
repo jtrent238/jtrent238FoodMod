@@ -9,15 +9,15 @@ public class Blocklight extends BlockGlowstone{
 
 	public Blocklight(Material ground) {
 		super(ground);
-
+		this.setLightLevel(5F);
 	}
 
-	
+	/*
 	public Block setLightLevel(float p_149715_1_)
     {
         this.lightValue = (int)(15.0F * p_149715_1_);
         return this;
     }
-	
+	*/
 
 }

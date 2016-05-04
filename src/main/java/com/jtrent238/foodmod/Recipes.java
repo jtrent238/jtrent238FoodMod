@@ -51,11 +51,17 @@ public class Recipes {
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemironapple),"XXX", "XYX", "XXX", 'X', Items.iron_ingot, 'Y', Items.apple);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcoalapple),"XXX", "XYX", "XXX", 'X', Items.coal, 'Y', Items.apple);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemlapizapple),"XXX", "XYX", "XXX", 'X', Items.dye, 'Y', Items.apple);
-		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemchickenlegraw,2),"X", 'X', Items.chicken);
-		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemchickenleg,2),"X", 'X', Items.cooked_chicken);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemchickenlegraw,2),"XY", 'X', Items.chicken, 'Y', ItemLoader.itemknife);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemchickenleg,2),"XY", 'X', Items.cooked_chicken, 'Y', ItemLoader.itemknife);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemknife),"ZZX", "ZXZ", "YZZ", 'X', Items.iron_ingot, 'Y', Items.stick);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcandyapple),"XXX", "XYX", "XXX", 'X', ItemLoader.itembuttercandy, 'Y', Items.apple);
-		
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcandyapple),"XXX", "XYX", "XXX", 'X', ItemLoader.itemluckycandy, 'Y', Items.apple);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcandyapple),"XXX", "XYX", "XXX", 'X', ItemLoader.itemcandycane, 'Y', Items.apple);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemcandyapple),"XXX", "XYX", "XXX", 'X', ItemLoader.itemunstablecandy, 'Y', Items.apple);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemPeppermint_Sword),"X", "X", "Y", 'X', ItemLoader.itembuttercandy, 'Y', ItemLoader.itemcandycanestick);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemPeppermint_Sword),"X", "X", "Y", 'X', ItemLoader.itemluckycandy, 'Y', ItemLoader.itemcandycanestick);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemPeppermint_Sword),"X", "X", "Y", 'X', ItemLoader.itemcandycane, 'Y', ItemLoader.itemcandycanestick);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.itemPeppermint_Sword),"X", "X", "Y", 'X', ItemLoader.itemunstablecandy, 'Y', ItemLoader.itemcandycanestick);
 	}
 
 	/**
@@ -78,7 +84,8 @@ public class Recipes {
 	    GameRegistry.addSmelting(ItemLoader.itemfishsticksraw, new ItemStack (ItemLoader.itemfishsticks, 1), 0.2F);
 	    GameRegistry.addSmelting(ItemLoader.itemhorsemeat_raw, new ItemStack (ItemLoader.itemhorsemeat, 1), 0.2F);
 	    GameRegistry.addSmelting(ItemLoader.itemchickenlegraw, new ItemStack (ItemLoader.itemchickenleg, 1), 0.2F);
-	
+	    GameRegistry.addSmelting(ItemLoader.itemvenison_raw, new ItemStack (ItemLoader.itemvenison, 1), 0.2F);
+		
 	}
 	/**
 	 * Add FoodPlus Worktop Recipes //Not Currently Working//
@@ -88,5 +95,7 @@ public class Recipes {
 		
 		
 	}
+
+	
 	}
 	

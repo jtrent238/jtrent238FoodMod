@@ -1,13 +1,13 @@
 [
 {
-  "modid": "weaponmod","foodmod","coremod,"lotsofblocks",
+  "modid": "weaponmod";"foodmod";"coremod;"lotsofblocks",
   "name": "§2jtrent238's Mods",
   "description": "§2Mods Made By jtrent238",
   "version": "",
-  "mcversion": "§21.7.10",
+  "mcversion": "§2 1.7.10",
   "url": "§2https://youtube.com/thejtrent238",
   "updateUrl": "",
-  "authorList": ["§2jtrent238"],
+  "authorList": ["jtrent238"],
   "credits": "§2jtrent238",
   "logoFile": "",
   "screenshots": [],

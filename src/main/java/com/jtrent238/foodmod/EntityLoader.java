@@ -17,6 +17,7 @@ import net.minecraft.client.model.ModelPig;
 import net.minecraft.client.model.ModelQuadruped;
 import net.minecraft.client.model.ModelSkeleton;
 import net.minecraft.client.model.ModelSlime;
+import net.minecraft.client.model.ModelSnowMan;
 import net.minecraft.client.model.ModelVillager;
 import net.minecraft.client.model.ModelWitch;
 import net.minecraft.client.model.ModelWither;
@@ -126,6 +127,19 @@ public class EntityLoader {
 		EntityRegistry.registerGlobalEntityID(Entitytatapatt.class, "Entitytatapatt",EntityRegistry.findGlobalUniqueEntityId());
 		RenderingRegistry.registerEntityRenderingHandler(Entitytatapatt.class, new RenderLiving(new ModelBiped(elec), 0){protected ResourceLocation getEntityTexture(Entity Entitytatapatt){return new ResourceLocation("Entitytatapatt.png");}});//Sets tatapatt Texture
 	
+	//josephpica Entity Registry
+		EntityRegistry.registerGlobalEntityID(Entityjosephpica.class, "Entityjosephpica",EntityRegistry.findGlobalUniqueEntityId());
+		RenderingRegistry.registerEntityRenderingHandler(Entityjosephpica.class, new RenderLiving(new ModelBiped(elec), 0){protected ResourceLocation getEntityTexture(Entity Entityjosephpica){return new ResourceLocation("Entityjosephpica.png");}});//Sets josephpica Texture
+	
+	//Test Fake Player
+		EntityRegistry.registerGlobalEntityID(Entitytestfakeplayer.class, "Entitytestfakeplayer",EntityRegistry.findGlobalUniqueEntityId());
+		RenderingRegistry.registerEntityRenderingHandler(Entitytestfakeplayer.class, new RenderLiving(new ModelBiped(elec), 0){protected ResourceLocation getEntityTexture(Entity Entitytestfakeplayer){return new ResourceLocation("Entitytestfakeplayer.png");}});//Sets Entitytestfakeplayer Texture
+	
+	//Frozen Snowman
+		/*
+		EntityRegistry.registerGlobalEntityID(EntityFrozenSnowman.class, "EntityFrozenSnowman",EntityRegistry.findGlobalUniqueEntityId());
+		RenderingRegistry.registerEntityRenderingHandler(EntityFrozenSnowman.class, new RenderLiving(new ModelSnowMan(), 0){protected ResourceLocation getEntityTexture(Entity EntityFrozenSnowman){return new ResourceLocation("EntityFrozenSnowman.png");}});//Sets EntityFrozenSnowman Texture
+		 */	
 		/*
 	//CandyXPOrb
 		EntityRegistry.registerGlobalEntityID(EntityCandyXPOrb.class, "EntityCandyXPOrb",EntityRegistry.findGlobalUniqueEntityId());

@@ -6,6 +6,7 @@ import com.google.common.collect.Iterators;
 
 import com.jtrent238.foodmod.Entilyjtrent238.Entityjtrent238;
 import com.jtrent238.foodmod.Entilytatapatt.Entitytatapatt;
+import com.jtrent238.coremod.LogHelper;
 import com.jtrent238.foodmod.BlockLoader;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
@@ -58,16 +59,20 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.Container;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.potion.Potion;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemPotion;
 import net.minecraft.item.ItemSeeds;
+import net.minecraft.item.ItemSoup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.stats.Achievement;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.WeightedRandomChestContent;
@@ -89,7 +94,7 @@ import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.oredict.OreDictionary;
 
-@Mod(modid="foodmod", name="jtrent238's Food Mod", version="1.0.0.5")
+@Mod(modid="foodmod", name="jtrent238's Food Mod", version="1.0.0.6")
 public class FoodMod
 {
 
@@ -99,7 +104,7 @@ public class FoodMod
 	
 	@Instance(MODID)
     public static FoodMod instance;
-	public static final String MODVERSION = "1.0.0.5";
+	public static final String MODVERSION = "1.0.0.6";
 
 	@ForgeSubscribe(priority = EventPriority.NORMAL)
     public void eventHandler(RenderGameOverlayEvent event) {
@@ -117,6 +122,10 @@ public class FoodMod
 	//Enchantments
 	public static final Enchantment candy = new EnchantCandy(64, 22, 0);
 	public static final Enchantment PosionProtection = new EnchantPosionProtection(65, 23, 0);
+	//public static final Enchantment sticky = new Enchantsticky(65, 24, 0);
+	//public static final Enchantment dull = new Enchantdull(66, 25, 0);
+	//public static final Enchantment ice = new Enchantice(67, 26, 0);
+	//public static final Enchantment greif = new Enchantgreif(68, 27, 0);
 	
 	
 			
@@ -130,6 +139,12 @@ public class FoodMod
 	//public static final BiomeGenBase candyland = (new BiomeGenCandyLand(p_i1986_1_)).setColor(9286496).setBiomeName("CandyLand");
 	public static final BiomeGenBase plains = (new BiomeGenPlains(1)).setColor(9286496).setBiomeName("Plains");
 	public static WorldType tutorialWorld = new WorldTypeCustom(15, "CUSTOM");
+	public static WorldType customworld0 = new WorldTypeCustom0(16, "CUSTOM0");
+	public static WorldType customworld1 = new WorldTypeCustom1(17, "CUSTOM1");
+	public static WorldType customworld2 = new WorldTypeCustom2(18, "CUSTOM2");
+	public static WorldType customworld3 = new WorldTypeCustom3(19, "CUSTOM3");
+	public static WorldType customworld4 = new WorldTypeCustom4(20, "CUSTOM4");
+	public static WorldType customworld5 = new WorldTypeCustom5(21, "CUSTOM5");
 	
 	
 		//saplings
@@ -151,11 +166,20 @@ public class FoodMod
 	//public static BiomeCache candybiome;
 	
 	public GuiHandler guiHandler = new GuiHandler();
-    
+
+
+
+	private InventoryPlayer InventoryPlayer;
+	private TileEntityOven TileEntityOven;
+	private Container Container;
 
 @Mod.EventHandler
 public void preInit(FMLPreInitializationEvent event)
 {
+	
+	FMLCommonHandler.instance().bus().register(new FoodModEvent());
+    
+	System.out.println("Event Handler Initialized");
 	
 	FoodModBlocks.init();
     FoodModItems.init();
@@ -189,6 +213,7 @@ public void preInit(FMLPreInitializationEvent event)
     PotionDrunk = new PotionDrunk(24, true, 64).setUnlocalizedName("PotionDrunk");
     
     MinecraftForge.EVENT_BUS.register(new PotionDrunk(24, true, 64));
+
 }
 
 
@@ -204,6 +229,7 @@ public void init(FMLInitializationEvent event)
 	ItemLoader.LoadItems();
 	EntityLoader.LoadEntitys();
 	ModLoader.LoadMods();
+	//InventoryLoader.LoadInventorys();
 	//SoundEvents.LoadSounds();
 	ModBiomes.registerWithBiomeDictionary();
 	Dimension.registerWorldProvider();
@@ -214,12 +240,12 @@ public void init(FMLInitializationEvent event)
 	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 	ChestGenHooks.getInfo(ChestGenHooks.BONUS_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(ItemLoader.itemnyanapple), 2, 5, 20));
 	MinecraftForge.addGrassSeed(new ItemStack(FoodModItems.StrawberrySeeds), 5);
-	//NetworkRegistry.instance().registerGuiHandler(instance, guiHandler);
+	NetworkRegistry.INSTANCE.registerGuiHandler(instance, guiHandler);
 	//Not Implemented Yet//NetworkRegistry.INSTANCE.registerGuiHandler(FridgeGUI.instance, new GuiHandler());
+
 	GameRegistry.registerTileEntity(com.jtrent238.foodmod.TileEntityGrinder.class, "stringID");
 	/** RecipeAPI */
 	FMLInterModComms.sendMessage("cfm", "register", "com.jtrent238.foodmod.FurnitureRecipes.register");
-	
 }
 
 
@@ -230,19 +256,26 @@ public static CreativeTabs FoodMod = new CreativeTabs("FoodMod")
 		return new ItemStack(ItemLoader.itemmutton).getItem();
 		//Old Icon//return new ItemStack(Items.golden_apple).getItem();
 	}
-
+	public boolean hasSearchBar(){
+		return true;
+	}
 
 	}
 ;
+
 public static CreativeTabs TestStuff = new CreativeTabs("TestStuff")
 {
 	public Item getTabIconItem() {
 
 		return new ItemStack(ItemLoader.itempeach).getItem();
 	}
-
+	public boolean hasSearchBar(){
+		return false;
+	}
 
 	}
+
+	
 ;
 	//Items
 		//Seeds
@@ -270,7 +303,7 @@ public static CreativeTabs TestStuff = new CreativeTabs("TestStuff")
 @Mod.EventHandler
 public void postInit(FMLPostInitializationEvent event) {
 	{
-		MinecraftForge.EVENT_BUS.register(new Guioven(Minecraft.getMinecraft()));
+		MinecraftForge.EVENT_BUS.register(new GuiOven(InventoryPlayer, TileEntityOven, Container));
 	    MinecraftForge.EVENT_BUS.register(new MobDropsHandler());
 	    MinecraftForge.EVENT_BUS.register(new BlockRenderRegister());
 	    MinecraftForge.EVENT_BUS.register(new itemnetherstarapple());
@@ -294,10 +327,11 @@ public void postInit(FMLPostInitializationEvent event) {
 	    MinecraftForge.EVENT_BUS.register(new ItemLuckyCandy(6, 0.2F, false)); 
 	  //MinecraftForge.EVENT_BUS.register(new TeleporterCandyLand());
 	    MinecraftForge.EVENT_BUS.register(new ModUpdater()); 
-	    MinecraftForge.EVENT_BUS.register(new ItemCandyBow()); 
+	    MinecraftForge.EVENT_BUS.register(new ItemCandyBow(ToolMaterial.IRON)); 
 	    MinecraftForge.EVENT_BUS.register(new Itemcandycanestructure()); 
 	    MinecraftForge.EVENT_BUS.register(new FoodModEventHooks());
-	    
+	    MinecraftForge.EVENT_BUS.register(new foodmodcommand());
+
 	    Recipes.registerRecpies();
 	    
 		
